@@ -1,0 +1,25 @@
+{
+  "encounterReason" : [
+      {"text":"sore throat"},
+      {"text":"headache"}
+    ],
+  "encounterType" : [
+    {"text": "GP"},
+    {"text": "OutPatient"}
+  ],
+  "conditionVerificationStatus" : [
+    "provisional","differential","confirmed"
+  ],
+  "conditionCode" : [
+    {"text": "Asthma"},
+    {"text": "Migraine"},
+    {"text": "Rheumatiod Arthritis"},
+    {"text": "Eczema"},
+    {"text": "Hypertension"},
+    {"text": "HyperThyroidism"},
+    {"text": "Cholelithiasis"},
+    {"text": "Gout"},
+    {"text": "Diabetes"}
+  ]
+
+}
