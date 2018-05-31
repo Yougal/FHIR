@@ -923,7 +923,7 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             //the currently selected data server object (not just the url)
             var dataServer = appConfigSvc.getCurrentDataServer();
             var resourceHash = {};      //this is used to avoid duplications that $everything can return...
-
+            /**
             if (dataServer.everythingOperation) {
                 //The everything operation will return all patient related resources. not all servers recognize this, and
                 //some implement paging and small default sizes (hapi) and some don't (grahame)
@@ -970,7 +970,7 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
                 return deferred.promise;
             }
 
-
+	**/
 
             //return all the data for the indicated patient. Doesn't use the 'everything' operation so there is a fixed set of resources...
             //currently only get a max of 100 resources of each type. Need to implement paging to get more...
