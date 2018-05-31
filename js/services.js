@@ -976,15 +976,15 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             //currently only get a max of 100 resources of each type. Need to implement paging to get more...
 
             var resources = [];
-            resources.push({type:'Observation',patientReference:'subject'});
-            resources.push({type:'Encounter',patientReference:'patient'});
-            resources.push({type:'Appointment',patientReference:'patient'});
-            resources.push({type:'Condition',patientReference:'patient'});
-            resources.push({type:'List',patientReference:'subject'});
-            resources.push({type:'Basic',patientReference:'subject'});
+            //resources.push({type:'Observation',patientReference:'subject'});
+            resources.push({type:'Encounter',patientReference:'patient',jsonData:'Encounter.json'});
+            //resources.push({type:'Appointment',patientReference:'patient'});
+            resources.push({type:'Condition',patientReference:'patient',jsonData:'ConditionBundle.json'});
+            //resources.push({type:'List',patientReference:'subject'});
+            //resources.push({type:'Basic',patientReference:'subject'});
 
-            resources.push({type:'AllergyIntolerance',patientReference:'patient'});
-            resources.push({type:'MedicationStatement',patientReference:'patient'});
+            resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'AllergyBundle.json'});
+            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json'});
 
             var arQuery = [];
 
@@ -994,11 +994,13 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
                 //if the reference is a subject (rather than a patient) then be explicit about the
                 //type that is being searched.
                 var uri;
-                if (item.patientReference == 'subject') {
+                /*if (item.patientReference == 'subject') {
                     uri = appConfigSvc.getCurrentDataServerBase() + item.type + "?" + item.patientReference + "=" + patientId + "&_count=100";
                 } else {
                     uri = appConfigSvc.getCurrentDataServerBase() + item.type + "?" + item.patientReference + "=" + patientId + "&_count=100";
-                }
+                }*/
+                
+                uri="data-json/"+item.jsonData;
 
 
                 arQuery.push(

@@ -1,6 +1,6 @@
 angular.module("sampleApp")
     .controller('findPatientCtrl',
-            function($scope,ResourceUtilsSvc,resourceSvc,supportSvc,resourceCreatorSvc,appConfigSvc,GetDataFromServer,
+            function($scope,$http,ResourceUtilsSvc,resourceSvc,supportSvc,resourceCreatorSvc,appConfigSvc,GetDataFromServer,
                      modalService){
 
                 $scope.input={mode:'find',gender:'male'};   //will be replaced by name randomizer
@@ -52,7 +52,7 @@ angular.module("sampleApp")
                 //directly load a patient based on their id
                 $scope.loadPatient = function(id) {
                     var url = appConfigSvc.getCurrentDataServer().url + "Patient/"+id;
-                    GetDataFromServer.adHocFHIRQuery(url).then(
+                    $http.get("data-json/Patient.json").then(	
                         function(data){
                             var patient = data.data;
                             if (patient) {

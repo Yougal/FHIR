@@ -3096,7 +3096,7 @@ angular.module("sampleApp")
                     //directly load a patient based on their id
                     $scope.loadPatient = function(id) {
                         var url = appConfigSvc.getCurrentDataServer().url + "Patient/"+id;
-                        GetDataFromServer.adHocFHIRQuery(url).then(
+                        $http.get("data-json/Patient.json").then(	
                             function(data){
                                 var patient = data.data;
                                 appConfigSvc.setCurrentPatient(patient);

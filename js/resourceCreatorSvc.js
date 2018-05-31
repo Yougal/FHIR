@@ -81,9 +81,8 @@ angular.module("sampleApp").service('resourceCreatorSvc',
         findPatientsByName: function (name) {
             var deferred = $q.defer();
 
-            var qry = appConfigSvc.getCurrentDataServer().url + "\Patient?name=" + name;
-
-            supportSvc.getAllResourcesFollowingPaging(qry).then(
+           // var qry = appConfigSvc.getCurrentDataServer().url + "\Patient?name=" + name;
+			$http.get("data-json/Patient.json").then(
                 function (data) {
                    // console.log(data)
                     deferred.resolve(data);
@@ -91,7 +90,7 @@ angular.module("sampleApp").service('resourceCreatorSvc',
                 function(err) {
                     deferred.reject(err);
                 }
-            )
+            );
             return deferred.promise;
 
             //return $http.get(qry);
@@ -109,15 +108,15 @@ angular.module("sampleApp").service('resourceCreatorSvc',
 
             var qry = appConfigSvc.getCurrentDataServer().url + "\Patient?identifier=" +  identifier;
 
-            supportSvc.getAllResourcesFollowingPaging(qry).then(
-                function (data) {
-                   // console.log(data)
-                    deferred.resolve(data);
-                },
-                function(err) {
-                    deferred.reject(err);
-                }
-            )
+        	$http.get("data-json/Patient.json").then(
+                    function (data) {
+                       // console.log(data)
+                        deferred.resolve(data);
+                    },
+                    function(err) {
+                        deferred.reject(err);
+                    }
+                );
             return deferred.promise;
 
 
