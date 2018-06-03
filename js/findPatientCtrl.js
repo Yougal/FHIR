@@ -50,16 +50,13 @@ angular.module("sampleApp")
                 };
 
                 //directly load a patient based on their id
-                $scope.loadPatient = function(id) {
-                    var url = appConfigSvc.getCurrentDataServer().url + "Patient/"+id;
-                    $http.get("data-json/Patient.json").then(	
+                $scope.findPatient = function() {
+                    $http.get("data-json/search-result.json").then(	
                         function(data){
-                            var patient = data.data;
-                            if (patient) {
-                                appConfigSvc.setCurrentPatient(patient);
-
+                            var history = data.data;
+                            if (history) {
+                                appConfigSvc.setSearchHistory(history);
                                 $scope.$close(patient);
-
                             }
                         },
                         function(err){
