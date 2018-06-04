@@ -8,9 +8,9 @@
 <uib-tabset>
     <uib-tab heading="Resource explorer">
 
-        <div class="row">
+        <div class="row" style="padding: 10px 30px;">
 
-            <div class="col-md-2 col-sm-3">
+            <div class="col-md-3 col-sm-3">
                 <h4>Resource Types</h4>
                 <div class="list-group">
                     <a href="#"  ng-click="typeSelected(type)"
@@ -27,12 +27,12 @@
                 </div>-->
             </div>
 
-            <div class="col-md-10 col-sm-9">
+            <div class="col-md-9 col-sm-9">
 
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
 
-                        <h4>{{outcome.selectedType}} resources</h4>
+                        <h4>{{outcome.selectedType}} Resources</h4>
                         <div class="list-group">
                             <a href="#"
                                ng-class="{'list-group-item':true,'active':entry.resource.id == outcome.selectedResource.id}"

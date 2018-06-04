@@ -3070,12 +3070,7 @@ console.log(summary);
                         }
                         break;
                     case "AllergyIntolerance" :
-                        if (fhirVersion == 3) {
-                            return getCCSummary(resource.code);
-                         } else {
-                            return getCCSummary(resource.substance);
-                        }
-
+                        return getCCSummary(resource.substance);
                         break;
                     case "Practitioner" :
                         if (resource.name) {
