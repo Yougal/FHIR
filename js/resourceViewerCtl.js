@@ -14,32 +14,6 @@ angular.module("sampleApp")
             $scope.isSMART = appConfigSvc.getCurrentDataServer().smart;     //if true, this server requires SMART
             $scope.oauthAccessToken;    //if SMART, this will be the access token...
 
-            //---------- SMART stuff ------ move to a common service eventually..
-            $scope.smartLogin = function() {
-                $http.get('smartAuth/'+appConfigSvc.getCurrentDataServer().name).then(
-                    function(data) {
-                        $window.location.href = data.data.authUrl;
-                    },
-                    function(data) {
-                        alert(data.msg)
-                    }
-                );
-            };
-
-            //always see if therer is an active token for this session.
-            //https://stackoverflow.com/questions/23124032/set-httpprovider-default-headers-after-user-authentification
-            $http.get("/smartAuth/getToken").then(
-                function(data) {
-                    sessionSvc.setAuthToken("Bearer " + data.data.token)
-                  //  $http.defaults.headers.common['Authorization'] = "Bearer " + data.data.token;
-                    alert("Bearer " + data.data.token)
-                }
-            );
-
-
-            //----------------------
-
-
             //find all the questionnaires (authored by CF) on the conformance server...
             questionnaireSvc.findQ().then(
                 function(bundle) {
@@ -355,69 +329,66 @@ angular.module("sampleApp")
 
 
             //used by patientViewer to select a patient to display
-            $scope.findPatient = function(){
-
-                delete $scope.graphDocResource;
-                delete $scope.docTreeResource;
-                delete $scope.docAttachment;
-                delete $scope.docSectionText;
-                delete $scope.docGraph;
-                delete $scope.fpResource;
-                delete $scope.docSection;
-
-                delete $scope.documentReferenceList;
-                delete $scope.allResources;
-                delete $scope.vitalsTable;
-                delete $scope.outcome.resourceTypes;
-                delete $scope.outcome.allResourcesOfOneType;
-
-                delete $scope.resourcesFromServer;
-                $uibModal.open({
-                    backdrop: 'static',      //means can't close by clicking on the backdrop. stuffs up the original settings...
-                    keyboard: false,       //same as above.
-                    templateUrl: 'modalTemplates/searchForPatient.html',
-                    size:'lg',
-                    controller: 'findPatientCtrl'
-                }).result.then(
-                    function(resource){
-                        console.log(resource)
-                        if (resource) {
-                            $scope.currentPatient = resource;
-                            //load the existing resources for this patient...
-                            appConfigSvc.setCurrentPatient(resource);
-
-                            $scope.waiting = true;
-
-                           //GetDataFromServer.adHocFHIRQueryFollowingPaging(appConfigSvc.getCurrentPatient().id).then(
-
-                             supportSvc.getAllData(appConfigSvc.getCurrentPatient().id).then(
-                                //returns an object hash - type as hash, contents as bundle - eg allResources.Condition = {bundle}
-
-                                function(data){
-
-                                    if (data.DocumentReference) {
-                                        $scope.documentReferenceList = data.DocumentReference.entry;
-                                    }
-
-                                    renderPatientDetails(data)
-                                    $scope.$broadcast('patientObservations',data['Observation']);//used to draw the observation charts...
-                                 },
-                                 function(err){
-                                    console.log(err)
-                             }).finally(
-                                 function(){
-                                     $scope.waiting = false;
-                                 }
-                             )
-
+            $scope.findPatient = function(name){
+            		appConfigSvc.setSearchedMember(null);
+            		appConfigSvc.setCurrentPatient(null);
+                $http.get("data-json/search-result.json").then(	
+                    function(result){
+                        var history = result.data;
+                        var filteredMember = history.filter(function(item){
+                        		return item.name.toUpperCase() === name.toUpperCase();
+                        });
+                        if (filteredMember) {
+                        		appConfigSvc.setSearchedMember(filteredMember[0]);
+                        }else{
+                        		modalService.showModal({}, {bodyText: 'No patient with that Name found.'})
                         }
+                    },
+                    function(err){
+                        modalService.showModal({}, {bodyText: 'No patient with that Id found.'})
+
+                    }
+                )};
+
+           $scope.hasSearchedMember = function() {
+        			return appConfigSvc.getSearchedMember()!=null;
+            },
+        
+            $scope.getName = function() {
+	    			return appConfigSvc.getSearchedMember()!=null? appConfigSvc.getSearchedMember().name:null	;
+	        },
+	        
+	        $scope.getVisitHistory = function() {
+	    			return appConfigSvc.getSearchedMember()!=null? appConfigSvc.getSearchedMember().visitHistory: {};
+	        },
+	        
+	        $scope.selectEHR = function(patientId, hospitalName,ehr){
+	        	 $scope.displayEHR=hospitalName + " - " + ehr;
+	        	 $scope.loadPatient(patientId);
+	        	 $('.collapse').removeClass("show");
+	        },
+	        
+	        //directly load a patient based on their id
+            $scope.loadPatient = function(id) {
+                var url = "data-json/" + id + "/Patient.json"
+                $http.get(url).then(	
+                    function(data){
+                        var patient = data.data;
+                        appConfigSvc.setCurrentPatient(patient);
+                        var result = supportSvc.getAllData(id);
+                        result.then(
+                        		  function(result) {
+                        			  renderPatientDetails(result);
+                        		  });
+                        
+                    },
+                    function(err){
+                        modalService.showModal({}, {bodyText: 'No patient with that Id found.'})
 
                     }
                 )
+                
             };
-
-
-
 
             function renderPatientDetails(allResources) {
                 $scope.hasVitals = false;

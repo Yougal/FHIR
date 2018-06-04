@@ -13,7 +13,8 @@ angular.module("sampleApp")
         var dataServer;         //the currently selected data server server
         var currentPatient;     //the currently selected patint
         var allResources;       //all resources for the current patient
-
+        
+        var searchedMember;
         //the default config for a new browser...
         var defaultConfig = {servers : {}};
         defaultConfig.lastUpdated='2018-04-05';     //will trigger a reload when this changes
@@ -400,11 +401,17 @@ angular.module("sampleApp")
             setCurrentPatient : function(patient) {
                 currentPatient = patient;
             },
-            removeCurrentPatient : function(){
-                currentPatient = null;      //I 
-            },
+            
             getCurrentPatient : function() {
                 return currentPatient;
+            },
+            
+            setSearchedMember : function(member) {
+            		searchedMember = member;
+            },
+            
+            getSearchedMember : function() {
+        			return searchedMember;
             },
             setAllResources : function(ar) {
                 //toto refactor to perform the query. Right now that's done by 'supportSvc' which has this serice as a dependency,

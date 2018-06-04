@@ -923,54 +923,6 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             //the currently selected data server object (not just the url)
             var dataServer = appConfigSvc.getCurrentDataServer();
             var resourceHash = {};      //this is used to avoid duplications that $everything can return...
-            /**
-            if (dataServer.everythingOperation) {
-                //The everything operation will return all patient related resources. not all servers recognize this, and
-                //some implement paging and small default sizes (hapi) and some don't (grahame)
-
-                var url = dataServer.url + "Patient/"+patientId + '/$everything';
-
-                this.getAllResourcesFollowingPaging(url).then(
-                    function(arrayOfResource){
-
-                        console.log(arrayOfResource)
-
-                        if (arrayOfResource) {
-                            arrayOfResource.forEach(function(resource){        //this is a bundle
-                                //var resource = entry.resource;
-                                var type = resource.resourceType;
-                                //Grahame returns AuditEvents in $everything...
-                                if (type !== 'AuditEvent') {
-                                    //check to see if we have aleady retrieved this resource...
-                                    var location = type+'/'+resource.id
-                                    if (!resourceHash[location] ) {
-                                        resourceHash[location] = 'x';
-                                        if (! allResources[type]) {
-                                            allResources[type] = {entry:[],total:0};        //this is also supposed to be a bundle
-                                        }
-
-                                        allResources[type].entry.push({resource:resource});
-                                        allResources[type].total ++;
-                                    }
-
-                                }
-
-                            })
-                        }
-
-                        deferred.resolve(allResources);
-                    },
-                    function(err){
-                        //alert("error loading all patient data:\n\n"+ angular.toJson(err));
-                        deferred.reject(err);
-                    }
-                );
-
-
-                return deferred.promise;
-            }
-
-	**/
 
             //return all the data for the indicated patient. Doesn't use the 'everything' operation so there is a fixed set of resources...
             //currently only get a max of 100 resources of each type. Need to implement paging to get more...
@@ -1000,7 +952,7 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
                     uri = appConfigSvc.getCurrentDataServerBase() + item.type + "?" + item.patientReference + "=" + patientId + "&_count=100";
                 }*/
                 
-                uri="data-json/"+item.jsonData;
+                uri="data-json/"+patientId+"/"+item.jsonData;
 
 
                 arQuery.push(

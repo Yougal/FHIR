@@ -1,0 +1,411 @@
+{
+  "resourceType": "Encounter",
+  "id": "4135906",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2018-03-13T08:27:34.000Z"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Encounter</b></p><p><b>Location</b>: Baseline East Medical Center, BE Hospital, 1N</p><p><b>Type</b>: Outpatient</p><p><b>Status</b>: Active</p><p><b>Period Start Date</b>: 2018-01-18T08:33:00.000Z</p><p><b>Reason For Visit</b>: uncontrolled diabetes</p><p><b>Attending Physician</b>: Julius, Scott</p></div>"
+  },
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "text": "FIN NBR"
+      },
+      "system": "urn:oid:3.3.3.3.3.3",
+      "value": "20003482",
+      "period": {
+        "start": "2016-09-01T18:47:48.000Z"
+      }
+    }
+  ],
+  "status": "in-progress",
+  "class": "outpatient",
+  "type": [
+    {
+      "text": "Outpatient"
+    }
+  ],
+  "patient": {
+    "reference": "Patient/4478007",
+    "display": "SMART Jr, FRED RICK"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ADM",
+              "display": "admitter",
+              "userSelected": false
+            }
+          ],
+          "text": "Admitting Physician"
+        }
+      ],
+      "period": {
+        "start": "2018-03-06T21:43:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1",
+        "display": "SYSTEM, SYSTEM"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ADM",
+              "display": "admitter",
+              "userSelected": false
+            }
+          ],
+          "text": "Admitting Physician"
+        }
+      ],
+      "period": {
+        "start": "2018-03-06T20:50:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/4594011",
+        "display": "Rajendran, Madhur"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ADM",
+              "display": "admitter",
+              "userSelected": false
+            }
+          ],
+          "text": "Admitting Physician"
+        }
+      ],
+      "period": {
+        "start": "2017-11-17T20:46:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/4660012",
+        "display": "White, Adam"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ADM",
+              "display": "admitter",
+              "userSelected": false
+            }
+          ],
+          "text": "Admitting Physician"
+        }
+      ],
+      "period": {
+        "start": "2017-07-28T19:25:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/4672007",
+        "display": "Houser, Angelica"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ADM",
+              "display": "admitter",
+              "userSelected": false
+            }
+          ],
+          "text": "Admitting Physician"
+        }
+      ],
+      "period": {
+        "start": "2016-09-01T18:47:48.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/3352007",
+        "display": "Finley, Cory"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "PART",
+              "display": "Participation",
+              "userSelected": false
+            }
+          ],
+          "text": "Assigned"
+        }
+      ],
+      "period": {
+        "start": "2016-09-01T20:40:00.000Z",
+        "end": "2016-09-02T20:22:01.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1614008",
+        "display": "Hanov, Yegor"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND",
+              "display": "attender",
+              "userSelected": false
+            }
+          ],
+          "text": "Attending Physician"
+        }
+      ],
+      "period": {
+        "start": "2018-03-05T17:55:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1776007",
+        "display": "Julius, Scott"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND",
+              "display": "attender",
+              "userSelected": false
+            }
+          ],
+          "text": "Attending Physician"
+        }
+      ],
+      "period": {
+        "start": "2017-06-19T18:46:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1790007",
+        "display": "Christi, Davis"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND",
+              "display": "attender",
+              "userSelected": false
+            }
+          ],
+          "text": "Attending Physician"
+        }
+      ],
+      "period": {
+        "start": "2017-03-29T20:36:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/4464007",
+        "display": "Portal, Portal"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND",
+              "display": "attender",
+              "userSelected": false
+            }
+          ],
+          "text": "Attending Physician"
+        }
+      ],
+      "period": {
+        "start": "2017-03-20T18:53:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/3622007",
+        "display": "Argonaut, Test"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND",
+              "display": "attender",
+              "userSelected": false
+            }
+          ],
+          "text": "Attending Physician"
+        }
+      ],
+      "period": {
+        "start": "2016-12-02T19:44:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1924007",
+        "display": "Sherchan, Shikhar"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND",
+              "display": "attender",
+              "userSelected": false
+            }
+          ],
+          "text": "Attending Physician"
+        }
+      ],
+      "period": {
+        "start": "2016-09-12T13:59:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/4474007",
+        "display": "Pickering, Kathy"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND",
+              "display": "attender",
+              "userSelected": false
+            }
+          ],
+          "text": "Attending Physician"
+        }
+      ],
+      "period": {
+        "start": "2016-09-02T20:21:00.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1614008",
+        "display": "Hanov, Yegor"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer",
+              "userSelected": false
+            }
+          ],
+          "text": "Ordering Physician"
+        }
+      ],
+      "period": {
+        "start": "2018-01-22T19:23:26.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/4474007",
+        "display": "Pickering, Kathy"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer",
+              "userSelected": false
+            }
+          ],
+          "text": "Ordering Physician"
+        }
+      ],
+      "period": {
+        "start": "2016-09-09T17:04:15.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1614008",
+        "display": "Hanov, Yegor"
+      }
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer",
+              "userSelected": false
+            }
+          ],
+          "text": "Ordering Physician"
+        }
+      ],
+      "period": {
+        "start": "2016-09-01T21:50:35.000Z"
+      },
+      "individual": {
+        "reference": "Practitioner/1502049",
+        "display": "Test, General"
+      }
+    }
+  ],
+  "period": {
+    "start": "2018-01-18T08:33:00.000Z"
+  },
+  "reason": [
+    {
+      "text": "uncontrolled diabetes"
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location/4048134",
+        "display": "Baseline East Medical Center, BE Hospital, 1N"
+      },
+      "status": "active"
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/619848"
+  }
+}
