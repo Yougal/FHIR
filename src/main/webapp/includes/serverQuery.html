@@ -1,0 +1,545 @@
+
+
+
+
+<!-- Display a 'select server' panel-->
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <div class="row" >
+
+            <div class="col-md-1 col-sm-1">
+                <strong>Select Server</strong>
+
+            </div>
+
+            <div class="col-md-2 col-sm-2">
+                <div><input type="radio" ng-model="input.serverType" value="known"> Known</div>
+                <input type="radio" ng-model="input.serverType" value="adhoc"> AdHoc
+            </div>
+
+
+            <div class="col-md-3 col-sm-3">
+                <div ng-show="input.serverType == 'known'">
+                    <select class="form-control"
+                            ng-change="selectServer(server)"
+                            ng-options="value.name for value in config.allKnownServers track by value.name"
+                            ng-model="server">
+
+                    </select>
+                </div>
+                <div ng-show="input.serverType == 'adhoc'">
+                    <input type="text" ng-model="input.adHocServer" ng-blur="selectServer(null,input.adHocServer)"
+                           class="form-control" placeholder="Enter the base Url of the server"/>
+                </div>
+
+            </div>
+
+            <div class="col-md-2 col-sm-2">
+
+            </div>
+
+
+            <div class="col-md-1 col-sm-1">
+
+                <div class="pull-right" ng-show="waiting">
+                    <img src="css/ajax_loader_blue_32.gif"/>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3">
+                <div class="pull-right">{{server.url}}</div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div class="row" ng-show="server">
+
+    <div class="col-sm-12 col-md-12">
+
+        <uib-tabset>
+            <uib-tab heading="Query">
+                <div class="pull-right">
+                    <button class="btn btn-link" ng-click="showHistory = ! showHistory">
+                        <span ng-show="showHistory">Hide History</span>
+                        <span ng-show="! showHistory">Show History</span>
+                    </button>
+
+                </div>
+
+
+                <div class="row">
+                    <div ng-class="{'col-md-4 col-sm-4':showHistory, hide: !showHistory}" >
+                        <div class="col-md-12 col-sm-12">
+                            <h4>Previous Queries</h4>
+
+                            <div class="list-group">
+                                <a href="#" class="list-group-item"
+                                   ng-repeat="hx in queryHistory"
+                                   ng-model="input.hx" ng-click = "selectFromHistory(hx)">
+                                    <div ng-class="{thisServer:hx.server.url == server.url}">{{hx.anonQuery}}</div>
+
+
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div  ng-class="{'col-md-8 col-sm-8':showHistory,'col-md-12 col-sm-12':!showHistory}">
+
+
+                        <div ng-show="server">
+
+
+                            <uib-tabset>
+                                <uib-tab heading="Query Builder">
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-md-2 col-sm-2">
+                                            Resource Type
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-2 col-sm-2">
+
+                                            <select class="form-control" ng-model="input.selectedType"
+                                                    ng-change="typeSelected(input.selectedType)"
+                                                    ng-options="type.name for type in standardResourceTypes"/>
+                                        </div>
+
+                                        <div class="col-md-1 col-sm-1" ng-show="type">
+                                            <a target="_blank" ng-href="{{fhirBasePath}}{{type.name | getLogicalID | lowercase}}.html">
+                                                <i class="glyphicon glyphicon-globe"
+                                                   title="View Resource definition in spec">
+                                                </i>
+
+                                            </a>
+                                        </div>
+
+                                        <div class="col-md-5 col-sm-5">
+                                            <div class="row">
+                                                <div class="col-md-11 col-sm-11">
+                                            <textarea ng-show="input.selectedType"
+                                                      placeholder="Query parameters"
+                                                      ng-model="input.parameters" class="form-control"
+                                                      ng-change="buildQuery()"></textarea>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1">
+                                                    <i ng-show="input.selectedType" class="glyphicon glyphicon-plus"
+                                                       title="Add to parameter"
+                                                       ng-click="addParamToQuery()" style="cursor: pointer">
+
+                                                    </i>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row rounded-box" ng-show="type && query">
+                                        <div class="col-md-1 col-sm-1">
+                                            <button class="btn btn-primary" ng-click="doit()">Execute</button>
+                                        </div>
+                                        <div class="col-md-11 col-sm-11">
+                                            <h5>{{query}}</h5>
+                                        </div>
+
+                                    </div>
+
+
+                                </uib-tab>
+
+                                <uib-tab heading="Ad Hoc REST query">
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-sm-10 col-md-10">
+                                            <textarea class="form-control" ng-model="adHocQry"
+                                            placeholder="Enter the query to be executed against {{server.url}}. Remember to use _id to refer to a resource id (as this is a search)"></textarea>
+                                        </div>
+                                        <div class="col-sm-2 col-md-2">
+                                            <button  rows=4 class="btn btn-primary" ng-click="executeAdHoc(adHocQry)">Execute</button>
+                                        </div>
+                                    </div>
+
+                                </uib-tab>
+
+                                <!--
+                                <uib-tab heading="GraphQL">
+                                    <graphql></graphql>
+                                </uib-tab>
+-->
+
+                            </uib-tabset>
+
+                        </div>
+
+
+
+                        <div class="row" ng-show="err">
+                            <div class="col-md-12 col-sm-12">
+                                <div><strong>StatusCode:{{err.statusCode}}</strong></div>
+                                <pre>{{err.data | json}}</pre>
+                            </div>
+                        </div>
+
+
+                        <hr/>
+                        <div class="row" ng-show="response">
+                            <div class="col-md-12 col-sm-12">
+
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3">
+
+                                        <div class="row" style="margin-bottom: 8px">
+
+                                            <div class="col-md-8 col-sm-8">
+                                                {{response.data.entry.length}} Entries
+                                            </div>
+                                            <div class="col-md-4 col-sm-4">
+                                                <span ng-click="showBundle(response.data)" class="clickable">Show Bundle</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="list-group"  style="height:600px; overflow-y: auto;">
+
+
+
+
+                                            <div ng-class="{'list-group-item':true,'list-group-item-info':result.selectedEntry.fullUrl == entry.fullUrl}"
+                                                 ng-repeat="entry in response.data.entry">
+                                                <div  ng-click="selectEntry(entry)"  ng-clickDEP="result.selectedEntry = entry" style="cursor: pointer">
+                                                    {{entry.resource.resourceType}}
+                                                    <div>{{ResourceUtilsSvc.getOneLineSummaryOfResource(entry.resource)}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 col-sm-9">
+
+                                        <uib-tabset>
+                                            <uib-tab heading="Json" ng-show="result.selectedEntry">
+                                                <br/>
+                                                <pre>{{result.selectedEntry.resource | json}}</pre>
+                                            </uib-tab>
+                                            <uib-tab heading="XML" ng-show="result.selectedEntry">
+                                                <br/>
+                                                <pre>{{xmlResource}}</pre>
+                                            </uib-tab>
+
+                                            <uib-tab heading="Tree" ng-show="result.selectedEntry">
+                                                <br/>
+                                                <div id="queryResourceTree"></div>
+
+                                            </uib-tab>
+                                            <uib-tab heading="Validate" ng-show="result.selectedEntry">
+                                                <br/>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <pre>{{result.selectedEntry.resource | json}}</pre>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-4 col-sm-4">
+                                                                Validation Server
+                                                            </div>
+                                                            <div class="col-md-8 col-sm-8">
+                                                                <select class="form-control" style="margin-bottom: 8px"
+                                                                        ng-options="value.name for value in config.allKnownServers track by value.name"
+                                                                        ng-model="input.validationServer">
+
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-9 col-sm-9">
+                                                                <input type="text" class="form-control" ng-model = "input.responseValidationProfile"
+                                                                       placeholder="Optional profile (must be on the validation server)"/>
+
+                                                            </div>
+                                                            <div class="col-md-3 col-sm-3">
+                                                                <button class="btn btn-primary"
+                                                                        ng-click="validateResponse(input.validationServer,
+                                                                        input.responseValidationProfile,
+                                                                        result.selectedEntry.resource)">
+                                                                    Validate</button>
+                                                            </div>
+                                                        </div>
+                                                        <br/>
+
+                                                        <!--
+                                                        <button class="btn btn-primary pull-right"
+                                                                ng-click="validateResponse(result.selectedEntry.resource)">
+                                                            Validate
+                                                        </button>
+                                                        -->
+
+                                                        <hr/>
+                                                        <pre ng-show="responseValidationResult"
+                                                             ng-class="{alert:true, 'alert-success':responseValidationSuccess, 'alert-danger':! responseValidationSuccess}"
+                                                             role="alert">{{responseValidationResult | json}}</pre>
+
+                                                    </div>
+                                                </div>
+
+                                            </uib-tab>
+                                            <uib-tab heading="FHIRPath" ng-show="result.selectedEntry">
+                                                <br/>
+                                                <fhirpath resource="result.selectedEntry.resource"></fhirpath>
+                                                <hr/>
+                                                <pre>{{result.selectedEntry.resource | json}}</pre>
+                                            </uib-tab>
+
+                                            <uib-tab heading="Bundle" ng-show="bundle">
+                                                <br/>
+                                                <div class="row" ng-show="bundle">
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <pre>{{bundle | json}}</pre>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <fhirpath resource="bundle"></fhirpath>
+                                                    </div>
+                                                </div>
+
+                                            </uib-tab>
+
+                                        </uib-tabset>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </uib-tab>
+            <uib-tab heading="Validate">
+                <br/>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <textarea  rows="30" class="form-control" ng-model= "input.validateJson">
+
+                        </textarea>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="row">
+                            <div class="col-md-9 col-sm-9">
+
+                                <input type="text" class="form-control" ng-model = "input.validationProfile"
+                                       placeholder="Optional profile (must be on the server)"/>
+
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <button class="btn btn-primary" ng-click="validate(input.validateJson)">Validate</button>
+                            </div>
+                        </div>
+                        <br/>
+                        <pre ng-show="validationResult"
+                             ng-class="{alert:true, 'alert-success':validationSuccess, 'alert-danger':! validationSuccess}"
+                             role="alert">{{validationResult | json}}</pre>
+
+
+                        <div ng-show="saveOutcome" role="alert"
+                             ng-class="{alert:true, 'alert-success':saveOutcome.success, 'alert-danger':! saveOutcome.success}">
+                                {{saveOutcome.msg}}
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-9 col-sm-9">
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <button ng-show="validationResult" class="btn btn-danger"
+                                        ng-click="saveResource(input.validateJson)">Send to server</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </uib-tab>
+            <uib-tab heading="Server Capabilities">
+                <br/>
+                <div>
+                    <uib-tabset>
+                        <uib-tab heading="Description">
+                            <br/>
+
+
+                            <table class="table">
+                                <tr>
+                                    <td valign="top" width="15%"><strong>Name</strong></td>
+                                    <td width="35%">{{conformance.name}}{{conformance.software.name}}</td>
+                                    <td valign="top" width="15%"><strong>FHIR version</strong></td>
+                                    <td width="35%">{{conformance.fhirVersion}}</td>
+                                </tr>
+                                <tr>
+                                    <td valign="top"><strong>Description</strong></td><td>{{conformance.description}}</td>
+                                    <td valign="top"><strong>Publisher</strong></td><td>{{conformance.publisher}}</td>
+                                </tr>
+                                <tr>
+                                    <td valign="top"><strong>Accept Unknown</strong></td><td>{{conformance.acceptUnknown}}</td>
+                                    <td valign="top"><strong>Formats</strong></td>
+                                    <td>
+                                        <div ng-repeat="f in conformance.format">
+                                            {{f}}
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+                            </table>
+
+
+                            <br />
+
+                            <div uib-alert ng-show="waiting" class="alert-info">
+                                Generating the quality report. Note that this can take some time as all profiles and extension definitions
+                                are retrieved by the report. It is assumed that all these artifacts are stored on the current conformance server
+                                (This is not required by FHIR, but is a limitation of this report)
+                            </div>
+                            <div ng-show="qualityReport">
+                                <h5>Quality report</h5>
+                                <uib-tabset>
+                                    <uib-tab heading = "Issues">
+                                        <br/>
+                                        <div class="panel" >
+                                            <table class="table  table-bordered">
+                                                <tr ng-repeat = "issue in qualityReport.issues">
+                                                    <td>{{issue.level}}</td>
+                                                    <td>{{issue.display}}</td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+                                    </uib-tab>
+                                    <uib-tab heading="Profiles">
+                                        <br/>
+                                        <ul>
+                                            <li ng-repeat = "profile in qualityReport.profiles">
+                                                {{profile.url}}
+                                            </li>
+                                        </ul>
+
+                                    </uib-tab>
+                                    <uib-tab heading="Extensions">
+                                        <br/>
+                                        <table class="table table-bordered table-condensed">
+                                            <tr ng-repeat = "extension in qualityReport.extensions">
+                                                <td>{{extension.ed.url}}</td>
+                                                <td>{{extension.ed.description}}</td>
+                                            </tr>
+                                        </table>
+
+                                    </uib-tab>
+
+                                </uib-tabset>
+
+                            </div>
+
+                            <!-- remove temporarily...
+                            <button class="btn btn-primary" ng-hide="waiting" ng-click="createConformanceQualityReport()">
+                                Generate Quality report</button>
+                            -->
+
+                        </uib-tab>
+
+                        <uib-tab heading="REST Interface">
+                            <ng-include src="'/includes/conformanceDisplay.html'"></ng-include>
+
+                        </uib-tab>
+
+                        <uib-tab heading="REST Operations">
+                            <br />
+                            <ng-include src="'/includes/operationsDisplay.html'"></ng-include>
+
+                        </uib-tab>
+
+
+                        <uib-tab heading="Json">
+                            <pre>{{conformance | json}}</pre>
+                        </uib-tab>
+                    </uib-tabset>
+
+                </div>
+            </uib-tab>
+            <uib-tab heading="Query help">
+                <br/>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 myBox">
+                        <h5>General links (open in new tab)</h5>
+                        <table class="table">
+                            <tr ng-repeat="link in fhirHelp.links">
+                                <td>{{link.description}}</td>
+                                <td><a href="{{link.url}}" target="_blank">{{link.url}}</a>  </td>
+
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 myBox">
+
+                        <h5>Search parameters (links open in new tab)</h5>
+
+                        <table class="table table-bordered">
+                            <tr><th>Name</th><th>Parameter</th><th>Example syntax</th><th>Description</th><th>Spec</th></tr>
+                            <tr ng-repeat="srch in fhirHelp.search">
+                                <td>{{srch.name}}</td>
+                                <td>{{srch.param}}</td>
+                                <td>{{srch.syntax}}</td>
+                                <td>{{srch.description}}</td>
+                                <td><a href="{{srch.url}}" target="_blank">Details</a>  </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </uib-tab>
+        </uib-tabset>
+
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,655 @@
+[
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": " 320176004","system":"http://snomed.info/ct","display":" salbutamol 100micrograms/inhaler "}
+      ],
+      "text" : " salbutamol 100micrograms/inhaler"
+    },
+    "status": "active",
+
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"195967001","system":"http://snomed.info/ct","display":"asthma (disorder)"}
+      ],
+      "text" : "asthma"
+    }],
+    "dosage" : [
+      {
+        "text" : "2 puffs every 4 hours as needed",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "4",
+            "periodUnit": "h"
+          }
+        },
+        "asNeededBoolean": true,
+        "doseQuantity": {
+          "value" : "2",
+          "system" : "http://snomed.info/ct","unit":"puffs","code" : "415215001"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "contained" : [
+      {
+        "resourceType": "Medication",
+        "id" : "med1",
+        "code": {
+          "coding": [
+            {
+              "code": "370167008 ",
+              "system": "http://snomed.info/ct",
+              "display": "aspirin 81mg e/c tablet "
+            }
+          ],
+          "text": "aspirin 81mg e/c tablet"
+        },
+        "isBrand" : false
+      }
+
+    ],
+    "medicationReference" : {
+      "reference": "#med1",
+      "display" : "aspirin 81mg e/c tablet"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {
+        "code":"49436004",
+        "system":"http://snomed.info/ct",
+        "display":"atrial fibrillation (disorder)"}],
+      "text" : "atrial fibrillation"
+    }],
+    "dosage" : [
+      {
+        "text" : "once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "2",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "376733004","system":"http://snomed.info/ct","display":"beclomethasone dipropionate 40mcg aerosol"}
+      ],
+      "text" : "beclomethasone dipropionate 40mcg aerosol"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"195967001","system":"http://snomed.info/ct","display":"asthma (disorder)"}
+      ],
+      "text" : "asthma"
+    }],
+    "dosage" : [
+      {
+        "text" : "2 puffs twice daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "2",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "asNeededBoolean": false,
+        "doseQuantity": {
+          "value" : "2",
+          "system" : "http://snomed.info/ct","unit":"puffs","code" : "415215001"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "318632005","system":"http://snomed.info/ct","display":"carvedilol 25 mg"}
+      ],
+      "text" : "carvedilol 25 mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"38341003","system":"http://snomed.info/ct","display":"hypertension (disorder)"}
+      ],
+      "text" : "hypertension"
+    }],
+    "dosage" : [
+      {
+        "text" : "twice daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "2",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "376321007","system":"http://snomed.info/ct","display":"chlortalidone 15 mg"}
+      ],
+      "text" : "chlortalidone 15 mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"38341003","system":"http://snomed.info/ct","display":"hypertension (disorder)"}
+      ],
+      "text" : "hypertension"
+    }],
+    "dosage" : [
+      {
+        "text" : "once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "321987003","system":"http://snomed.info/ct","display":"citalopram 20 mg"}
+      ],
+      "text" : "citalopram 20 mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"35489007","system":"http://snomed.info/ct","display":"depression (disorder)"}
+      ],
+      "text" : "depression"
+    }],
+    "dosage" : [
+      {
+        "text" : "once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "323021008","system":"http://snomed.info/ct","display":"gabapentin 600mg"}
+      ],
+      "text" : "gabapentin 600mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"247398009","system":"http://snomed.info/ct","display":"neuropathic pain (disorder)"}
+      ],
+      "text" : "neuropathic pain"
+    }],
+    "dosage" : [
+      {
+        "text" : "twice daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "2",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "400847007","system":"http://snomed.info/ct","display":"insulin glargine 100units/mL injection"}
+      ],
+      "text" : "insulin glargine 100units/mL injection"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"73211009","system":"http://snomed.info/ct","display":"diabetes (disorder)"}
+      ],
+      "text" : "diabetes"
+    }],
+    "dosage" : [
+      {
+        "text" : "28 units before bed",
+        "timing" : {
+          "repeat": {
+            "frequency" : 1,
+            "period": "1",
+            "periodUnit": "d"
+
+          }
+        },
+        "doseQuantity": {
+          "value" : "28",
+          "system" : "http://snomed.info/ct","unit":"unit dose","code" : "408102007"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "444639002","system":"http://snomed.info/ct","display":"losartan 100mg + hydrochlorothiazide 12.5mg"}
+      ],
+      "text" :  "losartan 100mg + hydrochlorothiazide 12.5mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"38341003","system":"http://snomed.info/ct","display":"hypertension (disorder)"}
+      ],
+      "text" : "hypertension"
+    }],
+    "dosage" : [
+      {
+        "text" : "once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "411533003","system":"http://snomed.info/ct","display":"metformin 1000mg"}
+      ],
+      "text" : "metformin 1000mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"73211009","system":"http://snomed.info/ct","display":"diabetes (disorder)"}
+      ],
+      "text" : "diabetes"
+    }],
+    "dosage" : [
+      {
+        "text" : "1 tab twice daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "2",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "329839005","system":"http://snomed.info/ct","display":"naproxen 500mg e/c tablet"}
+      ],
+      "text" : "naproxen 500mg e/c tablet"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"69896004","system":"http://snomed.info/ct","display":"rheumatoid arthritis (disorder)"}
+      ],
+      "text" : "rheumatoid arthritis"
+    }],
+    "dosage" : [
+      {
+        "text" : "1 tab twice daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "2",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "407848004","system":"http://snomed.info/ct","display":"omeprazole 40mg e/c tablet"}
+      ],
+      "text" : "omeprazole 40mg e/c tablet "
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"235595009","system":"http://snomed.info/ct","display":"GERD (disorder)"}
+      ],
+      "text" : "Gastro Oesophageal reflux"
+    }],
+    "dosage" : [
+      {
+        "text" : "1 tab once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "325456002","system":"http://snomed.info/ct","display":"prednisone 20mg"}
+      ],
+      "text" : "prednisone 20mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"195967001","system":"http://snomed.info/ct","display":"asthma (disorder)"}
+      ],
+      "text" : "asthma"
+    }],
+    "dosage" : [
+      {
+        "text" : "2 tabs once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "asNeededBoolean": true,
+        "doseQuantity": {
+          "value" : "2",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "429374003","system":"http://snomed.info/ct","display":"simvastatin 40mg"}
+      ],
+      "text" : "simvastatin 40mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"13644009","system":"http://snomed.info/ct","display":"high cholesterol"}
+      ],
+      "text" : "high cholesterol"
+    }],
+    "dosage" : [
+      {
+        "text" : "1 tab once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "asNeededBoolean": true,
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "324718007","system":"http://snomed.info/ct","display":"terbinafine 250mg"}
+      ],
+      "text" : "terbinafine 250mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" :[ {
+      "coding" : [
+        {"code":"414941008","system":"http://snomed.info/ct","display":"onychomycosis"}
+      ],
+      "text" : "onychomycosis"
+    }],
+    "dosage" : [
+      {
+        "text" : "1 tab once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "asNeededBoolean": true,
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "442160008","system":"http://snomed.info/ct","display":"zolpidem 5mg sublingual tablet"}
+      ],
+      "text" : "zolpidem 5mg sublingual tablet"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"193462001","system":"http://snomed.info/ct","display":"insomnia"}
+      ],
+      "text" : "insomnia"
+    }],
+    "dosage" : [
+      {
+        "text" : "1 tab before bed",
+        "timing" : {
+          "repeat": {
+            "frequency" : 1,
+            "period": "1",
+            "periodUnit": "d"
+
+          }
+        },
+        "doseQuantity": {
+          "value" : "28",
+          "system" : "http://snomed.info/ct","unit":"unit dose","code" : "408102007"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "318860005","system":"http://snomed.info/ct","display":"lisinopril 20mg"}
+      ],
+      "text" : "lisinopril 20mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"38341003","system":"http://snomed.info/ct","display":"hypertension (disorder)"}
+      ],
+      "text" : "hypertension"
+    }],
+    "dosage" : [
+      {
+        "text" : "once daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "1",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "319134001","system":"http://snomed.info/ct","display":"isosorbide mononitrate 20mg"}
+      ],
+      "text" : "isosorbide mononitrate 20mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"194828000","system":"http://snomed.info/ct","display":"angina"}
+      ],
+      "text" : "hypertension"
+    }],
+    "dosage" : [
+      {
+        "text" : "once daily at bedtime",
+        "timing" : {
+          "repeat": {
+            "frequency" : 1,
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  },
+  {
+    "resourceType" : "MedicationStatement",
+    "medicationCodeableConcept" : {
+      "coding" : [
+        {"code": "321323009","system":"http://snomed.info/ct","display":"buspirone 5mg"}
+      ],
+      "text" : "buspirone 5mg"
+    },
+    "status": "active",
+
+    "reasonForUseCode" : [{
+      "coding" : [
+        {"code":"19748006","system":"http://snomed.info/ct","display":"anxiety disorder"}
+      ],
+      "text" : "anxiety disorder"
+    }],
+    "dosage" : [
+      {
+        "text" : "3 times daily",
+        "timing" : {
+          "repeat": {
+            "frequency": "3",
+            "period": "1",
+            "periodUnit": "d"
+          }
+        },
+        "doseQuantity": {
+          "value" : "1",
+          "system" : "http://snomed.info/ct","unit":"tablet","code" : "428673006"
+        }
+      }
+    ]
+  }
+]

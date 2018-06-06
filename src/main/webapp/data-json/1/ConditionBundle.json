@@ -1,0 +1,922 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 18,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/10000000000",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "10000000000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Encounter for preventive health examination (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/",
+              "code": "305058001",
+              "display": "Encounter for preventive health examination"
+            }
+          ],
+          "text": "Encounter for preventive health examination"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/12146200001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "12146200001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Atrial Fibrillation (Clinical Status: Resolved)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/8",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2012-09-19",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "33165",
+              "display": "Atrial Fibrillation"
+            }
+          ],
+          "text": "History of Atrial Fibrillation"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "Resolved",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/12146500001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "12146500001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Atrial Flutter (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/10039",
+          "display": "Chart Update"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2015-03-02",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "33166",
+              "display": "Atrial Flutter"
+            }
+          ],
+          "text": "Atrial Flutter"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/12147000035",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "12147000035",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Acute Pharyngitis (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/10040",
+          "display": "CXD Document"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2015-03-03",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "91278",
+              "display": "Acute Pharyngitis"
+            }
+          ],
+          "text": "Acute Pharyngitis"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/12147000037",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "12147000037",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Acute Sinusitis (Clinical Status: )</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "31350",
+              "display": "Acute Sinusitis"
+            }
+          ],
+          "text": "Acute Sinusitis"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/12147000039",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "12147000039",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Backache (Clinical Status: )</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "34448",
+              "display": "Backache"
+            }
+          ],
+          "text": "Backache"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/12147000041",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "12147000041",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Hypertension (Clinical Status: )</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "33288",
+              "display": "Hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/12147200005",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "12147200005",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Atrial Fibrillation (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/10039",
+          "display": "Chart Update"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2015-03-02",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "33165",
+              "display": "Atrial Fibrillation"
+            }
+          ],
+          "text": "Atrial Fibrillation"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/13161800001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "13161800001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Acute Tonsillitis (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/20061",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2015-04-06",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "91291",
+              "display": "Acute Tonsillitis"
+            }
+          ],
+          "text": "Acute Tonsillitis"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/13161800007",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "13161800007",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Aortic Stenosis (Clinical Status: Resolved)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/20334",
+          "display": "Chart Update"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2015-08-12",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "33399",
+              "display": "Aortic Stenosis"
+            }
+          ],
+          "text": "History of Aortic Stenosis"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "Resolved",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/14168900001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "14168900001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Coronary Artery Disease (Clinical Status: )</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/20080",
+          "display": "Other"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2015-04-21",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "35988",
+              "display": "Coronary Artery Disease"
+            }
+          ],
+          "text": "Coronary Artery Disease"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "verificationStatus": "entered-in-error",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/17307900001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "17307900001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Benign Paroxysmal Positional Vertigo (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/30453",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "dateRecorded": "2015-10-29",
+        "code": {
+          "coding": [
+            {
+              "system": "Medcin",
+              "code": "32046",
+              "display": "Benign Paroxysmal Positional Vertigo"
+            }
+          ],
+          "text": "Benign Paroxysmal Positional Vertigo"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/23341200001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "23341200001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Smoking (Clinical Status: Resolved)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/",
+              "code": "77176002",
+              "display": "Smoking"
+            }
+          ],
+          "text": "History of Smoking"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "Resolved",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/23341400001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "23341400001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Former smoker (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/",
+              "code": "8517006",
+              "display": "Former smoker"
+            }
+          ],
+          "text": "Former smoker"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/23341500005",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "23341500005",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Hypertension, benign (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/16",
+          "display": "Allscripts,Provider "
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/",
+              "code": "10725009",
+              "display": "Hypertension, benign"
+            }
+          ],
+          "text": "Hypertension, benign"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/23341500015",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "23341500015",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Dorsodynia (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/16",
+          "display": "Allscripts,Provider "
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/",
+              "code": "279038004",
+              "display": "Dorsodynia"
+            }
+          ],
+          "text": "Dorsodynia"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/23341500029",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "23341500029",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Sinusitis (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/16",
+          "display": "Allscripts,Provider "
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/",
+              "code": "36971009",
+              "display": "Sinusitis"
+            }
+          ],
+          "text": "Sinusitis"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Condition/23341500051",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "23341500051",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-condition"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Cat bite of ankle (Clinical Status: active)</p>"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "asserter": {
+          "reference": "Practitioner/16",
+          "display": "Allscripts,Provider "
+        },
+        "dateRecorded": "2016-10-03",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/",
+              "code": "283782004",
+              "display": "Cat bite of ankle"
+            }
+          ],
+          "text": "Cat bite of ankle"
+        },
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/condition-category",
+              "code": "diagnosis",
+              "display": "Diagnosis"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "unknown",
+        "abatementBoolean": false
+      }
+    }
+  ]
+}
