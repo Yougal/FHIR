@@ -362,20 +362,22 @@ angular.module("sampleApp")
 	    			return appConfigSvc.getSearchedMember()!=null? appConfigSvc.getSearchedMember().visitHistory: {};
 	        },
 	        
-	        $scope.selectEHR = function(patientId, hospitalName,ehr){
+	        $scope.selectEHR = function(patientId, hospitalName,ehr,ehrId){
 	        	 $scope.displayEHR=hospitalName + " - " + ehr;
-	        	 $scope.loadPatient(patientId);
+	        	 $scope.loadPatient(patientId,ehrId);
 	        	 $('.collapse').removeClass("show");
 	        },
 	        
 	        //directly load a patient based on their id
-            $scope.loadPatient = function(id) {
-                var url = $window.location.origin+_contextPath+"/data-json/" + id + "/Patient.json"
+            $scope.loadPatient = function(patientId,ehrId) {
+                var url = appConfigSvc.getUrl()+"/"+ehrId+"/getpatient/" + patientId;
+	        		//var url = $window.location.origin+_contextPath+"/data-json/" + patientId + "/Patient.json"
+                console.log(url);
                 $http.get(url).then(	
                     function(data){
                         var patient = data.data;
                         appConfigSvc.setCurrentPatient(patient);
-                        var result = supportSvc.getAllData(id);
+                        var result = supportSvc.getAllData(patientId,ehrId);
                         result.then(
                         		  function(result) {
                         			  renderPatientDetails(result);

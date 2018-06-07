@@ -3,24 +3,32 @@
   "visitHistory" :[
     {"hospitalName": "Hospital ABC",
      "ehrName":"All Script",
-     "patientId" : "1",
-      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png"
-    },
-    {"hospitalName": "Hospital XYZ",
-     "ehrName":"All Script",
-     "patientId" : "1",
-      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png"
-    },
-    {"hospitalName": "Hospital PQR",
-     "ehrName":"All Script",
-     "patientId" : "1",
-      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png"
+     "ehrId": "2",
+     "patientId" : "10002752",
+      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
+      "enable": "true"
     },
     
-    {"hospitalName": "Hospital PQR",
+    {"hospitalName": "Hospital WWW",
      "ehrName":"Cerner",
-     "patientId" : "1",
-      "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png"
+     "ehrId": "1",
+     "patientId" : "10002752",
+      "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png",
+      "enable": "true"
+    },
+     {"hospitalName": "Hospital XYZ",
+     "ehrName":"All Script",
+     "ehrId": "2",
+     "patientId" : "10002752",
+      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
+      "enable": "false"
+    },
+    {"hospitalName": "Hospital PQR",
+     "ehrName":"All Script",
+     "ehrId": "2",
+     "patientId" : "10002752",
+      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
+      "enable": "false"
     }
   ]
 },
@@ -29,24 +37,31 @@
   "visitHistory" : [
     {"hospitalName": "Hospital ABC",
      "ehrName":"All Script",
-      "patientId" : "2",
-      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png"
+     "ehrId": "2",
+     "patientId" : "19",
+      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
+      "enable": "true"
     },
+    {"hospitalName": "Hospital WWW",
+     "ehrName":"Cerner",
+     "ehrId": "1",
+     "patientId" : "19",
+      "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png",
+      "enable": "true"
+    },  
     {"hospitalName": "Hospital XYZ",
      "ehrName":"All Script",
-      "patientId" : "2",
-      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png"
+      "ehrId": "2",
+     "patientId" : "19",
+      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
+      "enable": "false"
     },
     {"hospitalName": "Hospital PQR",
      "ehrName":"All Script",
-     "patientId" : "2",
-      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png"
-    },
-    
-    {"hospitalName": "Hospital PQR",
-     "ehrName":"Cerner",
-     "patientId" : "2",
-      "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png"
+     "ehrId": "2",
+     "patientId" : "19",
+      "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
+      "enable": "false"
     }
   ]
 }]

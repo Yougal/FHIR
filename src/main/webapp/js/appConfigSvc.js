@@ -13,7 +13,6 @@ angular.module("sampleApp")
         var dataServer;         //the currently selected data server server
         var currentPatient;     //the currently selected patint
         var allResources;       //all resources for the current patient
-        
         var searchedMember;
         //the default config for a new browser...
         var defaultConfig = {servers : {}};
@@ -22,7 +21,6 @@ angular.module("sampleApp")
         defaultConfig.standardExtensionUrl = {};
         defaultConfig.standardSystem = {};
         defaultConfig.standardCode = {};
-        
         //if a valueset has concepts entered directly but not in snomed (so terminology services won't expand)
         defaultConfig.standardExtensionUrl.vsDirectConcept = 'http://clinfhir.com/fhir/StructureDefinition/vsDirectConcept';
 
@@ -295,6 +293,9 @@ angular.module("sampleApp")
                     return true;
                 } 
 
+            },
+            getUrl : function() {
+            		return "http://10.87.182.125:8080/fhirdemo/api/clinicalservice";
             },
             getAllServers : function(version) {
                 //return all the servers. can specify a FHIR version...

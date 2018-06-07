@@ -3,16 +3,40 @@
     .myActive {
         background-color: red;
     }
+    .tab-content{
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        padding: 20px 20px 100px 20px;
+        background: white;
+    }
+    .nav-tabs .active{
+      border: 1px solid lightgray;
+      border-bottom: 1px solid white;
+      font-weight: bold;
+      color: red;
+      background: white;
+    }
+    .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+        border-color: transparent;
+    }
+    a {
+    color: #196ecf;
+    }
+    .list-group-item.active {
+        background-color: #196ecf;
+        border-color: #196ecf;
+    }
 </style>
 
 <uib-tabset>
     <uib-tab heading="Resource explorer">
 
-        <div class="row" style="padding: 10px 30px;">
+        <div class="row" style="padding-bottom: 20px;">
 
             <div class="col-md-3 col-sm-3">
                 <h4>Resource Types</h4>
-                <div class="list-group">
+                <div class="list-group" style="    margin-top: 20px;">
                     <a href="#"  ng-click="typeSelected(type)"
                        ng-class="{'list-group-item':true,'active':type.type == outcome.selectedType}"
                        ng-repeat="type in outcome.resourceTypes ">
@@ -33,7 +57,7 @@
                     <div class="col-md-4 col-sm-4">
 
                         <h4>{{outcome.selectedType}} Resources</h4>
-                        <div class="list-group">
+                        <div class="list-group" style="    margin-top: 20px;">
                             <a href="#"
                                ng-class="{'list-group-item':true,'active':entry.resource.id == outcome.selectedResource.id}"
                                ng-repeat="entry in outcome.allResourcesOfOneType.entry">
@@ -183,7 +207,7 @@
                                 <div class="col-md-4 col-sm-4">
                                     <h4>Outward references</h4>
 
-                                    <div class="list-group">
+                                    <div class="list-group" style="    margin-top: 20px;">
                                         <a href="#"class="list-group-item"
                                            ng-repeat="reference in resourceReferences.outwardLinks"
                                            ng-click="selectNewResource(reference,$event)">
@@ -196,7 +220,7 @@
 
                                     <h4>Inward references</h4>
 
-                                    <div class="list-group">
+                                    <div class="list-group" style="    margin-top: 20px;">
                                         <a href="#" class="list-group-item"
                                            ng-repeat="reference in resourceReferences.inwardLinks"
                                            ng-click="selectNewResource(reference,$event)">
@@ -223,13 +247,13 @@
 
         <a href='#' ng-show="showPatientJson" ng-click="showPatientJson=false">Hide Patient Json</a>
         <a href="#" ng-hide="showPatientJson" ng-click="showPatientJson=true">Show Patient Json</a>
-        <div ng-show="showPatientJson">
+        <div ng-show="showPatientJson" style="overflow-y:scroll; height:400px;">
             <pre>{{appConfigSvc.getCurrentPatient() | json}}</pre>
         </div>
 
     </uib-tab>
 
-    <uib-tab heading="Resource references graph"  select="fitGraphInContainer('mynetwork')">
+    <uib-tab heading="Resource references graph"  select="fitGraphInContainer('mynetwork')" ng-click="showPatientJson=false">
         <br/>
         <div class="row">
             <div class="col-md-8 col-sm-8">
@@ -256,7 +280,7 @@
 
     </uib-tab>
 
-    <uib-tab heading="Numeric Observations/Vitals" >
+    <uib-tab heading="Numeric Observations/Vitals" ng-click="showPatientJson=false">
         <br/>
         <div ng-controller="observationsDisplayCtrl">
             <div class="row">
@@ -335,7 +359,7 @@
         </div>
     </uib-tab>
 
-    <uib-tab heading="Encounter timeline">
+    <uib-tab heading="Encounter timeline" ng-click="showPatientJson=false">
         <br/>
         <div class="row">
             <div class="col-md-2 col-sm-2">
@@ -376,7 +400,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <ng-include ng-show="outcome.selectedResource.resourceType=='Encounter'"
-                                                src="'${pageContext.request.contextPath}/displayTemplates/encounter.html'"></ng-include>
+                                                src="'./displayTemplates/encounter.html'"></ng-include>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
                                     <pre>
@@ -420,7 +444,7 @@
 
     </uib-tab>
 
-    <uib-tab heading="FHIRPath">
+    <uib-tab heading="FHIRPath" ng-click="showPatientJson=false">
         <br/>
         <div class="row">
             <div class="col-md-2">
@@ -438,7 +462,7 @@
                                     <li ng-class="{'list-group-item':1==1,'list-group-item-info':entry.resource.id == outcome.selectedResource.id}"
                                         style = "cursor: pointer"
                                         ng-repeat = "entry in value.entry" ng-click="selectFPResource(entry)">
-                                        <ng-include src="'${pageContext.request.contextPath}/includes/resourceDisplayTemplates.html'"></ng-include>
+                                        <ng-include src="'./includes/resourceDisplayTemplates.html'"></ng-include>
 
                                     </li>
                                 </ul>
@@ -497,7 +521,7 @@
         </div>
     </uib-tab>
 
-    <uib-tab heading="Documents">
+<!--    <uib-tab heading="Documents">
 
         <div class="row">
 
@@ -625,7 +649,7 @@
                 <questionnaire model="currentQ" resourcehash="allResources"></questionnaire>
             </div>
         </div>
-    </uib-tab>
+    </uib-tab>-->
 
 
 

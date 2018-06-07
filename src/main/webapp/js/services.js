@@ -915,7 +915,7 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             return deferred.promise;
 
         },
-        getAllData : function(patientId) {
+        getAllData : function(patientId,ehrId) {
             //get all the data for a patient. Follow paging to get them all...
 
             var deferred = $q.defer();
@@ -927,17 +927,40 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             //return all the data for the indicated patient. Doesn't use the 'everything' operation so there is a fixed set of resources...
             //currently only get a max of 100 resources of each type. Need to implement paging to get more...
 
-            var resources = [];
+            
+            
             //resources.push({type:'Observation',patientReference:'subject'});
-            resources.push({type:'Encounter',patientReference:'patient',jsonData:'Encounter.json'});
+            
             //resources.push({type:'Appointment',patientReference:'patient'});
-            resources.push({type:'Condition',patientReference:'patient',jsonData:'ConditionBundle.json'});
+          
             //resources.push({type:'List',patientReference:'subject'});
             //resources.push({type:'Basic',patientReference:'subject'});
 
-            resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'AllergyBundle.json'});
-            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json'});
+            
+            
 
+            
+            
+            
+            var resources = [];
+            //resources.push({type:'Observation',patientReference:'subject'});
+            if(ehrId==='1'){
+            		resources.push({type:'Encounter',patientReference:'patient',jsonData:'getencounters'});
+            		//resources.push({type:'Encounter',patientReference:'patient',jsonData:'Encounter.json'});
+            }
+            //resources.push({type:'Appointment',patientReference:'patient'});
+            resources.push({type:'Condition',patientReference:'patient',jsonData:'getproblems'});
+            //resources.push({type:'Condition',patientReference:'patient',jsonData:'ConditionBundle.json'});
+            //resources.push({type:'List',patientReference:'subject'});
+            //resources.push({type:'Basic',patientReference:'subject'});
+
+            resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'getallergies'});
+            //resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'AllergyBundle.json'});
+            
+            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'getmedicationStatements'});
+            //resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json'});
+            resources.push({type:'Immunization',patientReference:'patient',jsonData:'getimmunizations'});
+            //resources.push({type:'Immunization',patientReference:'patient',jsonData:'ImmunizationBundle.json'});
             var arQuery = [];
 
 
@@ -951,9 +974,11 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
                 } else {
                     uri = appConfigSvc.getCurrentDataServerBase() + item.type + "?" + item.patientReference + "=" + patientId + "&_count=100";
                 }*/
-                
-                uri= $window.location.origin+_contextPath+"/data-json/"+patientId+"/"+item.jsonData;
+                //uri= $window.location.origin+_contextPath+"/data-json/"+patientId+"/"+item.jsonData;
 
+
+                uri= appConfigSvc.getUrl()+"/"+ehrId+"/"+item.jsonData+"/"+patientId;
+                console.log(uri);
 
                 arQuery.push(
 

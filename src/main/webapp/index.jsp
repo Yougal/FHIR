@@ -23,6 +23,13 @@
   <title>EISL - Landing Page</title>
 
   <style>/*https://css-tricks.com/snippets/css/css-box-shadow/*/
+        .list-group-item.active {
+        background-color: #196ecf;
+        border-color: #196ecf;
+    }
+    a {
+      color: #196ecf;
+    }
         .myBox {
           padding: 30px;
           border: 1px solid lightgray;
@@ -135,7 +142,7 @@
     </div>
     <div class="col-md-6 text-right">
       <!--<img style="height: 350px;" src="https://patientengagementhit.com/images/site/article_headers/_normal/doctor_computer.png">-->
-      <img style="height: 350px;" src="https://getreferralmd.com/wp-content/uploads/2013/10/patient-portal.png">
+      <img style="height: 250px;" src="https://getreferralmd.com/wp-content/uploads/2013/10/patient-portal.png">
     </div>
   </div>
   <div style="text-align: center;
@@ -177,146 +184,6 @@
     background: whitesmoke;
     cursor: not-allowed;">App Services
         </button>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="footer_bottom_par parsys">
-      <div class="reference parbase section">
-        <div class="cq-dd-paragraph">
-          <div class="popularlinks_62f popularlinks">
-            <section class="footer-menu-wrapper">
-              <div id="footer-menu" style="    max-width: 90% !important;">
-                <h2 style="font-size: 28px; font-family:'News Cycle';     font-weight: bolder;"> Popular Links</h2>
-                <div class="footer-menu-column-wrapper">
-
-                  <div class="col-sm-4 footer-menu-column">
-                    <h3>Products<span class="plus-icon"></span></h3>
-                    <div class="footer-menu-list ">
-                      <ul>
-
-
-                        <li lang="en"><a
-                            href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/understanding-health-insurance/how-insurance-works/health-insurance-marketplace"
-                            target="_self">Marketplace Insurance Plans</a></li>
-
-
-                        <li lang="en"><a href="https://www.uhcmedicaresolutions.com/?WT.mc_id=880332" target="_self">Medicare</a>
-                        </li>
-
-
-                        <li lang="en"><a
-                            href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/health-insurance-plans/medicare-medicaid/what-is-medicaid"
-                            target="_self">Medicaid</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/employer" target="_self">Employer Group
-                          Plans</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/dental-insurance"
-                                         target="_self">Dental Insurance</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/insurance-plans/vision"
-                                         target="_self">Vision Insurance</a></li>
-
-
-                        <li lang="en"><a
-                            href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/short-term-health-insurance"
-                            target="_self">Short Term Health Insurance</a></li>
-
-
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4 footer-menu-column">
-                    <h3>Healthy Living<span class="plus-icon"></span></h3>
-                    <div class="footer-menu-list inactive">
-                      <ul>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/health-and-wellness/fitness" target="_self">Fitness</a>
-                        </li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/health-and-wellness/nutrition" target="_self">Nutrition</a>
-                        </li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/health-and-wellness/health-topics"
-                                         target="_self">Health Topics</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/health-and-wellness/take-control-of-your-care"
-                                         target="_self">Take Control of Your Care</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/health-and-wellness" target="_self">Health and
-                          Wellness</a></li>
-
-
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-4 footer-menu-column">
-                    <h3>Featured Links<span class="plus-icon"></span></h3>
-                    <div class="footer-menu-list inactive">
-                      <ul>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/member-resources"
-                                         target="_self">Member Resources</a></li>
-
-
-                        <li lang="en"><a
-                            href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/member-resources/health-care-tools"
-                            target="_self">Program &amp; Tools</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/about-us" target="_self">About Us</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/united-for-reform" target="_self">United For
-                          Reform</a></li>
-
-
-                        <li lang="en"><a href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/valuebasedcare" target="_self">Value-Based
-                          Care</a></li>
-
-
-                        <li lang="en"><a href="http://www.myuhc.com/" target="_self">View Drug List</a></li>
-
-
-                        <li lang="en"><a
-                            href="${pageContext.request.contextPath}/content/uhcdotcom/en/home/individual-and-family/member-resources/health-care-tools/health4me"
-                            target="_self">Download Health4Me App</a></li>
-
-
-                        <li lang="en"><a href="https://www.uhc.com/broker" target="_self">Broker Resources</a></li>
-
-
-                        <li lang="en"><a href="http://www.justplainclear.com?srcName=uhc_com-FeaturedLink"
-                                         target="_self">Just Plain Clear® Glossary</a></li>
-
-
-                      </ul>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-      <div class="reference parbase section">
-        <div class="cq-dd-paragraph">
-          <div class="htmlscript_c138 htmlscript">
-          </div>
-        </div>
       </div>
     </div>
   </div>
