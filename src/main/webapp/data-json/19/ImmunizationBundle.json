@@ -1,0 +1,172 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 3,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Immunization/23341200007",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "23341200007",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-immunization"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> 2009-10-03 - Hepatitis A ( Status: Completed)</p>"
+        },
+        "status": "completed",
+        "date": "2009-10-03",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "52",
+              "display": "Hep A, adult"
+            }
+          ],
+          "text": "Hepatitis A"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "wasNotGiven": false,
+        "reported": true,
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Immunization/23341200011",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "23341200011",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-immunization"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> 2010-10-03 - Hepatitis B, adult ( Status: Completed)</p>"
+        },
+        "status": "completed",
+        "date": "2010-10-03",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "43",
+              "display": "Hep B, adult"
+            }
+          ],
+          "text": "Hepatitis B, adult"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "wasNotGiven": false,
+        "reported": true,
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Immunization/23341200015",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "23341200015",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-immunization"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> 2016-10-03 - Fluarix (23  mg Status: Completed)</p>"
+        },
+        "status": "completed",
+        "date": "2016-10-03",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "156",
+              "display": "Rho(D) - IG"
+            }
+          ],
+          "text": "Fluarix"
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "wasNotGiven": false,
+        "reported": true,
+        "performer": {
+          "reference": "Practitioner/83",
+          "display": "Provider,Midmark "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "manufacturer": {
+          "reference": "Organization/1854",
+          "display": "DISPENSING SOLUTIONS INC."
+        },
+        "lotNumber": "112",
+        "site": {
+          "coding": [
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "1stDig",
+              "display": "1st Digit"
+            }
+          ],
+          "text": "1st Digit"
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "25",
+              "display": "Intradermal"
+            }
+          ],
+          "text": "Intradermal"
+        },
+        "doseQuantity": {
+          "value": 23,
+          "unit": " mg",
+          "system": "http://unitsofmeasure.org"
+        },
+        "vaccinationProtocol": [
+          {
+            "series": "123",
+            "doseStatus": {
+              "coding": [
+                {
+                  "system": "[Not reported]",
+                  "code": "[Not reported]",
+                  "display": "[Not reported]"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

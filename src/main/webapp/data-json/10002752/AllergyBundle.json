@@ -1,0 +1,294 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 7,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/AllergyIntolerance/12147000013",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "12147000013",
+        "meta": {
+          "lastUpdated": "2015-03-03T15:21:53.55-05:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-allergyintolerance"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Augmentin TABS</p>"
+        },
+        "onset": "2015-03-03T15:21:53-05:00",
+        "recordedDate": "2015-03-03T15:21:53-05:00",
+        "recorder": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "824194",
+              "display": "Augmentin TABS"
+            }
+          ],
+          "text": "Augmentin TABS"
+        },
+        "status": "active",
+        "criticality": "CRITU",
+        "category": "medication"
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/AllergyIntolerance/12147000017",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "12147000017",
+        "meta": {
+          "lastUpdated": "2015-03-03T15:21:53.63-05:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-allergyintolerance"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Bactrim TABS</p>"
+        },
+        "onset": "2015-03-03T15:21:53-05:00",
+        "recordedDate": "2015-03-03T15:21:53-05:00",
+        "recorder": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "208416",
+              "display": "Bactrim TABS"
+            }
+          ],
+          "text": "Bactrim TABS"
+        },
+        "status": "active",
+        "criticality": "CRITU",
+        "category": "medication"
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/AllergyIntolerance/12147000019",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "12147000019",
+        "meta": {
+          "lastUpdated": "2015-03-03T15:21:53.64-05:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-allergyintolerance"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Glucophage XR TB24</p>"
+        },
+        "onset": "2015-03-03T15:21:53-05:00",
+        "recordedDate": "2015-03-03T15:21:53-05:00",
+        "recorder": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860985",
+              "display": "Glucophage XR TB24"
+            }
+          ],
+          "text": "Glucophage XR TB24"
+        },
+        "status": "active",
+        "criticality": "CRITU",
+        "category": "medication"
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/AllergyIntolerance/12147000021",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "12147000021",
+        "meta": {
+          "lastUpdated": "2015-03-03T15:21:53.65-05:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-allergyintolerance"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Lisinopril TABS</p>"
+        },
+        "onset": "2015-03-03T15:21:53-05:00",
+        "recordedDate": "2015-03-03T15:21:53-05:00",
+        "recorder": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "205326",
+              "display": "Lisinopril TABS"
+            }
+          ],
+          "text": "Lisinopril TABS"
+        },
+        "status": "active",
+        "criticality": "CRITU",
+        "category": "medication"
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/AllergyIntolerance/12147000023",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "12147000023",
+        "meta": {
+          "lastUpdated": "2015-03-03T15:21:53.66-05:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-allergyintolerance"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Penicillins</p>"
+        },
+        "onset": "2015-03-03T15:21:53-05:00",
+        "recordedDate": "2015-03-03T15:21:53-05:00",
+        "recorder": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "70618",
+              "display": "Penicillins"
+            }
+          ],
+          "text": "Penicillins"
+        },
+        "status": "active",
+        "criticality": "CRITU",
+        "category": "medication"
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/AllergyIntolerance/14168400011",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "14168400011",
+        "meta": {
+          "lastUpdated": "2015-04-20T15:37:01.55-04:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-allergyintolerance"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Sulfonamide Loop Diuretics</p>"
+        },
+        "onset": "2015-04-20T15:37:01-04:00",
+        "recordedDate": "2015-04-20T15:37:01-04:00",
+        "recorder": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1808",
+              "display": "Sulfonamide Loop Diuretics"
+            }
+          ],
+          "text": "Sulfonamide Loop Diuretics"
+        },
+        "status": "active",
+        "criticality": "CRITU",
+        "category": "medication"
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/AllergyIntolerance/14168400013",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "14168400013",
+        "meta": {
+          "lastUpdated": "2015-04-20T15:37:01.57-04:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-allergyintolerance"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Zithromax TABS</p>"
+        },
+        "onset": "2015-04-20T15:37:01-04:00",
+        "recordedDate": "2015-04-20T15:37:01-04:00",
+        "recorder": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James "
+        },
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "226827",
+              "display": "Zithromax TABS"
+            }
+          ],
+          "text": "Zithromax TABS"
+        },
+        "status": "active",
+        "criticality": "CRITU",
+        "category": "medication"
+      }
+    }
+  ]
+}
