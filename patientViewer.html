@@ -8,7 +8,9 @@
     <script src="js/libs/angular.min1-5.js"></script>
 
     <script src="js/libs/ui-bootstrap-tpls-2.0.1.min.js"></script>
-    <script src="js/libs/lodash.core.js"></script>
+    <script src="https://use.fontawesome.com/5a364c316b.js"></script>
+
+  <script src="js/libs/lodash.core.js"></script>
     <script src="js/libs/moment.min.js"></script>
 
      <link rel="stylesheet" type="text/css"
@@ -159,9 +161,10 @@
 </head>
 
 
-<body>
+<body style="background: whitesmoke">
 
-<div ng-app="sampleApp" ng-controller="resourceViewerCtrl" class="container-fluid" style="padding-right: 0px;">
+<div ng-app="sampleApp" ng-controller="resourceViewerCtrl"
+     style="padding-right: 0px;">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="    background: white;
     box-shadow: 1px 1px 5px #888;">
         <div class="col-md-10 col-sm-10">
@@ -187,7 +190,7 @@
     </div>-->
 
     <div class="row">
-        <form style="    width: 90%;padding: 30px;">
+        <form style="    width: 90%;padding: 30px;padding-bottom: 0px;">
             <div class="form-group row">
                 <div class="col-sm-2">
                     <label for="patientName" class="col-form-label">Select Patient : </label>
@@ -203,10 +206,24 @@
         </form>
     </div>
 
-    <div ng-show="hasSearchedMember()">
-        <h3><a href="#historyTable" data-toggle="collapse" onclick="$('.collapse').addClass('show');">Visit History : ({{getName()}})</a></h3>
+    <div ng-show="hasSearchedMember()" style="padding: 15px;    background: white;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;">
+        <h3>
+          <a href="#historyTable" data-toggle="collapse" onclick="$('.collapse').addClass('show');">
+            Visit History : ({{getName()}})
+            <i class="fa fa-caret-down" ng-show="appConfigSvc.getCurrentPatient()"
+               style="font-size: 30px;padding-left: 10px;"></i>
+          </a>
+          <span  ng-show="appConfigSvc.getCurrentPatient()" style="font-size: 20px;
+    color: #1a6dcf;
+    background: aliceblue;
+    padding: 0px 16px;
+    margin: 30px;
+    font-weight: normal;"> {{displayEHR}}</span>
+        </h3>
         <div id="historyTable" class="collapse show">
-	        <table class="table table-hover" >
+	        <table class="table table-hover"  style="background: white;">
 	            <tbody ng-repeat="history in getVisitHistory()">
 	                <tr ng-click ="selectEHR(history.patientId,history.hospitalName,history.ehrName)">
 	                    <td>{{history.hospitalName}}</td>
@@ -217,161 +234,17 @@
         </div>
     </div>
     
-    <div class="row" style="padding: 0px 30px;" ng-show="appConfigSvc.getCurrentPatient()">
+    <!--<div class="row" style="padding: 0px 30px;" ng-show="appConfigSvc.getCurrentPatient()">
         <h3>
-            {{getName()}} <span style="font-size: 20px;
-    color: #1a6dcf;
-    background: aliceblue;
-    padding: 0px 16px;
-    margin: 30px;
-    font-weight: normal;"> {{displayEHR}}</span>
+            {{getName()}}
         </h3>
+    </div>-->
+
+    <div class="row" style="padding: 15px 30px;" ng-show="appConfigSvc.getCurrentPatient()" >
+        <ng-include src="'/includes/resourceViewer.html'" style="width: 100%"></ng-include>
     </div>
 
-    <div class="row" style="padding: 15px 30px;" ng-show="appConfigSvc.getCurrentPatient()">
-        <ng-include src="'/includes/resourceViewer.html'"></ng-include>
-    </div>
 
-    <div>
-        <div class="footer_bottom_par parsys">
-            <div class="reference parbase section">
-                <div class="cq-dd-paragraph">
-                    <div class="popularlinks_62f popularlinks">
-                        <section class="footer-menu-wrapper">
-                            <div id="footer-menu" style="    max-width: 90% !important;">
-                                <h2 style="font-size: 28px; font-family:'News Cycle';     font-weight: bolder;"> Popular Links</h2>
-                                <div class="footer-menu-column-wrapper">
-
-                                    <div class="col-sm-4 footer-menu-column">
-                                        <h3>Products<span class="plus-icon"></span></h3>
-                                        <div class="footer-menu-list ">
-                                            <ul>
-
-
-                                                <li lang="en"><a
-                                                    href="/content/uhcdotcom/en/home/individual-and-family/understanding-health-insurance/how-insurance-works/health-insurance-marketplace"
-                                                    target="_self">Marketplace Insurance Plans</a></li>
-
-
-                                                <li lang="en"><a href="https://www.uhcmedicaresolutions.com/?WT.mc_id=880332" target="_self">Medicare</a>
-                                                </li>
-
-
-                                                <li lang="en"><a
-                                                    href="/content/uhcdotcom/en/home/individual-and-family/health-insurance-plans/medicare-medicaid/what-is-medicaid"
-                                                    target="_self">Medicaid</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/employer" target="_self">Employer Group
-                                                    Plans</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/individual-and-family/dental-insurance"
-                                                                 target="_self">Dental Insurance</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/individual-and-family/insurance-plans/vision"
-                                                                 target="_self">Vision Insurance</a></li>
-
-
-                                                <li lang="en"><a
-                                                    href="/content/uhcdotcom/en/home/individual-and-family/short-term-health-insurance"
-                                                    target="_self">Short Term Health Insurance</a></li>
-
-
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-4 footer-menu-column">
-                                        <h3>Healthy Living<span class="plus-icon"></span></h3>
-                                        <div class="footer-menu-list inactive">
-                                            <ul>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/health-and-wellness/fitness" target="_self">Fitness</a>
-                                                </li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/health-and-wellness/nutrition" target="_self">Nutrition</a>
-                                                </li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/health-and-wellness/health-topics"
-                                                                 target="_self">Health Topics</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/health-and-wellness/take-control-of-your-care"
-                                                                 target="_self">Take Control of Your Care</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/health-and-wellness" target="_self">Health and
-                                                    Wellness</a></li>
-
-
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-4 footer-menu-column">
-                                        <h3>Featured Links<span class="plus-icon"></span></h3>
-                                        <div class="footer-menu-list inactive">
-                                            <ul>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/individual-and-family/member-resources"
-                                                                 target="_self">Member Resources</a></li>
-
-
-                                                <li lang="en"><a
-                                                    href="/content/uhcdotcom/en/home/individual-and-family/member-resources/health-care-tools"
-                                                    target="_self">Program &amp; Tools</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/about-us" target="_self">About Us</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/united-for-reform" target="_self">United For
-                                                    Reform</a></li>
-
-
-                                                <li lang="en"><a href="/content/uhcdotcom/en/home/valuebasedcare" target="_self">Value-Based
-                                                    Care</a></li>
-
-
-                                                <li lang="en"><a href="http://www.myuhc.com/" target="_self">View Drug List</a></li>
-
-
-                                                <li lang="en"><a
-                                                    href="/content/uhcdotcom/en/home/individual-and-family/member-resources/health-care-tools/health4me"
-                                                    target="_self">Download Health4Me App</a></li>
-
-
-                                                <li lang="en"><a href="https://www.uhc.com/broker" target="_self">Broker Resources</a></li>
-
-
-                                                <li lang="en"><a href="http://www.justplainclear.com?srcName=uhc_com-FeaturedLink"
-                                                                 target="_self">Just Plain Clear® Glossary</a></li>
-
-
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-            <div class="reference parbase section">
-                <div class="cq-dd-paragraph">
-                    <div class="htmlscript_c138 htmlscript">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 </body>
