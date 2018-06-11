@@ -7,6 +7,8 @@ angular.module("sampleApp")
 
             $scope.outcome = {};
             $scope.graph = {};
+            $scope.patientFirstName = "John";
+            $scope.patientLastName = "Doe";
 
             $scope.ResourceUtilsSvc = ResourceUtilsSvc; //needed for 1 line summary
             $scope.appConfigSvc = appConfigSvc;     //for displaying the patient json
@@ -326,17 +328,33 @@ angular.module("sampleApp")
             }
 
 
-
+            $scope.setAttribute = function(attribute, value){
+              switch(attribute){
+                case "showFilter" :
+                  $scope[attribute] = value;
+                  $scope.showAdditionalHospital = false;
+                  break;
+                case "showAdditionalHospital":
+                  $scope[attribute] = value;
+                  $scope.showFilter = false;
+                  break;
+                default:
+                  $scope[attribute] = value;
+                  break;
+              }
+            }
 
             //used by patientViewer to select a patient to display
-            $scope.findPatient = function(name){
+            $scope.findPatient = function(firstName, lastName, uhgId, dob){
+                firstName = firstName || "John";
+                lastName = lastName || "Doe";
             		appConfigSvc.setSearchedMember(null);
             		appConfigSvc.setCurrentPatient(null);
                 $http.get("data-json/search-result.json").then(	
                     function(result){
                         var history = result.data;
                         var filteredMember = history.filter(function(item){
-                        		return item.name.toUpperCase() === name.toUpperCase();
+                        		return item.name.toUpperCase() === firstName.toUpperCase() + " " + lastName.toUpperCase();
                         });
                         if (filteredMember) {
                         		appConfigSvc.setSearchedMember(filteredMember[0]);
