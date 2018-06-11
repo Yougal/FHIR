@@ -11,7 +11,7 @@ angular.module('sampleApp')
                 showValueSetE : '&'
             },
 
-            templateUrl: 'directive/fhirpath/fhirpath.html',
+            templateUrl: _contextPath+'/directive/fhirpath/fhirpath.html',
             controller: function($scope,$http){
 
                 $scope.input = {};

@@ -7,7 +7,7 @@ angular.module('sampleApp')
                 resource: '='
             },
 
-            templateUrl: 'directive/graphql/graphql.html',
+            templateUrl: _contextPath+'/directive/graphql/graphql.html',
             controller: function($scope,$http,appConfigSvc){
 
                 $scope.input = {};

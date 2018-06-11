@@ -32,6 +32,11 @@
       a {
         color: #196ecf;
       }
+      #historyTable .active{
+	     border: 1px solid cornflowerblue;
+         font-weight: bold;
+         background: white !important;
+         }
         .myBox {
           padding: 30px;
           border: 1px solid lightgray;
@@ -204,52 +209,106 @@
         <form style="    width: 90%;padding: 30px;padding-bottom: 0px;">
             <div class="form-group row">
                 <div class="col-sm-2">
-                    <label for="patientName" class="col-form-label">Select Patient : </label>
+                  <label class="col-form-label">Search Patient : </label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="patientName" ng-model="input.patientName" 
-                           value="">
+                <div class="row">
+                    <div class="col-xs-8">
+                      <input type="text" placeholder="First Name" class="form-control" id="patientFirstName"
+                             ng-model="input.patientFirstName" value="">
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" placeholder="Last Name" class="form-control" id="patientLastName"
+                             ng-model="input.patientLastName" value="">
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-xs-8">
+                      <input type="text" placeholder="UHG Id" class="form-control" id="patientUHGId"
+                             ng-model="input.patientUHGId" value="">
+                    </div>
+                    <div class="col-xs-8">
+                      <input type="text" placeholder="Date of Birth (MM-DD-YYYY)" class="form-control" id="patientDOB"
+                             ng-model="input.patientDOB" value="">
+                    </div>
+                  </div>
                 </div>
                 <div class="col-sm-1">
-                    <button type="button" class="btn primary-button" ng-click="findPatient(input.patientName)"> Find </button>
+                   <button type="button" class="btn primary-button"
+                            ng-click="findPatient(input.patientFirstName, input.patientLastName, input.patientUHGId, input.patientDOB,input.startDate,input.endDate)">
+                      Find
+                   </button>
                 </div>
             </div>
         </form>
     </div>
 
-    <div ng-show="hasSearchedMember()" style="padding: 15px;    background: white;
-    border-bottom: 1px solid lightgray;
-    border-top: 1px solid lightgray;">
-        <h3>
-          <a href="#historyTable" data-toggle="collapse" onclick="$('.collapse').addClass('show');">
-            Visit History : ({{getName()}})
-            <i class="fa fa-caret-down" ng-show="appConfigSvc.getCurrentPatient()"
-               style="font-size: 30px;padding-left: 10px;"></i>
-          </a>
-          <span  ng-show="appConfigSvc.getCurrentPatient()" style="font-size: 20px;
-    color: #1a6dcf;
-    background: aliceblue;
-    padding: 0px 16px;
-    margin: 30px;
-    font-weight: normal;"> {{displayEHR}}</span>
-        </h3>
+    <div ng-show="hasSearchedMember()" style="padding: 15px;    background: white; border-bottom: 1px solid lightgray; border-top: 1px solid lightgray;">
         <div id="historyTable" class="collapse show">
-            <table class="table table-hover"  style="background: white;">
-                <tbody ng-repeat="history in getVisitHistory()">
-                		
-                    <tr ng-if= "history.enable=='true'" ng-click ="selectEHR(history.patientId,history.hospitalName,history.ehrName,history.ehrId)">
-                        <td>{{history.hospitalName}}</td>
-                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
-                    </tr>
-                     <tr ng-if= "history.enable=='false'" style="background-color: grey;">
-                        <td>{{history.hospitalName}}</td>
-                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
-                    </tr>
-                </tbody>
-            </table>
+         <div class="row toolbar" style="padding: 10px 0px; background: whitesmoke; margin: 0px;">
+            <div class="col-xs-16">
+              <a ng-class="{'active' : showFilter}" ng-click="setAttribute('showFilter', !showFilter)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Filter</a>
+              <a ng-class="{'active' : showAdditionalHospital}" ng-click="setAttribute('showAdditionalHospital', !showAdditionalHospital)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Additional Hospital</a>
+            </div>
+          </div>
+          <div ng-show="showFilter" class="row toolbar" style="padding: 15px 0px;  background: floralwhite; margin: 0px; border-top: 1px solid lightgray;">
+            <div class="col-xs-4">
+              <input type="text" placeholder="Start Date (MM-DD-YYYY)" class="form-control" id="startDate"
+                     ng-model="input.startDate" value="">
+            </div>
+            <div class="col-xs-4">
+              <input type="text" placeholder="End Date (MM-DD-YYYY)" class="form-control" id="endDate"
+                     ng-model="input.endDate" value="">
+            </div>
+            <div class="col-xs-4">
+              <button type="button" class="btn primary-button"
+                      ng-click="filterPatient(input.startDate,input.endDate)">
+                Filter
+              </button>
+            </div>
+          </div>
+          <div ng-show="showAdditionalHospital" class="row toolbar" style="padding: 15px 0px; background: floralwhite; margin: 0px; border-top: 1px solid lightgray;">
+            <div class="col-xs-4">
+              <input type="text" placeholder="EHR Name" class="form-control" id="patientDOB"
+                     ng-model="input.patientDOB" value="">
+            </div>
+            <div class="col-xs-4">
+              <input type="text" placeholder="Hospital Name" class="form-control" id="patientDOB"
+                     ng-model="input.patientDOB" value="">
+            </div>
+            <div class="col-xs-4">
+              <button type="button" class="btn primary-button"
+                      ng-click="findPatient(input.patientFirstName, input.patientLastName, input.patientUHGId, input.patientDOB)">
+                Add Hospital
+              </button>
+           </div>
+
+          </div>
+          <div class="row" style="padding: 0px 30px;" ng-show="hasVistedHistory()">
+	            <table class="table table-hover"  style="background: white;">
+	                <tbody ng-repeat="history in getVisitHistory()">
+	                		
+	                    <tr ng-if= "history.enable=='true'" ng-click ="selectEHR(history.patientId,history.hospitalName,history.ehrName,history.ehrId)">
+	                        <td>{{history.hospitalName}}</td>
+	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
+	                        <td>{{history.ehrId}}</td>
+		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
+	                    </tr>
+	                     <tr ng-if= "history.enable=='false'" style="background-color: grey;">
+	                        <td>{{history.hospitalName}}</td>
+	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
+	                        <td>{{history.ehrId}}</td>
+		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
+	                    </tr>
+	                </tbody>
+	            </table>
+            </div>
+             <div class="row" style="padding: 0px 30px;" ng-hide="hasVistedHistory()">
+             	No patient found
+             </div>
         </div>
     </div>
-    
     <!--<div class="row" style="padding: 0px 30px;" ng-show="appConfigSvc.getCurrentPatient()">
         <h3>
             {{getName()}}

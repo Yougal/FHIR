@@ -1,12 +1,16 @@
-[{
-  "name": "John Doe",
+{
   "visitHistory" :[
     {"hospitalName": "Hospital ABC",
      "ehrName":"All Script",
      "ehrId": "2",
      "patientId" : "10002752",
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
-      "enable": "true"
+      "enable": "true",
+      "lastVisitDate" : "06-13-2013",
+	  "firstName": "John",
+	  "lastName": "Doe",
+	  "dob":"08-24-1965",
+	  "uhgId":"12345"
     },
     
     {"hospitalName": "Hospital WWW",
@@ -14,54 +18,84 @@
      "ehrId": "1",
      "patientId" : "10002752",
       "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png",
-      "enable": "true"
+      "enable": "true",
+       "lastVisitDate" : "06-13-2013",
+	  "firstName": "John",
+	  "lastName": "Doe",
+	  "dob":"08-24-1965",
+	  "uhgId":"12345"
     },
      {"hospitalName": "Hospital XYZ",
      "ehrName":"All Script",
      "ehrId": "2",
      "patientId" : "10002752",
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
-      "enable": "false"
+      "enable": "false",
+      "lastVisitDate" : "08-13-2013",
+	  "firstName": "John",
+	  "lastName": "Doe",
+	  "dob":"08-24-1965",
+	  "uhgId":"12345"
     },
     {"hospitalName": "Hospital PQR",
      "ehrName":"All Script",
      "ehrId": "2",
      "patientId" : "10002752",
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
-      "enable": "false"
-    }
-  ]
-},
-{
-  "name": "Dave Mike",
-  "visitHistory" : [
+      "enable": "false",
+      "lastVisitDate" : "08-13-2013",
+	  "firstName": "John",
+	  "lastName": "Doe",
+	  "dob":"08-24-1965",
+	  "uhgId":"12345"
+    },
     {"hospitalName": "Hospital ABC",
      "ehrName":"All Script",
      "ehrId": "2",
      "patientId" : "19",
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
-      "enable": "true"
+      "enable": "true",
+      "lastVisitDate" : "06-13-2013",
+      "firstName": "Mike",
+	  "lastName": "Dave",
+	  "dob":"05-31-1977",
+	  "uhgId":"12345"
     },
     {"hospitalName": "Hospital WWW",
      "ehrName":"Cerner",
      "ehrId": "1",
      "patientId" : "19",
       "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png",
-      "enable": "true"
+      "enable": "true",
+      "lastVisitDate" : "06-13-2013",
+      "firstName": "Mike",
+	  "lastName": "Dave",
+	  "dob":"05-31-1977",
+	  "uhgId":"12345"
     },  
     {"hospitalName": "Hospital XYZ",
      "ehrName":"All Script",
       "ehrId": "2",
      "patientId" : "19",
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
-      "enable": "false"
+      "enable": "false",
+      "lastVisitDate" : "06-13-2013",
+      "firstName": "Mike",
+	  "lastName": "Dave",
+	  "dob":"05-31-1977",
+	  "uhgId":"12345"
     },
     {"hospitalName": "Hospital PQR",
      "ehrName":"All Script",
      "ehrId": "2",
      "patientId" : "19",
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
-      "enable": "false"
+      "enable": "false",
+      "lastVisitDate" : "06-13-2013",
+      "firstName": "Mike",
+	  "lastName": "Dave",
+	  "dob":"05-31-1977",
+	  "uhgId":"12345"
     }
   ]
-}]
+}

@@ -4,13 +4,15 @@ angular.module("sampleApp")
         function ($scope,supportSvc,appConfigSvc,resourceCreatorSvc,resourceSvc,$sce,sessionSvc,questionnaireSvc,
                   $uibModal, $timeout,GetDataFromServer,modalService,ResourceUtilsSvc,builderSvc,$window,$http) {
 
-
+    			
             $scope.outcome = {};
             $scope.graph = {};
-
+            $scope.patientFirstName = "John";
+            $scope.patientLastName = "Doe";
             $scope.ResourceUtilsSvc = ResourceUtilsSvc; //needed for 1 line summary
             $scope.appConfigSvc = appConfigSvc;     //for displaying the patient json
-
+            $scope.visitHistory={};
+            $scope.allFilteredMembers={};
             $scope.isSMART = appConfigSvc.getCurrentDataServer().smart;     //if true, this server requires SMART
             $scope.oauthAccessToken;    //if SMART, this will be the access token...
 
@@ -325,41 +327,104 @@ angular.module("sampleApp")
                 })
             }
 
-
-
+            $scope.setAttribute = function(attribute, value){
+            		switch(attribute){
+    	                case "showFilter" :
+    	                  $scope[attribute] = value;
+    	                  $scope.showAdditionalHospital = false;
+    	                  break;
+    	                case "showAdditionalHospital":
+    	                  $scope[attribute] = value;
+    	                 $scope.showFilter = false;
+    	                  break;
+    	               default:
+    	                  $scope[attribute] = value;
+    	                  break;
+    	              }
+            };
+            
+            $scope.filterPatient = function(startDate, endDate){
+           	 var resultData = $scope.allFilteredMembers.filter(function(item){
+		    			if(startDate!=undefined){
+		    				var momentLastVisitDate=moment(item.lastVisitDate,'MM-DD-YYYY');
+		    				var momentStartDate = moment(startDate,'MM-DD-YYYY');
+		    				var diff = momentLastVisitDate.diff(momentStartDate, 'days');
+		    				if(diff>=0){
+		    					if(endDate!=undefined){
+		    						var momentEndDate = moment(endDate,'MM-DD-YYYY');
+		    						var diff = momentLastVisitDate.diff(momentEndDate, 'days');
+		    						if(diff<=0){
+		    							return true;
+		    						}else{
+		    							return false;
+		    						}
+		    					}else{
+		    						return true;
+		    					}
+		    				}else{
+		    					return false;
+		    				}
+		    			}else{
+		    				return true;
+		    			}      
+           	 	});
+     	 	$scope.visitHistory=resultData;
+            }
 
             //used by patientViewer to select a patient to display
-            $scope.findPatient = function(name){
-            		appConfigSvc.setSearchedMember(null);
-            		appConfigSvc.setCurrentPatient(null);
+            $scope.findPatient = function(firstName, lastName, uhgId, dob,startDate, endDate){
                 $http.get($window.location.origin+_contextPath+"/data-json/search-result.json").then(	
                     function(result){
-                        var history = result.data;
-                        var filteredMember = history.filter(function(item){
-                        		return item.name.toUpperCase() === name.toUpperCase();
+                    	   $scope.allFilteredMembers={};
+                        var history = result.data.visitHistory;
+                        var regex = "^";
+                        if(firstName!=undefined){
+                        		regex=regex+firstName + " # ";
+                        }else{
+                        		regex=regex+"[a-zA-z] # ";
+                        }
+                        if(lastName!=undefined){
+                        		regex=regex+lastName + " # ";
+                        }else{
+                        		regex=regex+"[a-zA-z]* # ";
+                        }
+                        if(uhgId!=undefined){
+                        		regex=regex+uhgId + " # ";
+                        }else{
+                        		regex=regex+"[a-zA-z0-9]* # ";
+                        }
+                        if(dob!=undefined){
+                    			regex=regex+dob+"$";
+	                    }else{
+	                    		regex = regex+ "((0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])[-](19|20)?[0-9]{2})*$";
+	                    }
+                        var reg = new RegExp(regex,'i');
+                        var filteredMembers = history.filter(function(item){
+                        		var str = item.firstName + " # " + item.lastName + " # " + item.uhgId + " # " + item.dob;
+                        		return reg.test(str);
                         });
-                        if (filteredMember) {
-                        		appConfigSvc.setSearchedMember(filteredMember[0]);
+                        if (filteredMembers.length>0) {
+                        	  $scope.allFilteredMembers=filteredMembers;
+                        	  $scope.visitHistory=filteredMembers;
                         }else{
                         		modalService.showModal({}, {bodyText: 'No patient with that Name found.'})
                         }
                     },
                     function(err){
                         modalService.showModal({}, {bodyText: 'No patient with that Id found.'})
-
                     }
                 )};
 
-           $scope.hasSearchedMember = function() {
-        			return appConfigSvc.getSearchedMember()!=null;
+            $scope.hasSearchedMember = function() {
+            		return !angular.equals($scope.allFilteredMembers, {}) || $scope.allFilteredMembers.length>0;
+            },
+            
+            $scope.hasVistedHistory = function() {
+        		return !angular.equals($scope.visitHistory, {}) || $scope.visitHistory.length>0;
             },
         
-            $scope.getName = function() {
-	    			return appConfigSvc.getSearchedMember()!=null? appConfigSvc.getSearchedMember().name:null	;
-	        },
-	        
 	        $scope.getVisitHistory = function() {
-	    			return appConfigSvc.getSearchedMember()!=null? appConfigSvc.getSearchedMember().visitHistory: {};
+	    			return this.visitHistory;
 	        },
 	        
 	        $scope.selectEHR = function(patientId, hospitalName,ehr,ehrId){

@@ -14,6 +14,7 @@ angular.module("sampleApp")
         var currentPatient;     //the currently selected patint
         var allResources;       //all resources for the current patient
         var searchedMember;
+        var visitHistory;
         //the default config for a new browser...
         var defaultConfig = {servers : {}};
         defaultConfig.lastUpdated='2018-04-05';     //will trigger a reload when this changes
@@ -398,13 +399,6 @@ angular.module("sampleApp")
 
 
                 return version;
-            },
-            setCurrentPatient : function(patient) {
-                currentPatient = patient;
-            },
-            
-            getCurrentPatient : function() {
-                return currentPatient;
             },
             
             setSearchedMember : function(member) {
