@@ -407,11 +407,11 @@ angular.module("sampleApp")
                         	  $scope.allFilteredMembers=filteredMembers;
                         	  $scope.visitHistory=filteredMembers;
                         }else{
-                        		modalService.showModal({}, {bodyText: 'No patient with that Name found.'})
+                        		modalService.showModal({windowClass: 'show'}, {bodyText: 'No patient with that Name found.', headerText: 'Warning!'})
                         }
                     },
                     function(err){
-                        modalService.showModal({}, {bodyText: 'No patient with that Id found.'})
+                        modalService.showModal({windowClass: 'show'}, {bodyText: 'No patient with that Id found.'})
                     }
                 )};
 
