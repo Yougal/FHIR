@@ -945,22 +945,16 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             var resources = [];
             //resources.push({type:'Observation',patientReference:'subject'});
             if(ehrId==='1'){
-            		resources.push({type:'Encounter',patientReference:'patient',jsonData:'getencounters'});
-            		//resources.push({type:'Encounter',patientReference:'patient',jsonData:'Encounter.json'});
+            		resources.push({type:'Encounter',patientReference:'patient',jsonData:'Encounter.json',resourceName:'getencounters'});
             }
             //resources.push({type:'Appointment',patientReference:'patient'});
-            resources.push({type:'Condition',patientReference:'patient',jsonData:'getproblems'});
-            //resources.push({type:'Condition',patientReference:'patient',jsonData:'ConditionBundle.json'});
+            resources.push({type:'Condition',patientReference:'patient',jsonData:'ConditionBundle.json',resourceName:'getproblems'});
             //resources.push({type:'List',patientReference:'subject'});
             //resources.push({type:'Basic',patientReference:'subject'});
 
-            resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'getallergies'});
-            //resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'AllergyBundle.json'});
-            
-            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'getmedicationStatements'});
-            //resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json'});
-            resources.push({type:'Immunization',patientReference:'patient',jsonData:'getimmunizations'});
-            //resources.push({type:'Immunization',patientReference:'patient',jsonData:'ImmunizationBundle.json'});
+            resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'AllergyBundle.json',resourceName:'getallergies'});
+            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json',resourceName:'getmedicationStatements'});
+            resources.push({type:'Immunization',patientReference:'patient',jsonData:'ImmunizationBundle.json',resourceName:'getimmunizations'});
             var arQuery = [];
 
 
@@ -974,11 +968,13 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
                 } else {
                     uri = appConfigSvc.getCurrentDataServerBase() + item.type + "?" + item.patientReference + "=" + patientId + "&_count=100";
                 }*/
-                //uri= $window.location.origin+_contextPath+"/data-json/"+patientId+"/"+item.jsonData;
+                //
 
-
-                uri= appConfigSvc.getUrl()+"/"+ehrId+"/"+item.jsonData+"/"+patientId;
-                console.log(uri);
+                if(appConfigSvc.getMode()=='dev'){
+                		uri= $window.location.origin+_contextPath+"/data-json/"+patientId+"/"+item.jsonData;
+                }else{
+                		uri= appConfigSvc.getUrl()+"/"+ehrId+"/"+item.resourceName+"/"+patientId;
+                }
 
                 arQuery.push(
 

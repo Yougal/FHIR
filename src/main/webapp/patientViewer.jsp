@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jsTreeStyle.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jsTreeThemes/proton/style.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/vis.min.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap-datepicker3.min.css"/>
     <style>/*https://css-tricks.com/snippets/css/css-box-shadow/*/
           .list-group-item.active {
         background-color: #196ecf;
@@ -137,8 +138,6 @@
         }]).config(function($httpProvider){
             $httpProvider.interceptors.push('authIntercept')
         })
-
-
     </script>
 
     <script src="${pageContext.request.contextPath}/js/libs/ngStorage.min.js"></script>
@@ -147,6 +146,7 @@
 
     <script src="${pageContext.request.contextPath}/js/appConfigSvc.js"></script>
     <script src="${pageContext.request.contextPath}/js/queryCtrl.js"></script>
+ 	<script src="${pageContext.request.contextPath}/js/bootstrap-datepicker.js"></script>
 
 
     <script src="${pageContext.request.contextPath}/js/modalDialogSvc.js"></script>
@@ -230,7 +230,7 @@
                     </div>
                     <div class="col-xs-8">
                       <input type="text" placeholder="Date of Birth (MM-DD-YYYY)" class="form-control" id="patientDOB"
-                             ng-model="input.patientDOB" value="">
+                             ng-model="input.patientDOB" value="" data-date-format="mm-dd-yyyy" data-provide="datepicker">
                     </div>
                   </div>
                 </div>
@@ -245,6 +245,16 @@
     </div>
 
     <div ng-show="hasSearchedMember()" style="padding: 15px;    background: white; border-bottom: 1px solid lightgray; border-top: 1px solid lightgray;">
+     <h3>
+          <a href="#historyTable" data-toggle="collapse" onclick="$('.collapse').addClass('show');">
+            Visit History : ({{getName()}})
+            <i class="fa fa-caret-down" ng-show="appConfigSvc.getCurrentPatient()"
+               style="font-size: 30px;padding-left: 10px;"></i>
+         </a>
+          <span  ng-show="appConfigSvc.getCurrentPatient()" style="font-size: 20px; color: #1a6dcf; background: aliceblue;padding: 0px 16px;
+		    margin: 30px;
+		    font-weight: normal;"> {{displayEHR}}</span>
+		  </h3>
         <div id="historyTable" class="collapse show">
          <div class="row toolbar" style="padding: 10px 0px; background: whitesmoke; margin: 0px;">
             <div class="col-xs-16">
@@ -255,11 +265,11 @@
           <div ng-show="showFilter" class="row toolbar" style="padding: 15px 0px;  background: floralwhite; margin: 0px; border-top: 1px solid lightgray;">
             <div class="col-xs-4">
               <input type="text" placeholder="Start Date (MM-DD-YYYY)" class="form-control" id="startDate"
-                     ng-model="input.startDate" value="">
+                     ng-model="input.startDate" value="" data-date-format="mm-dd-yyyy" data-provide="datepicker">
             </div>
             <div class="col-xs-4">
               <input type="text" placeholder="End Date (MM-DD-YYYY)" class="form-control" id="endDate"
-                     ng-model="input.endDate" value="">
+                     ng-model="input.endDate" value="" data-date-format="mm-dd-yyyy" data-provide="datepicker">
             </div>
             <div class="col-xs-4">
               <button type="button" class="btn primary-button"

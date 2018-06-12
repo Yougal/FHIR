@@ -13,6 +13,7 @@ angular.module("sampleApp")
             $scope.appConfigSvc = appConfigSvc;     //for displaying the patient json
             $scope.visitHistory={};
             $scope.allFilteredMembers={};
+            $scope.patientName="";
             $scope.isSMART = appConfigSvc.getCurrentDataServer().smart;     //if true, this server requires SMART
             $scope.oauthAccessToken;    //if SMART, this will be the access token...
 
@@ -376,6 +377,7 @@ angular.module("sampleApp")
                 $http.get($window.location.origin+_contextPath+"/data-json/search-result.json").then(	
                     function(result){
                     	   $scope.allFilteredMembers={};
+                    	   $scope.patientName="";
                         var history = result.data.visitHistory;
                         var regex = "^";
                         if(firstName!=undefined){
@@ -405,6 +407,7 @@ angular.module("sampleApp")
                         });
                         if (filteredMembers.length>0) {
                         	  $scope.allFilteredMembers=filteredMembers;
+                        	  $scope.patientName=filteredMembers[0].firstName + " "+ filteredMembers[0].lastName;
                         	  $scope.visitHistory=filteredMembers;
                         }else{
                         		modalService.showModal({windowClass: 'show'}, {bodyText: 'No patient with that Name found.', headerText: 'Warning!'})
@@ -427,6 +430,10 @@ angular.module("sampleApp")
 	    			return this.visitHistory;
 	        },
 	        
+	        $scope.getName = function() {
+    			return this.patientName;
+	        }
+	        
 	        $scope.selectEHR = function(patientId, hospitalName,ehr,ehrId){
 	        	 $scope.displayEHR=hospitalName + " - " + ehr;
 	        	 $scope.loadPatient(patientId,ehrId);
@@ -435,8 +442,12 @@ angular.module("sampleApp")
 	        
 	        //directly load a patient based on their id
             $scope.loadPatient = function(patientId,ehrId) {
-                var url = appConfigSvc.getUrl()+"/"+ehrId+"/getpatient/" + patientId;
-	        		//var url = $window.location.origin+_contextPath+"/data-json/" + patientId + "/Patient.json"
+	        	 	var url ;
+		        	 if(appConfigSvc.getMode()=='dev'){
+	             		url=  $window.location.origin+_contextPath+"/data-json/" + patientId + "/Patient.json"
+	             }else{
+	             		url = appConfigSvc.getUrl()+"/"+ehrId+"/getpatient/" + patientId;
+	             }
                 console.log(url);
                 $http.get(url).then(	
                     function(data){

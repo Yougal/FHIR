@@ -298,6 +298,10 @@ angular.module("sampleApp")
             getUrl : function() {
             		return "http://10.87.182.125:8080/fhirdemo/api/clinicalservice";
             },
+            
+            getMode : function(){
+            		return "dev";
+            },
             getAllServers : function(version) {
                 //return all the servers. can specify a FHIR version...
                 if (! $localStorage.config) {
@@ -404,7 +408,13 @@ angular.module("sampleApp")
             setSearchedMember : function(member) {
             		searchedMember = member;
             },
+            setCurrentPatient : function(patient) {
+                currentPatient = patient;
+            },
             
+            getCurrentPatient : function() {
+                return currentPatient;
+            },
             getSearchedMember : function() {
         			return searchedMember;
             },
