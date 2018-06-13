@@ -137,7 +137,7 @@
             }
         }]).config(function($httpProvider){
             $httpProvider.interceptors.push('authIntercept')
-        })
+        });
     </script>
 
     <script src="${pageContext.request.contextPath}/js/libs/ngStorage.min.js"></script>
@@ -255,6 +255,8 @@
 		    margin: 30px;
 		    font-weight: normal;"> {{displayEHR}}</span>
 		  </h3>
+		  
+		<form ng-submit="addHospital()">
         <div id="historyTable" class="collapse show">
          <div class="row toolbar" style="padding: 10px 0px; background: whitesmoke; margin: 0px;">
             <div class="col-xs-16">
@@ -278,23 +280,29 @@
               </button>
             </div>
           </div>
-          <div ng-show="showAdditionalHospital" class="row toolbar" style="padding: 15px 0px; background: floralwhite; margin: 0px; border-top: 1px solid lightgray;">
+          <div ng-show="showAdditionalHospital" class="row toolbar" style="padding: 15px 0px; background: floralwhite; margin: 0px; border-top: 1px solid lightgray;" id="showAdditionalHospitalContainer">
             <div class="col-xs-4">
-              <input type="text" placeholder="EHR Name" class="form-control" id="patientDOB"
-                     ng-model="input.patientDOB" value="">
+<!--               <input type="text" placeholder="EHR Name" class="form-control" id="patientDOB"
+                     ng-model="input.patientDOB" value=""> -->
+              <select class="form-control" ng-model="selectedEHR" ng-options="ehr.name for ehr in ehrArray" ng-change="onEhrNameChange()">
+              	<option value="">Select EHR Name</option>
+              </select>
             </div>
             <div class="col-xs-4">
-              <input type="text" placeholder="Hospital Name" class="form-control" id="patientDOB"
-                     ng-model="input.patientDOB" value="">
+<!--               <input type="text" placeholder="Hospital Name" class="form-control" id="patientDOB"
+                     ng-model="input.patientDOB" value=""> -->
+			 <select class="form-control" ng-disabled="!selectedEHR" ng-model="selectedHospital" ng-options="hospital.name for hospital in hospitalArray">
+              	<option value="">Select Hospital Name</option>
+              </select>
             </div>
             <div class="col-xs-4">
-              <button type="button" class="btn primary-button"
-                      ng-click="findPatient(input.patientFirstName, input.patientLastName, input.patientUHGId, input.patientDOB)">
+              <button type="submit" class="btn primary-button">
                 Add Hospital
               </button>
            </div>
 
           </div>
+          
           <div class="row" style="padding: 0px 30px;" ng-show="hasVistedHistory()">
 	            <table class="table table-hover"  style="background: white;">
 	                <tbody ng-repeat="history in getVisitHistory()">
@@ -318,6 +326,7 @@
              	No patient found
              </div>
         </div>
+        </form>
     </div>
     <!--<div class="row" style="padding: 0px 30px;" ng-show="appConfigSvc.getCurrentPatient()">
         <h3>

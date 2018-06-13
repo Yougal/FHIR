@@ -1,0 +1,14 @@
+{
+	"hospitals": [
+		{"hospitalId" : "1", "ehrId": "2", "name": "Florida Orlando Hospital"},
+		{"hospitalId" : "2", "ehrId": "2", "name": "IU Health Methodist Hospital"},
+		{"hospitalId" : "3", "ehrId": "2", "name": "Carolinas Medical Center"},
+		{"hospitalId" : "4", "ehrId": "2", "name": "Methodist University Hospital"},
+		{"hospitalId" : "5", "ehrId": "2", "name": "Christiana Hospital"},
+		{"hospitalId" : "6", "ehrId": "2", "name": "Memorial Hermann Texas Medical Center"},
+		{"hospitalId" : "7", "ehrId": "2", "name": "UAB Hospital"},
+		{"hospitalId" : "8", "ehrId": "2", "name": "John H Stroger Hospital"},
+		{"hospitalId" : "9", "ehrId": "2", "name": "VCU Medical Center"},
+		{"hospitalId" : "10", "ehrId": "2", "name": "Milton S Hershey Medical Center"}
+	]
+}

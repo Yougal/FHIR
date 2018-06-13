@@ -3,7 +3,6 @@ angular.module("sampleApp")
     .controller('resourceViewerCtrl',
         function ($scope,supportSvc,appConfigSvc,resourceCreatorSvc,resourceSvc,$sce,sessionSvc,questionnaireSvc,
                   $uibModal, $timeout,GetDataFromServer,modalService,ResourceUtilsSvc,builderSvc,$window,$http) {
-
     			
             $scope.outcome = {};
             $scope.graph = {};
@@ -416,7 +415,17 @@ angular.module("sampleApp")
                     function(err){
                         modalService.showModal({windowClass: 'show'}, {bodyText: 'No patient with that Id found.'})
                     }
-                )};
+                );
+                
+    	        $http.get($window.location.origin+_contextPath+"/data-json/ehr/ehr-names.json").then(	
+    	                function(result){
+    	                	$scope.ehrArray = result.data.ehrArray;
+    	                },
+    	                function(err){
+    	                	$scope.ehrArray = [];
+    	                }
+    	        );
+            };
 
             $scope.hasSearchedMember = function() {
             		return !angular.equals($scope.allFilteredMembers, {}) || $scope.allFilteredMembers.length>0;
@@ -815,6 +824,40 @@ angular.module("sampleApp")
 
                     }
                 )
+            };            
+            
+            $scope.onEhrNameChange = function() {
+            	
+            	var selectedEhr = $scope.selectedEHR;
+            	
+    	        $http.get($window.location.origin+_contextPath+"/data-json/ehr/ehrId_" + selectedEhr.ehrId + "/ehr-hospitals.json").then(	
+    	                function(result){
+    	                	$scope.hospitalArray = result.data.hospitals;
+    	                },
+    	                function(err){
+    	                	$scope.hospitalArray = [];
+    	                }
+    	        );
+            	
             };
-
+            
+            $scope.addHospital = function() {
+            	var selectedHospital = $scope.selectedHospital;
+            	if( !isHospitalAlreadyAdded($scope.visitHistory, selectedHospital) ) {
+                	$scope.visitHistory.push({ 'hospitalName':selectedHospital.name, 'url': 'https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png', 'ehrId':selectedHospital.ehrId, 'lastVisitDate': null, 'enable': 'true' });
+            	}
+            	
+            };
+            
+            function isHospitalAlreadyAdded(visitHistory, selectedHospital) {
+            	var hospitalAlreadyAdded = false;
+            	visitHistory.forEach(function(entry){
+            		if(entry.hospitalName == selectedHospital.name) {
+            			hospitalAlreadyAdded = true;
+            			return false;
+            		}
+            	});
+            	
+            	return hospitalAlreadyAdded;
+            };
         });
