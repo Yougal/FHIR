@@ -17,7 +17,7 @@ angular.module("sampleApp")
             $scope.oauthAccessToken;    //if SMART, this will be the access token...
 
             //find all the questionnaires (authored by CF) on the conformance server...
-            questionnaireSvc.findQ().then(
+            /**questionnaireSvc.findQ().then(
                 function(bundle) {
                     $scope.QBundle = bundle;
                 }
@@ -26,7 +26,7 @@ angular.module("sampleApp")
             $scope.selectQ = function(Q) {
                 $scope.currentQ = Q;
             }
-
+			**/
 
             $scope.showGQL = appConfigSvc.getCurrentDataServer().name == 'Grahames STU3 server';
 
@@ -383,7 +383,7 @@ angular.module("sampleApp")
                         if(firstName!=undefined){
                         		regex=regex+firstName + " # ";
                         }else{
-                        		regex=regex+"[a-zA-z] # ";
+                        		regex=regex+"[a-zA-z]* # ";
                         }
                         if(lastName!=undefined){
                         		regex=regex+lastName + " # ";
@@ -483,8 +483,8 @@ angular.module("sampleApp")
                         
                     },
                     function(err){
-                        modalService.showModal({}, {bodyText: 'No patient with that Id found.'})
-
+                        modalService.showModal({windowClass: 'show'}, {bodyText: 'No patient with that Id found.'})
+                   	 	$('.collapse').addClass("show");
                     }
                 )
                 
@@ -889,8 +889,11 @@ angular.module("sampleApp")
             	var selectedHospital = $scope.selectedHospital;
             	var validHospital = getValidHospital(selectedHospital);
             	if( !isHospitalAlreadyAdded($scope.visitHistory, validHospital) ) {
+            		var item = $scope.visitHistory.filter(function(item){
+            			return item.ehrId===validHospital.ehrId && item.lastVisitDate!=null;
+            		});
                 	$scope.visitHistory.push({ 'hospitalName':validHospital.name, 'url': validHospital.url,
-                		'ehrId':validHospital.ehrId,'hospitalId':validHospital.hospitalId ,'lastVisitDate': null, 'enable': 'true',"patientId":$scope.visitHistory[0].patientId,"ehrName":validHospital.ehrName });
+                		'ehrId':validHospital.ehrId,'hospitalId':validHospital.hospitalId ,'lastVisitDate': null, 'enable': 'true',"patientId":item[0].patientId,"ehrName":validHospital.ehrName });
             	}
             	
             };

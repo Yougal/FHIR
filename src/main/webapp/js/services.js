@@ -953,7 +953,9 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             //resources.push({type:'Basic',patientReference:'subject'});
 
             resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'AllergyBundle.json',resourceName:'getallergies'});
-            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json',resourceName:'getmedicationStatements'});
+
+            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json',resourceName:'getmedstatements'});
+
             resources.push({type:'Immunization',patientReference:'patient',jsonData:'ImmunizationBundle.json',resourceName:'getimmunizations'});
             var arQuery = [];
 
@@ -975,7 +977,7 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
                 }else{
                 		uri= appConfigSvc.getUrl()+"/"+ehrId+"/"+item.resourceName+"/"+patientId;
                 }
-
+                console.log(uri);
                 arQuery.push(
 
                     //GetDataFromServer.adHocFHIRQueryFollowingPaging(uri).then(
