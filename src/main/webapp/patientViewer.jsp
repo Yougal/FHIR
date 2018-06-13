@@ -284,16 +284,20 @@
             <div class="col-xs-4">
 <!--               <input type="text" placeholder="EHR Name" class="form-control" id="patientDOB"
                      ng-model="input.patientDOB" value=""> -->
-              <select class="form-control" ng-model="selectedEHR" ng-options="ehr.name for ehr in ehrArray" ng-change="onEhrNameChange()">
+<!--               <select class="form-control" ng-model="selectedEHR" ng-options="ehr.name for ehr in ehrArray" ng-change="onEhrNameChange()">
               	<option value="">Select EHR Name</option>
-              </select>
+              </select> -->
+              <input type="text" ng-model="selectedEHR" placeholder="EHR Name" uib-typeahead="ehr.name for ehr in ehrArray | filter:{name:$viewValue}" 
+              		class="form-control" typeahead-show-hint="true" typeahead-min-length="0" ng-change="onEhrNameChange()" typeahead-on-select="onEhrNameChange()">
             </div>
             <div class="col-xs-4">
 <!--               <input type="text" placeholder="Hospital Name" class="form-control" id="patientDOB"
                      ng-model="input.patientDOB" value=""> -->
-			 <select class="form-control" ng-disabled="!selectedEHR" ng-model="selectedHospital" ng-options="hospital.name for hospital in hospitalArray">
+			 <!-- <select class="form-control" ng-disabled="!selectedEHR" ng-model="selectedHospital" ng-options="hospital.name for hospital in hospitalArray">
               	<option value="">Select Hospital Name</option>
-              </select>
+              </select> -->
+             <input type="text" ng-model="selectedHospital" placeholder="Hospital Name" uib-typeahead="hospital.name for hospital in hospitalArray | filter:{name:$viewValue}" 
+              		class="form-control" typeahead-show-hint="true" typeahead-min-length="0" ng-change="onHospitalNameChange()" typeahead-on-select="onHospitalNameChange()">
             </div>
             <div class="col-xs-4">
               <button type="submit" class="btn primary-button">

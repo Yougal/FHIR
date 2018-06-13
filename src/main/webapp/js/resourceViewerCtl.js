@@ -421,10 +421,21 @@ angular.module("sampleApp")
                 
     	        $http.get($window.location.origin+_contextPath+"/data-json/ehr/ehr-names.json").then(	
     	                function(result){
-    	                	$scope.ehrArray = result.data.ehrArray;
+    	                	$scope.allEHRs = result.data.ehrArray;
+    	                	$scope.ehrArray = $scope.allEHRs; 
     	                },
     	                function(err){
     	                	$scope.ehrArray = [];
+    	                }
+    	        );
+    	        
+    	        $http.get($window.location.origin+_contextPath+"/data-json/ehr/all-hospitals.json").then(	
+    	                function(result){
+    	                	$scope.allHospitals = result.data.hospitals;
+    	                	$scope.hospitalArray = $scope.allHospitals; 
+    	                },
+    	                function(err){
+    	                	$scope.allHospitals = [];
     	                }
     	        );
             };
@@ -832,25 +843,86 @@ angular.module("sampleApp")
             	
             	var selectedEhr = $scope.selectedEHR;
             	
-    	        $http.get($window.location.origin+_contextPath+"/data-json/ehr/ehrId_" + selectedEhr.ehrId + "/ehr-hospitals.json").then(	
-    	                function(result){
-    	                	$scope.hospitalArray = result.data.hospitals;
-    	                },
-    	                function(err){
-    	                	$scope.hospitalArray = [];
-    	                }
-    	        );
-            	
-            };
-            
-            $scope.addHospital = function() {
-            	var selectedHospital = $scope.selectedHospital;
-            	if( !isHospitalAlreadyAdded($scope.visitHistory, selectedHospital) ) {
-                	$scope.visitHistory.push({ 'hospitalName':selectedHospital.name, 'url': selectedHospital.url,
-                		'ehrId':selectedHospital.ehrId,'hospitalId':selectedHospital.hospitalId ,'lastVisitDate': null, 'enable': 'true',"patientId":$scope.visitHistory[0].patientId,"ehrName":selectedHospital.ehrName });
+            	if( selectedEhr == "" ) {
+            		// Nothing selected, show all hospitals.
+            		$scope.hospitalArray = $scope.allHospitals;
+            	} else {
+                	var validEhr = getValidEHR(selectedEhr);
+                	
+                	if( validEhr != null ) {
+            	        $http.get($window.location.origin+_contextPath+"/data-json/ehr/ehrId_" + validEhr.ehrId + "/ehr-hospitals.json").then(	
+            	                function(result){
+            	                	$scope.hospitalArray = result.data.hospitals;
+            	                },
+            	                function(err){
+            	                	$scope.hospitalArray = [];
+            	                }
+            	        );
+                	}
             	}
             	
             };
+            
+            $scope.onHospitalNameChange = function() {
+            	var selectedHospitalName = $scope.selectedHospital;
+            	
+            	if( selectedHospitalName == "" ) {
+            		//Nothing selected, show all EHRs
+            		$scope.ehrArray = $scope.allEHRs;
+            	} else {
+            		var validHospital = getValidHospital(selectedHospitalName);
+            		
+            		if( validHospital != null ) {
+            			$scope.allEHRs.forEach(function(entry){
+            				
+            				if(entry.ehrId == validHospital.ehrId) {
+            					$scope.ehrArray = [entry];
+            					$scope.selectedEHR = entry;
+            				}
+            				
+            			});
+            		}
+            	}
+            }
+            
+            $scope.addHospital = function() {
+            	var selectedHospital = $scope.selectedHospital;
+            	var validHospital = getValidHospital(selectedHospital);
+            	if( !isHospitalAlreadyAdded($scope.visitHistory, validHospital) ) {
+                	$scope.visitHistory.push({ 'hospitalName':validHospital.name, 'url': validHospital.url,
+                		'ehrId':validHospital.ehrId,'hospitalId':validHospital.hospitalId ,'lastVisitDate': null, 'enable': 'true',"patientId":$scope.visitHistory[0].patientId,"ehrName":validHospital.ehrName });
+            	}
+            	
+            };
+            
+            function getValidEHR(selectedEHR) {
+            	var ehrArray = $scope.allEHRs;
+            	var selectedEhrObject = null;
+            	
+            	ehrArray.forEach(function(entry){
+            		
+            		if( entry.name == selectedEHR ) {
+            			selectedEhrObject = entry;
+            			return false;
+            		}	
+            	});
+            	
+            	return selectedEhrObject;
+            }
+            
+            function getValidHospital(selectedHospitalName) {
+            	var allHospitals = $scope.allHospitals;
+            	var selectedHospitalObject = null;
+            	
+            	allHospitals.forEach(function(entry) {
+            		if( entry.name == selectedHospitalName ) {
+            			selectedHospitalObject = entry;
+            			return false;
+            		}
+            	});
+            	
+            	return selectedHospitalObject;
+            }
             
             function isHospitalAlreadyAdded(visitHistory, selectedHospital) {
             	var hospitalAlreadyAdded = false;
