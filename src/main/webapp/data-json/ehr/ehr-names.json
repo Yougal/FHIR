@@ -1,7 +1,7 @@
 {
 "ehrArray":[
-	{"ehrId" : "1", "name" : "Epic EHR"},
-        {"ehrId" : "2", "name" : "Cerner EHR"},
+	{"ehrId" : "2", "name" : "Epic EHR"},
+        {"ehrId" : "1", "name" : "Cerner EHR"},
         {"ehrId" : "3", "name" : "Meditech EHR"}
 ]
 }

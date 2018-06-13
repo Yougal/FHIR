@@ -377,6 +377,7 @@ angular.module("sampleApp")
                     function(result){
                     	   $scope.allFilteredMembers={};
                     	   $scope.patientName="";
+                    	   appConfigSvc.setCurrentPatient(null);
                         var history = result.data.visitHistory;
                         var regex = "^";
                         if(firstName!=undefined){
@@ -408,6 +409,7 @@ angular.module("sampleApp")
                         	  $scope.allFilteredMembers=filteredMembers;
                         	  $scope.patientName=filteredMembers[0].firstName + " "+ filteredMembers[0].lastName;
                         	  $scope.visitHistory=filteredMembers;
+                        	  	 $('.collapse').addClass("show");
                         }else{
                         		modalService.showModal({windowClass: 'show'}, {bodyText: 'No patient with that Name found.', headerText: 'Warning!'})
                         }
@@ -844,7 +846,8 @@ angular.module("sampleApp")
             $scope.addHospital = function() {
             	var selectedHospital = $scope.selectedHospital;
             	if( !isHospitalAlreadyAdded($scope.visitHistory, selectedHospital) ) {
-                	$scope.visitHistory.push({ 'hospitalName':selectedHospital.name, 'url': 'https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png', 'ehrId':selectedHospital.ehrId, 'lastVisitDate': null, 'enable': 'true' });
+                	$scope.visitHistory.push({ 'hospitalName':selectedHospital.name, 'url': selectedHospital.url,
+                		'ehrId':selectedHospital.ehrId,'hospitalId':selectedHospital.hospitalId ,'lastVisitDate': null, 'enable': 'true',"patientId":$scope.visitHistory[0].patientId,"ehrName":selectedHospital.ehrName });
             	}
             	
             };

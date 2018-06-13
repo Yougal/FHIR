@@ -1,14 +1,14 @@
 {
 	"hospitals": [
-		{"hospitalId" : "1", "ehrId": "3", "name": "Methodist Hospital"},
-		{"hospitalId" : "2", "ehrId": "3", "name": "Avera McKennan Hospital & University Health Center"},
-		{"hospitalId" : "3", "ehrId": "3", "name": "Medical City Hospital"},
-		{"hospitalId" : "4", "ehrId": "3", "name": "TriStar Centennial Medical Center"},
-		{"hospitalId" : "5", "ehrId": "3", "name": "St David's Medical Center"},
-		{"hospitalId" : "6", "ehrId": "3", "name": "Henry Mayo Newhall Memorial Hospital"},
-		{"hospitalId" : "7", "ehrId": "3", "name": "CJW Medical Center"},
-		{"hospitalId" : "8", "ehrId": "3", "name": "Good Samaritan Hospital"},
-		{"hospitalId" : "9", "ehrId": "3", "name": "St. Joseph Hospital"},
-		{"hospitalId" : "10", "ehrId": "3", "name": "Wesley Medical Center"}
+		{"hospitalId" : "1", "ehrId": "3", "name": "Methodist Hospital","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "2", "ehrId": "3", "name": "Avera McKennan Hospital & University Health Center","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "3", "ehrId": "3", "name": "Medical City Hospital","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "4", "ehrId": "3", "name": "TriStar Centennial Medical Center","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "5", "ehrId": "3", "name": "St David's Medical Center","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "6", "ehrId": "3", "name": "Henry Mayo Newhall Memorial Hospital","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "7", "ehrId": "3", "name": "CJW Medical Center","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "8", "ehrId": "3", "name": "Good Samaritan Hospital","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "9", "ehrId": "3", "name": "St. Joseph Hospital","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"},
+		{"hospitalId" : "10", "ehrId": "3", "name": "Wesley Medical Center","ehrName":"Meditech", "url": "https://ehr.meditech.com/sites/all/themes/meditech/images/MEDITECH-Logo-2018.png"}
 	]
 }

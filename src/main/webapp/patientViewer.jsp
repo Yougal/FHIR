@@ -305,18 +305,26 @@
           
           <div class="row" style="padding: 0px 30px;" ng-show="hasVistedHistory()">
 	            <table class="table table-hover"  style="background: white;">
+	            		<thead>
+	            		<tr>
+					     <th>Hospital Name</th>
+					     <th>EHR Name</th>
+					     <th>Hospital Id</th>
+					     <th>Last Visited Date</th>
+					  </tr>
+					 </thead>
 	                <tbody ng-repeat="history in getVisitHistory()">
 	                		
 	                    <tr ng-if= "history.enable=='true'" ng-click ="selectEHR(history.patientId,history.hospitalName,history.ehrName,history.ehrId)">
 	                        <td>{{history.hospitalName}}</td>
 	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
-	                        <td>{{history.ehrId}}</td>
+	                        <td>{{history.hospitalId}}</td>
 		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
 	                    </tr>
 	                     <tr ng-if= "history.enable=='false'" style="background-color: grey;">
 	                        <td>{{history.hospitalName}}</td>
 	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
-	                        <td>{{history.ehrId}}</td>
+	                        <td>{{history.hospitalId}}</td>
 		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
 	                    </tr>
 	                </tbody>
