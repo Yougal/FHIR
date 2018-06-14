@@ -1,0 +1,124 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 2,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Observation/23341200001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "23341200001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-smokingstatus"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Tobacco smoking status: Smoking </p>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "social-history",
+              "display": "Social History"
+            }
+          ],
+          "text": "Social History"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ],
+          "text": "Tobacco smoking status"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "effectivePeriod": {
+          "end": "2016-10-03"
+        },
+        "issued": "2016-10-03T11:37:38.277-04:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "SNOMED",
+              "code": "77176002",
+              "display": "Smoking"
+            }
+          ],
+          "text": "History of Smoking"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Observation/23341400001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "23341400001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-smokingstatus"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Tobacco smoking status: Former smoker </p>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "social-history",
+              "display": "Social History"
+            }
+          ],
+          "text": "Social History"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ],
+          "text": "Tobacco smoking status"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "issued": "2016-10-03T11:37:19.94-04:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "SNOMED",
+              "code": "8517006",
+              "display": "Former smoker"
+            }
+          ],
+          "text": "Former smoker"
+        }
+      }
+    }
+  ]
+}

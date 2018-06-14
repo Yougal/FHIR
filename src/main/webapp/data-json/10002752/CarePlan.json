@@ -1,0 +1,60 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/CarePlan/19",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "19",
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;strong&gt;Assessment&lt;/strong&gt;&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</p>"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "status": "active",
+        "context": {
+          "reference": "Encounter/20124",
+          "display": "Other"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/0"
+          },
+          {
+            "reference": "Practitioner/53",
+            "display": "Allscripts,Family Medicine "
+          },
+          {
+            "reference": "Practitioner/61",
+            "display": "Allscripts,General Surgeon "
+          },
+          {
+            "reference": "Practitioner/82",
+            "display": "Medicin,James "
+          }
+        ],
+        "addresses": [
+          {
+            "reference": "Condition/"
+          },
+          {
+            "reference": "Condition/12147000035",
+            "display": "Acute Pharyngitis"
+          }
+        ],
+        "goal": [
+          {
+            "reference": "Goal/15198300007",
+            "display": "Equal to Negative"
+          }
+        ]
+      }
+    }
+  ]
+}

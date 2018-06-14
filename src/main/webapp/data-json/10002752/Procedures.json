@@ -1,0 +1,248 @@
+{
+  "resourceType": "Bundle",
+  "id": "106ddec5-1e18-4bf7-9124-ff88db2f4468",
+  "type": "searchset",
+  "total": 5,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Procedure?patient=4478007"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Procedure/37598559",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "37598559",
+        "meta": {
+          "versionId": "0",
+          "lastUpdated": "2018-02-27T15:10:37.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Procedure</b></p><p><b>Subject</b>: SMART Jr, FRED RICK</p><p><b>Code</b>: OFFICE OUTPT EST 25 MIN, 99214</p><p><b>Status</b>: Completed</p></div>"
+        },
+        "subject": {
+          "reference": "Patient/4478007",
+          "display": "SMART Jr, FRED RICK"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "99214",
+              "display": "Office or other outpatient visit for the evaluation and management of an established patient, which requires at least two of these three key components: a detailed history; a detailed examination; medical decision making of moderate complexity. Counseling"
+            }
+          ],
+          "text": "OFFICE OUTPT EST 25 MIN"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/4842007",
+              "display": "Welby, Marcus"
+            }
+          }
+        ],
+        "performedDateTime": "2018-02-27T00:00:00.000-06:00",
+        "encounter": {
+          "reference": "Encounter/4135906"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Procedure/37626555",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "37626555",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2018-03-01T16:29:37.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Procedure</b></p><p><b>Subject</b>: SMART Jr, FRED RICK</p><p><b>Code</b>: Surgery of complex intracranial aneurysm, intracranial approach; carotid circulation, 61697</p><p><b>Status</b>: Completed</p></div>"
+        },
+        "subject": {
+          "reference": "Patient/4478007",
+          "display": "SMART Jr, FRED RICK"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "61697",
+              "display": "Surgery of complex intracranial aneurysm, intracranial approach; carotid circulation"
+            }
+          ],
+          "text": "Surgery of complex intracranial aneurysm, intracranial approach; carotid circulation"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/1614008",
+              "display": "Hanov, Yegor"
+            }
+          }
+        ],
+        "performedDateTime": "2018-03-01T00:00:00.000-06:00",
+        "encounter": {
+          "reference": "Encounter/4135906"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Procedure/37598565",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "37598565",
+        "meta": {
+          "versionId": "0",
+          "lastUpdated": "2018-02-27T15:13:17.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Procedure</b></p><p><b>Subject</b>: SMART Jr, FRED RICK</p><p><b>Code</b>: Ophthalmological services: medical examination and evaluation with initiation of diagnostic and treatment program; comprehensive, new patient, 1 or more visits, 92004</p><p><b>Status</b>: Completed</p><p><b>Location</b>: Baseline East</p><p><b>Notes</b>: <ul><li>vision declined suddenly</li></ul></p></div>"
+        },
+        "subject": {
+          "reference": "Patient/4478007",
+          "display": "SMART Jr, FRED RICK"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "92004",
+              "display": "Ophthalmological services: medical examination and evaluation with initiation of diagnostic and treatment program; comprehensive, new patient, one or more visits"
+            }
+          ],
+          "text": "Ophthalmological services: medical examination and evaluation with initiation of diagnostic and treatment program; comprehensive, new patient, 1 or more visits"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/2772007",
+              "display": "Thomas P Olenginski-Like MD"
+            }
+          }
+        ],
+        "performedDateTime": "2017-06-01T00:00:00.000-05:00",
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "location": {
+          "reference": "Location/4048128",
+          "display": "Baseline East"
+        },
+        "notes": [
+          {
+            "authorReference": {
+              "reference": "Practitioner/4474007",
+              "display": "Pickering, Kathy"
+            },
+            "time": "2018-02-27T15:13:17.000Z",
+            "text": "vision declined suddenly"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Procedure/36462565",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "36462565",
+        "meta": {
+          "versionId": "0",
+          "lastUpdated": "2017-02-22T15:14:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Procedure</b></p><p><b>Subject</b>: SMART Jr, FRED RICK</p><p><b>Code</b>: Renal angiogram, 420013002</p><p><b>Status</b>: Completed</p><p><b>Location</b>: Baseline East</p><p><b>Notes</b>: <ul><li>This is a procedure comment</li></ul></p></div>"
+        },
+        "subject": {
+          "reference": "Patient/4478007",
+          "display": "SMART Jr, FRED RICK"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "420013002",
+              "display": "Fluoroscopic angiography of renal artery (procedure)"
+            }
+          ],
+          "text": "Renal angiogram"
+        },
+        "reasonReference": {
+          "reference": "Condition/d36486653",
+          "display": "Renal disease"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/2796007",
+              "display": "Pass, Neo"
+            }
+          }
+        ],
+        "performedDateTime": "2017-02-22T00:00:00.000-06:00",
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "location": {
+          "reference": "Location/4048128",
+          "display": "Baseline East"
+        },
+        "notes": [
+          {
+            "authorReference": {
+              "reference": "Practitioner/4474007",
+              "display": "Pickering, Kathy"
+            },
+            "time": "2017-02-22T15:14:53.000Z",
+            "text": "This is a procedure comment"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Procedure/36774557",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "36774557",
+        "meta": {
+          "versionId": "0",
+          "lastUpdated": "2017-07-31T17:56:03.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Procedure</b></p><p><b>Subject</b>: SMART Jr, FRED RICK</p><p><b>Code</b>: Renal function monitoring, 182809008</p><p><b>Status</b>: Completed</p></div>"
+        },
+        "subject": {
+          "reference": "Patient/4478007",
+          "display": "SMART Jr, FRED RICK"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "182809008",
+              "display": "Renal function monitoring (regime/therapy)"
+            }
+          ],
+          "text": "Renal function monitoring"
+        },
+        "performedDateTime": "2017-07-31T00:00:00.000-05:00",
+        "encounter": {
+          "reference": "Encounter/4135906"
+        }
+      }
+    }
+  ]
+}

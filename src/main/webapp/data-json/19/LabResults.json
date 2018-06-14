@@ -1,0 +1,249 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 5,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Observation/12146200015",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "12146200015",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-resultobs"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">&lt;li&gt;85610 INR 2.1  &lt;/li&gt;</p>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "85610",
+              "display": "INR"
+            },
+            {
+              "code": "TWINR",
+              "display": "INR"
+            }
+          ],
+          "text": "Prothrombin Time (PT)"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/8",
+          "display": "Non-Appointment"
+        },
+        "effectiveDateTime": "2014-11-09",
+        "performer": [
+          {
+            "reference": "Practitioner/82",
+            "display": "Medicin,James "
+          }
+        ],
+        "valueQuantity": {
+          "value": 2.1
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Observation/12146200021",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "12146200021",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-resultobs"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">&lt;li&gt;85610 Prothrombin Time 11 secs&lt;/li&gt;</p>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "85610",
+              "display": "Prothrombin Time"
+            },
+            {
+              "code": "TWPT",
+              "display": "Prothrombin Time"
+            }
+          ],
+          "text": "Prothrombin Time (PT)"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/8",
+          "display": "Non-Appointment"
+        },
+        "effectiveDateTime": "2014-11-09",
+        "performer": [
+          {
+            "reference": "Practitioner/82",
+            "display": "Medicin,James "
+          }
+        ],
+        "valueQuantity": {
+          "value": 11,
+          "unit": "secs"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Observation/15206500000",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "15206500000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-resultobs"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">&lt;li&gt;87880 Rapid Strep [Not reported] &lt;/li&gt;</p>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "87880",
+              "display": "Rapid Strep"
+            },
+            {
+              "code": "TWRSTREP",
+              "display": "Rapid Strep"
+            }
+          ],
+          "text": "Rapid Bact Antigen Ident Kit Streptococcus Group A Hemolytic"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/20138",
+          "display": "Non-Appointment"
+        },
+        "effectiveDateTime": "2015-06-26T02:10:00-04:00",
+        "performer": [
+          {
+            "reference": "Practitioner/82",
+            "display": "Medicin,James "
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Observation/15206800000",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "15206800000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-resultobs"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">&lt;li&gt;87880 Rapid Strep [Not reported] &lt;/li&gt;</p>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "87880",
+              "display": "Rapid Strep"
+            },
+            {
+              "code": "TWRSTREP",
+              "display": "Rapid Strep"
+            }
+          ],
+          "text": "Rapid Bact Antigen Ident Kit Streptococcus Group A Hemolytic"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/20138",
+          "display": "Non-Appointment"
+        },
+        "effectiveDateTime": "2015-06-26T02:10:00-04:00",
+        "performer": [
+          {
+            "reference": "Practitioner/82",
+            "display": "Medicin,James "
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Observation/15207100000",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "15207100000",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-resultobs"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">&lt;li&gt;81000 Protein [Not reported] &lt;/li&gt;</p>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "81000",
+              "display": "Protein"
+            },
+            {
+              "code": "TWPROT",
+              "display": "Protein"
+            }
+          ],
+          "text": "Urinalysis By Dip Stick With Microscopy"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "encounter": {
+          "reference": "Encounter/20138",
+          "display": "Non-Appointment"
+        },
+        "effectiveDateTime": "2015-06-26T02:10:00-04:00",
+        "performer": [
+          {
+            "reference": "Practitioner/82",
+            "display": "Medicin,James "
+          }
+        ]
+      }
+    }
+  ]
+}

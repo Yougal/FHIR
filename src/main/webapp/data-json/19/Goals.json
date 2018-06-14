@@ -1,0 +1,42 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 1,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/Goal/15198300007",
+      "resource": {
+        "resourceType": "Goal",
+        "id": "15198300007",
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\">Equal to Negative</p>"
+        },
+        "subject": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison "
+        },
+        "startDate": "2015-06-23",
+        "targetDate": "1754-01-01",
+        "description": "Equal to Negative",
+        "status": "in-progress",
+        "statusDate": "2015-06-23",
+        "addresses": [
+          {
+            "reference": "ResultObs/175",
+            "display": "Rapid Strep"
+          }
+        ],
+        "outcome": [
+          {
+            "resultReference": {
+              "reference": "ResultObs/175",
+              "display": "Rapid Strep"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

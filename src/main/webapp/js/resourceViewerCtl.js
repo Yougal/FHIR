@@ -383,17 +383,17 @@ angular.module("sampleApp")
                         if(firstName!=undefined){
                         		regex=regex+firstName + " # ";
                         }else{
-                        		regex=regex+"[a-zA-z]* # ";
+                        		regex=regex+"[a-zA-Z]* # ";
                         }
                         if(lastName!=undefined){
                         		regex=regex+lastName + " # ";
                         }else{
-                        		regex=regex+"[a-zA-z]* # ";
+                        		regex=regex+"[a-zA-Z]* # ";
                         }
                         if(uhgId!=undefined){
                         		regex=regex+uhgId + " # ";
                         }else{
-                        		regex=regex+"[a-zA-z0-9]* # ";
+                        		regex=regex+"[a-zA-Z0-9]* # ";
                         }
                         if(dob!=undefined){
                     			regex=regex+dob+"$";

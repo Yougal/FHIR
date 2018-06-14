@@ -1,0 +1,836 @@
+{
+  "resourceType": "Bundle",
+  "id": "d5b2e2b6-3ac0-43ca-8dd0-8d77b902ad1d",
+  "type": "searchset",
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation?category=vital-signs&patient=4478007&_count=50"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M7153319",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M7153319",
+        "meta": {
+          "versionId": "1-7153318",
+          "lastUpdated": "2017-08-30T20:12:28.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: BSA Measured</p><p><b>Result</b>: 2.55 m2</p><p><b>Date</b>: 2017-08-30T20:12:00.000Z</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3139-3"
+            }
+          ],
+          "text": "BSA Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2017-08-30T20:12:00.000Z",
+        "issued": "2017-08-30T20:12:03.000Z",
+        "valueQuantity": {
+          "value": 2.55,
+          "unit": "m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "m2"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M7153321",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M7153321",
+        "meta": {
+          "versionId": "1-7153320",
+          "lastUpdated": "2017-08-30T20:12:28.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Body Mass Index Measured</p><p><b>Result</b>: 40 kg/m2</p><p><b>Risk Level</b>: &gt;HHI</p><p><b>Date</b>: 2017-08-30T20:12:00.000Z</p><p><b>Risk Level Detail</b>: Low: 18 kg/m2 High: 25 kg/m2</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5"
+            }
+          ],
+          "text": "Body Mass Index Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2017-08-30T20:12:00.000Z",
+        "issued": "2017-08-30T20:12:03.000Z",
+        "valueQuantity": {
+          "value": 40,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": ">",
+              "display": "Off scale high"
+            }
+          ],
+          "text": ">HHI"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 18,
+              "unit": "kg/m2",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg/m2"
+            },
+            "high": {
+              "value": 25,
+              "unit": "kg/m2",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg/m2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M7153315",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M7153315",
+        "meta": {
+          "versionId": "1-7153314",
+          "lastUpdated": "2017-08-30T20:12:28.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Height/Length Measured</p><p><b>Result</b>: 180 cm</p><p><b>Risk Level</b>: Normal</p><p><b>Date</b>: 2017-08-30T20:12:00.000Z</p><p><b>Risk Level Detail</b>: Low: 140.00 cm High: 200.00 cm</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2"
+            }
+          ],
+          "text": "Height/Length Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2017-08-30T20:12:00.000Z",
+        "issued": "2017-08-30T20:12:03.000Z",
+        "valueQuantity": {
+          "value": 180,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": "N",
+              "display": "Normal"
+            }
+          ]
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 140.00,
+              "unit": "cm",
+              "system": "http://unitsofmeasure.org",
+              "code": "cm"
+            },
+            "high": {
+              "value": 200.00,
+              "unit": "cm",
+              "system": "http://unitsofmeasure.org",
+              "code": "cm"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M7153317",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M7153317",
+        "meta": {
+          "versionId": "1-7153316",
+          "lastUpdated": "2017-08-30T20:12:28.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Weight Measured</p><p><b>Result</b>: 130 kg</p><p><b>Risk Level</b>: &gt;HHI</p><p><b>Date</b>: 2017-08-30T20:12:00.000Z</p><p><b>Risk Level Detail</b>: Low: 30.0 kg High: 100.0 kg</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "3141-9"
+            }
+          ],
+          "text": "Weight Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2017-08-30T20:12:00.000Z",
+        "issued": "2017-08-30T20:12:03.000Z",
+        "valueQuantity": {
+          "value": 130,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": ">",
+              "display": "Off scale high"
+            }
+          ],
+          "text": ">HHI"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 30.0,
+              "unit": "kg",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg"
+            },
+            "high": {
+              "value": 100.0,
+              "unit": "kg",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M6727301",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M6727301",
+        "meta": {
+          "versionId": "1-6727300",
+          "lastUpdated": "2016-09-02T14:49:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Pulse</p><p><b>Result</b>: 60 bpm</p><p><b>Risk Level</b>: Normal</p><p><b>Date</b>: 2016-09-02T14:47:00.000Z</p><p><b>Risk Level Detail</b>: Low: 55 bpm High: 95 bpm</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4"
+            }
+          ],
+          "text": "Pulse"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2016-09-02T14:47:00.000Z",
+        "issued": "2016-09-02T14:47:38.000Z",
+        "valueQuantity": {
+          "value": 60,
+          "unit": "bpm",
+          "system": "http://unitsofmeasure.org",
+          "code": "{Beats}/min"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": "N",
+              "display": "Normal"
+            }
+          ]
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 55,
+              "unit": "bpm",
+              "system": "http://unitsofmeasure.org",
+              "code": "{Beats}/min"
+            },
+            "high": {
+              "value": 95,
+              "unit": "bpm",
+              "system": "http://unitsofmeasure.org",
+              "code": "{Beats}/min"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M6727307",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M6727307",
+        "meta": {
+          "versionId": "1-6727306",
+          "lastUpdated": "2016-09-02T14:49:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: BSA Measured</p><p><b>Result</b>: 2.53 m2</p><p><b>Date</b>: 2016-09-02T14:47:00.000Z</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3139-3"
+            }
+          ],
+          "text": "BSA Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2016-09-02T14:47:00.000Z",
+        "issued": "2016-09-02T14:47:38.000Z",
+        "valueQuantity": {
+          "value": 2.53,
+          "unit": "m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "m2"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M6727309",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M6727309",
+        "meta": {
+          "versionId": "1-6727308",
+          "lastUpdated": "2016-09-02T14:49:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Body Mass Index Measured</p><p><b>Result</b>: 37 kg/m2</p><p><b>Risk Level</b>: &gt;HHI</p><p><b>Date</b>: 2016-09-02T14:47:00.000Z</p><p><b>Risk Level Detail</b>: Low: 18 kg/m2 High: 25 kg/m2</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5"
+            }
+          ],
+          "text": "Body Mass Index Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2016-09-02T14:47:00.000Z",
+        "issued": "2016-09-02T14:47:38.000Z",
+        "valueQuantity": {
+          "value": 37,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": ">",
+              "display": "Off scale high"
+            }
+          ],
+          "text": ">HHI"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 18,
+              "unit": "kg/m2",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg/m2"
+            },
+            "high": {
+              "value": 25,
+              "unit": "kg/m2",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg/m2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M6727303",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M6727303",
+        "meta": {
+          "versionId": "1-6727302",
+          "lastUpdated": "2016-09-02T14:49:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Height/Length Measured</p><p><b>Result</b>: 185 cm</p><p><b>Risk Level</b>: Normal</p><p><b>Date</b>: 2016-09-02T14:47:00.000Z</p><p><b>Risk Level Detail</b>: Low: 140.00 cm High: 200.00 cm</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2"
+            }
+          ],
+          "text": "Height/Length Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2016-09-02T14:47:00.000Z",
+        "issued": "2016-09-02T14:47:38.000Z",
+        "valueQuantity": {
+          "value": 185,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": "N",
+              "display": "Normal"
+            }
+          ]
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 140.00,
+              "unit": "cm",
+              "system": "http://unitsofmeasure.org",
+              "code": "cm"
+            },
+            "high": {
+              "value": 200.00,
+              "unit": "cm",
+              "system": "http://unitsofmeasure.org",
+              "code": "cm"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M6727305",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M6727305",
+        "meta": {
+          "versionId": "1-6727304",
+          "lastUpdated": "2016-09-02T14:49:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Weight Measured</p><p><b>Result</b>: 125 kg</p><p><b>Risk Level</b>: HI</p><p><b>Date</b>: 2016-09-02T14:47:00.000Z</p><p><b>Risk Level Detail</b>: Low: 30.0 kg High: 100.0 kg</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "3141-9"
+            }
+          ],
+          "text": "Weight Measured"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2016-09-02T14:47:00.000Z",
+        "issued": "2016-09-02T14:47:38.000Z",
+        "valueQuantity": {
+          "value": 125,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": "H",
+              "display": "High"
+            }
+          ],
+          "text": "HI"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 30.0,
+              "unit": "kg",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg"
+            },
+            "high": {
+              "value": 100.0,
+              "unit": "kg",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/BP-6727295-6727297",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "BP-6727295-6727297",
+        "meta": {
+          "versionId": "1-6727294-1-6727296",
+          "lastUpdated": "2016-09-02T14:49:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: final</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Systolic Blood Pressure: Systolic Blood Pressure Diastolic Blood Pressure: Diastolic Blood Pressure</p><p><b>Result</b>: Systolic Blood Pressure: 129 mmHg Diastolic Blood Pressure: 85 mmHg</p><p><b>Risk Level</b>: HI</p><p><b>Date</b>: 2016-09-02T14:47:00.000Z</p><p><b>Risk Level Detail</b>: Systolic Blood Pressure: Low: 80 mmHg High: 120 mmHg Diastolic Blood Pressure: Low: 70 mmHg High: 80 mmHg</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "75367002",
+              "display": "Blood pressure (observable entity)"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "55284-4"
+            }
+          ],
+          "text": "Blood pressure"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2016-09-02T14:47:00.000Z",
+        "issued": "2016-09-02T14:47:38.000Z",
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v2/0078",
+              "code": "H",
+              "display": "High"
+            }
+          ],
+          "text": "HI"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6"
+                }
+              ],
+              "text": "Systolic Blood Pressure"
+            },
+            "valueQuantity": {
+              "value": 129,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            },
+            "referenceRange": [
+              {
+                "low": {
+                  "value": 80,
+                  "unit": "mmHg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mm[Hg]"
+                },
+                "high": {
+                  "value": 120,
+                  "unit": "mmHg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mm[Hg]"
+                }
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4"
+                }
+              ],
+              "text": "Diastolic Blood Pressure"
+            },
+            "valueQuantity": {
+              "value": 85,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            },
+            "referenceRange": [
+              {
+                "low": {
+                  "value": 70,
+                  "unit": "mmHg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mm[Hg]"
+                },
+                "high": {
+                  "value": 80,
+                  "unit": "mmHg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mm[Hg]"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://fhir-open.sandboxcerner.com/dstu2/0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca/Observation/M6727299",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "M6727299",
+        "meta": {
+          "versionId": "1-6727298",
+          "lastUpdated": "2016-09-02T14:49:53.000Z"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Observation</b></p><p><b>Patient</b>: 4478007</p><p><b>Status</b>: Auth (Verified)</p><p><b>Category</b>: Vital Signs</p><p><b>Code</b>: Mean Arterial Pressure, Cuff</p><p><b>Result</b>: 100 mmHg</p><p><b>Date</b>: 2016-09-02T14:47:00.000Z</p></div>"
+        },
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8478-0"
+            }
+          ],
+          "text": "Mean Arterial Pressure, Cuff"
+        },
+        "subject": {
+          "reference": "Patient/4478007"
+        },
+        "encounter": {
+          "reference": "Encounter/4135906"
+        },
+        "effectiveDateTime": "2016-09-02T14:47:00.000Z",
+        "issued": "2016-09-02T14:47:38.000Z",
+        "valueQuantity": {
+          "value": 100,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    }
+  ]
+}

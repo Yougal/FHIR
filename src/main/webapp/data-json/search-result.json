@@ -64,7 +64,7 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"12345"
+	  "uhgId":"123467"
     },
     {"hospitalName": "Hospital WWW",
      "ehrName":"Cerner",
@@ -77,7 +77,7 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"12345"
+	  "uhgId":"123467"
     },  
     {"hospitalName": "Hospital XYZ",
      "ehrName":"All Script",
@@ -90,7 +90,7 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"12345"
+	  "uhgId":"123467"
     },
     {"hospitalName": "Hospital PQR",
      "ehrName":"All Script",
@@ -103,7 +103,7 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"12345"
+	  "uhgId":"123467"
     }
   ]
 }

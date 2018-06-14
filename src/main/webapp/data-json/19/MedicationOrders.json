@@ -1,0 +1,365 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 4,
+  "entry": [
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/MedicationOrder/12146200007",
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "12146200007",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-medicationorder"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Amoxicillin 250 MG/5ML Oral Suspension Reconstituted (TAKE 1 AND 1/2 TEASPOONSFUL 3 TIMES A DAY., 7 ML, )</p>"
+        },
+        "dateWritten": "2014-11-09",
+        "status": "completed",
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison"
+        },
+        "prescriber": {
+          "reference": "Practitioner/82",
+          "display": "Medicin,James"
+        },
+        "encounter": {
+          "reference": "Encounter/8",
+          "display": "Non-Appointment"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "239191",
+              "display": "Amoxicillin 250 MG/5ML Oral Suspension Reconstituted"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "1161",
+              "display": "Amoxicillin 250 MG/5ML Oral Suspension Reconstituted"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "012000",
+              "display": "Amoxicillin 250 MG/5ML Oral Suspension Reconstituted"
+            }
+          ],
+          "text": "Amoxicillin 250 MG/5ML Oral Suspension Reconstituted"
+        },
+        "dosageInstruction": [
+          {
+            "text": "TAKE 1 AND 1/2 TEASPOONSFUL 3 TIMES A DAY.",
+            "asNeededBoolean": false,
+            "route": {
+              "coding": [
+                {
+                  "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+                  "code": "14",
+                  "display": "Oral"
+                }
+              ],
+              "text": "Oral"
+            },
+            "doseQuantity": {
+              "value": 1.5,
+              "unit": "TEASPOON",
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 7,
+            "unit": "ML"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/MedicationOrder/23366800001",
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "23366800001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-medicationorder"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Advil Cold &amp; Sinus Liqui-Gels 30-200 MG Oral Capsule (TAKE 2 CAPSULE 3 times daily, 30 Capsule, )</p>"
+        },
+        "dateWritten": "2016-12-08",
+        "status": "completed",
+        "dateEnded": "2016-12-08T23:59:00-05:00",
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison"
+        },
+        "prescriber": {
+          "reference": "Practitioner/54",
+          "display": "Allscripts,MedicalMD"
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "795912",
+              "display": "Advil Cold & Sinus Liqui-Gels 30-200 MG Oral Capsule"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "115350",
+              "display": "Advil Cold & Sinus Liqui-Gels 30-200 MG Oral Capsule"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "439910",
+              "display": "Advil Cold & Sinus Liqui-Gels 30-200 MG Oral Capsule"
+            }
+          ],
+          "text": "Advil Cold & Sinus Liqui-Gels 30-200 MG Oral Capsule"
+        },
+        "dosageInstruction": [
+          {
+            "text": "TAKE 2 CAPSULE 3 times daily",
+            "timing": {
+              "repeat": {
+                "boundsQuantity": {
+                  "value": 5,
+                  "unit": "d",
+                  "system": "http://hl7.org/fhir/ValueSet/units-of-time"
+                },
+                "frequency": 3,
+                "period": 1,
+                "periodUnits": "d"
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+                    "code": "tid",
+                    "display": "3 times daily"
+                  }
+                ],
+                "text": "3 times daily"
+              }
+            },
+            "asNeededBoolean": false,
+            "route": {
+              "coding": [
+                {
+                  "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+                  "code": "14",
+                  "display": "Oral"
+                }
+              ],
+              "text": "Oral"
+            },
+            "doseQuantity": {
+              "value": 2,
+              "unit": "CAPSULE",
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 30,
+            "unit": "Capsule"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/MedicationOrder/23367400001",
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "23367400001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-medicationorder"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Lisinopril 20 MG Oral Tablet (TAKE 1 TABLET 3 times daily PRN as needed, 3 30 Tablet Pack, )</p>"
+        },
+        "dateWritten": "2016-12-09",
+        "status": "completed",
+        "dateEnded": "2016-12-09T23:59:00-05:00",
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison"
+        },
+        "prescriber": {
+          "reference": "Practitioner/48",
+          "display": "Allscripts,Internist"
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "314077",
+              "display": "Lisinopril 20 MG Oral Tablet"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "12248",
+              "display": "Lisinopril 20 MG Oral Tablet"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "361000",
+              "display": "Lisinopril 20 MG Oral Tablet"
+            }
+          ],
+          "text": "Lisinopril 20 MG Oral Tablet"
+        },
+        "dosageInstruction": [
+          {
+            "text": "TAKE 1 TABLET 3 times daily PRN as needed",
+            "timing": {
+              "repeat": {
+                "boundsQuantity": {
+                  "value": 30,
+                  "unit": "d",
+                  "system": "http://hl7.org/fhir/ValueSet/units-of-time"
+                },
+                "frequency": 3,
+                "period": 1,
+                "periodUnits": "d"
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+                    "code": "tid",
+                    "display": "3 times daily"
+                  }
+                ],
+                "text": "3 times daily"
+              }
+            },
+            "asNeededBoolean": true,
+            "route": {
+              "coding": [
+                {
+                  "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+                  "code": "14",
+                  "display": "Oral"
+                }
+              ],
+              "text": "Oral"
+            },
+            "doseQuantity": {
+              "value": 1,
+              "unit": "TABLET",
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 3,
+            "unit": "30 Tablet Pack"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "https://tw171.open.allscripts.com/FHIRAnon/MedicationOrder/23367500001",
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "23367500001",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/daf-medicationorder"
+          ]
+        },
+        "language": "en-US",
+        "text": {
+          "status": "generated",
+          "div": "<p xmlns=\"http://www.w3.org/1999/xhtml\"> Tobramycin Sulfate 10 MG/ML Injection Solution (IMPLANT 1 MG/HR Daily, 10 Milliliter, )</p>"
+        },
+        "dateWritten": "2016-12-09",
+        "status": "completed",
+        "patient": {
+          "reference": "Patient/19",
+          "display": "Allscripts,Allison"
+        },
+        "prescriber": {
+          "reference": "Practitioner/50",
+          "display": "Allscripts,Pediatrician"
+        },
+        "encounter": {
+          "reference": "Encounter/70501",
+          "display": "Non-Appointment"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "313416",
+              "display": "Tobramycin Sulfate 10 MG/ML Injection Solution"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "21735",
+              "display": "Tobramycin Sulfate 10 MG/ML Injection Solution"
+            },
+            {
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+              "code": "070000",
+              "display": "Tobramycin Sulfate 10 MG/ML Injection Solution"
+            }
+          ],
+          "text": "Tobramycin Sulfate 10 MG/ML Injection Solution"
+        },
+        "dosageInstruction": [
+          {
+            "text": "IMPLANT 1 MG/HR Daily",
+            "asNeededBoolean": false,
+            "route": {
+              "coding": [
+                {
+                  "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index",
+                  "code": "3",
+                  "display": "Injection"
+                }
+              ],
+              "text": "Injection"
+            },
+            "doseQuantity": {
+              "value": 1,
+              "unit": "MG/HR",
+              "system": "https://tw171.open.allscripts.com/FHIRAnon/doc/codes/index"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 10,
+            "unit": "Milliliter"
+          }
+        }
+      }
+    }
+  ]
+}

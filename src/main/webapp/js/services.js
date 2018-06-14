@@ -952,11 +952,26 @@ angular.module("sampleApp").service('supportSvc', function($http,$q,appConfigSvc
             //resources.push({type:'List',patientReference:'subject'});
             //resources.push({type:'Basic',patientReference:'subject'});
 
-            resources.push({type:'AllergyIntolerance',patientReference:'patient',jsonData:'AllergyBundle.json',resourceName:'getallergies'});
+            resources.push({type:'Allergy Intolerance',patientReference:'patient',jsonData:'AllergyBundle.json',resourceName:'getallergies'});
 
-            resources.push({type:'MedicationStatement',patientReference:'patient',jsonData:'MedicationStatement.json',resourceName:'getmedstatements'});
+            resources.push({type:'Medication Statement',patientReference:'patient',jsonData:'MedicationStatement.json',resourceName:'getmedstatements'});
 
             resources.push({type:'Immunization',patientReference:'patient',jsonData:'ImmunizationBundle.json',resourceName:'getimmunizations'});
+            
+            resources.push({type:'Care Plan',patientReference:'patient',jsonData:'CarePlan.json',resourceName:'getcareplan'});
+            
+            resources.push({type:'Goals',patientReference:'patient',jsonData:'Goals.json',resourceName:'getgoals'});
+            
+            resources.push({type:'Lab Results',patientReference:'patient',jsonData:'LabResults.json',resourceName:'getresults'});
+            
+            resources.push({type:'Medication Orders',patientReference:'patient',jsonData:'MedicationOrders.json',resourceName:'getmedorders'});
+            
+            resources.push({type:'Procedures',patientReference:'patient',jsonData:'Procedures.json',resourceName:'getprocedures'});
+            
+            resources.push({type:'SmokingStatus',patientReference:'patient',jsonData:'SmokingStatus.json',resourceName:'getsmokingstatus'});
+            
+            resources.push({type:'Vital Signs',patientReference:'patient',jsonData:'VitalSigns.json',resourceName:'getvitalsigns'});
+            
             var arQuery = [];
 
 
