@@ -1,6 +1,5 @@
 
-angular.module("sampleApp")
-    .controller('resourceViewerCtrl',
+angular.module("sampleApp").controller('resourceViewerCtrl',
         function ($scope,supportSvc,appConfigSvc,resourceCreatorSvc,resourceSvc,$sce,sessionSvc,questionnaireSvc,
                   $uibModal, $timeout,GetDataFromServer,modalService,ResourceUtilsSvc,builderSvc,$window,$http) {
     			
@@ -371,6 +370,12 @@ angular.module("sampleApp")
      	 	$scope.visitHistory=resultData;
             }
 
+            	$scope.formReset = function(){
+            		 $scope.allFilteredMembers={};
+              	 $scope.patientName="";
+              	 appConfigSvc.setCurrentPatient(null);
+              	$("#filter2").trigger('reset');
+            	};
             //used by patientViewer to select a patient to display
             $scope.findPatient = function(firstName, lastName, uhgId, dob,startDate, endDate){
                 $http.get($window.location.origin+_contextPath+"/data-json/search-result.json").then(	
@@ -893,7 +898,7 @@ angular.module("sampleApp")
             			return item.ehrId===validHospital.ehrId && item.lastVisitDate!=null;
             		});
                 	$scope.visitHistory.push({ 'hospitalName':validHospital.name, 'url': validHospital.url,
-                		'ehrId':validHospital.ehrId,'hospitalId':validHospital.hospitalId ,'lastVisitDate': null, 'enable': 'true',"patientId":item[0].patientId,"ehrName":validHospital.ehrName });
+                		'ehrId':validHospital.ehrId,'hospitalId':validHospital.hospitalId ,'lastVisitDate': null, 'enable': validHospital.enabled,"patientId":item[0].patientId,"ehrName":validHospital.ehrName });
             	}
             	
             };

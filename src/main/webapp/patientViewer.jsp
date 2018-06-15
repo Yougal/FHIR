@@ -14,11 +14,11 @@
     <script src="${pageContext.request.contextPath}/js/libs/lodash.core.js"></script>
     <script src="${pageContext.request.contextPath}/js/libs/moment.min.js"></script>
 
-  <script src="${pageContext.request.contextPath}/js/libs/lodash.core.js"></script>
+  	<script src="${pageContext.request.contextPath}/js/libs/lodash.core.js"></script>
     <script src="${pageContext.request.contextPath}/js/libs/moment.min.js"></script>
-
      <link rel="stylesheet" type="text/css"
           href="https://www.uhc.com/etc/designs/uhcdotcom/clientlibs/responsive/themes/default.min.8d633391e39b92fcbce01bc23f2bcce4.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animateLoader.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap4.min.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jsTreeStyle.css"/>
@@ -155,6 +155,7 @@
     <script src="${pageContext.request.contextPath}/resourceBuilder/rbServices.js"></script>
     <script src="${pageContext.request.contextPath}/js/resourceSvc.js"></script>
     <script src="${pageContext.request.contextPath}/js/filters.js"></script>
+    <script src="${pageContext.request.contextPath}/directive/loading/http-loading.js"></script>
     <script src="${pageContext.request.contextPath}/js/resourceViewerCtl.js"></script>
     <script src="${pageContext.request.contextPath}/js/observationsDisplayCtrl.js"></script>
 
@@ -163,7 +164,6 @@
     <script src="${pageContext.request.contextPath}/js/libs/vis.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/components/dataTypes.js"></script>
     <script src="${pageContext.request.contextPath}/directive/fhirpath/fhirpath.js"></script>
-    <script src="${pageContext.request.contextPath}/directive/graphql/graphql.js"></script>
     <script src="${pageContext.request.contextPath}/js/builderSvc.js"></script>
     <script src="${pageContext.request.contextPath}/js/sessionSvc.js"></script>
 
@@ -171,7 +171,6 @@
     <script src="${pageContext.request.contextPath}/directive/questionnaire/questionnaireCtl.js"></script>
 
     <script src="${pageContext.request.contextPath}/resourceBuilder/vsBrowser.js"></script>
-
     <title>Patient Viewer</title>
 
 </head>
@@ -206,7 +205,7 @@
     </div>-->
 
     <div class="row">
-        <form style="    width: 90%;padding: 30px;padding-bottom: 0px;">
+        <form style="    width: 90%;padding: 30px;padding-bottom: 0px;" name="filter1">
             <div class="form-group row">
                 <div class="col-sm-2">
                   <label class="col-form-label">Search Patient : </label>
@@ -240,6 +239,11 @@
                       Find
                    </button>
                 </div>
+                <div class="col-sm-1">
+                   <button type="reset" class="btn secondary-button" ng-click="formReset()">
+                   	Clear
+                   </button>
+                </div>
             </div>
         </form>
     </div>
@@ -256,12 +260,12 @@
 		    font-weight: normal;"> {{displayEHR}}</span>
 		  </h3>
 		  
-		<form ng-submit="addHospital()">
+		<form name="filter2" id="filter2">
         <div id="historyTable" class="collapse show">
          <div class="row toolbar" style="padding: 10px 0px; background: whitesmoke; margin: 0px;">
             <div class="col-xs-16">
               <a ng-class="{'active' : showFilter}" ng-click="setAttribute('showFilter', !showFilter)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Filter</a>
-              <a ng-class="{'active' : showAdditionalHospital}" ng-click="setAttribute('showAdditionalHospital', !showAdditionalHospital)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Additional Hospital</a>
+              <a ng-class="{'active' : showAdditionalHospital}" ng-click="setAttribute('showAdditionalHospital', !showAdditionalHospital)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Additional Provider</a>
             </div>
           </div>
           <div ng-show="showFilter" class="row toolbar" style="padding: 15px 0px;  background: floralwhite; margin: 0px; border-top: 1px solid lightgray;">
@@ -300,7 +304,7 @@
               		class="form-control" typeahead-show-hint="true" typeahead-min-length="0" ng-change="onHospitalNameChange()" typeahead-on-select="onHospitalNameChange()">
             </div>
             <div class="col-xs-4">
-              <button type="submit" class="btn primary-button">
+              <button type="reset" class="btn primary-button" ng-disabled="selectedEHR.name==='Meditech EHR' || selectedEHR==='Meditech EHR'" ng-click="addHospital()">
                 Add Hospital
               </button>
            </div>
@@ -345,8 +349,9 @@
             {{getName()}}
         </h3>
     </div>-->
-
+	<loading></loading>
     <div class="row" style="padding: 15px 30px;" ng-show="appConfigSvc.getCurrentPatient()" >
+    		
         <ng-include src="'${pageContext.request.contextPath}/includes/resourceViewer.jsp'" style="width: 100%"></ng-include>
     </div>
 

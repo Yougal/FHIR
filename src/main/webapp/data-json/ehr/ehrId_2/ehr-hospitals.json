@@ -1,14 +1,14 @@
 {
 	"hospitals": [
-		{"hospitalId" : "1", "ehrId": "2", "name": "New York Presbyterian / Weill Cornell Medical Center","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "2", "ehrId": "2", "name": "Cleveland Clinic","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "3", "ehrId": "2", "name": "Stanford Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "4", "ehrId": "2", "name": "NYU Langone Medical Center - Tisch Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "5", "ehrId": "2", "name": "University of Texas MD Anderson Cancer Center","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "6", "ehrId": "2", "name": "UCSF Medical Center at Parnassus Heights","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "7", "ehrId": "2", "name": "Cedars-Sinai Medical Center","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "8", "ehrId": "2", "name": "University of Michigan Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "9", "ehrId": "2", "name": "Montefiore Medical Center - Henry and Lucy Moses Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"},
-		{"hospitalId" : "10", "ehrId": "2", "name": "Massachusetts General Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png"}
+		{"hospitalId" : "1", "ehrId": "2", "name": "New York Presbyterian / Weill Cornell Medical Center","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "2", "ehrId": "2", "name": "Cleveland Clinic","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "3", "ehrId": "2", "name": "Stanford Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "4", "ehrId": "2", "name": "NYU Langone Medical Center - Tisch Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "5", "ehrId": "2", "name": "University of Texas MD Anderson Cancer Center","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "6", "ehrId": "2", "name": "UCSF Medical Center at Parnassus Heights","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "7", "ehrId": "2", "name": "Cedars-Sinai Medical Center","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "8", "ehrId": "2", "name": "University of Michigan Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "9", "ehrId": "2", "name": "Montefiore Medical Center - Henry and Lucy Moses Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"},
+		{"hospitalId" : "10", "ehrId": "2", "name": "Massachusetts General Hospital","ehrName":"Epic", "url": "https://www.epic.com/Images/epic_logo_45.png","enabled": "false"}
 	]
 }

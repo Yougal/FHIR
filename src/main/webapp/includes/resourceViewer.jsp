@@ -35,7 +35,7 @@
         <div class="row" style="padding-bottom: 20px;">
 
             <div class="col-md-3 col-sm-3">
-                <h4>Resource Types</h4>
+                <h4>House Records</h4>
                 <div class="list-group" style="    margin-top: 20px;">
                     <a href="#"  ng-click="typeSelected(type)"
                        ng-class="{'list-group-item':true,'active':type.type == outcome.selectedType}"

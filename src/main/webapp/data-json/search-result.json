@@ -1,6 +1,6 @@
 {
   "visitHistory" :[
-    {"hospitalName": "Hospital ABC",
+    {"hospitalName": "John Medical",
      "ehrName":"All Script",
      "ehrId": "2",
       "hospitalId": "1234567",
@@ -8,13 +8,13 @@
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
       "enable": "true",
       "lastVisitDate" : "06-13-2013",
-	  "firstName": "John",
-	  "lastName": "Doe",
+	  "firstName": "Fred",
+	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345"
     },
     
-    {"hospitalName": "Hospital WWW",
+    {"hospitalName": "Elmhurst Hospital",
      "ehrName":"Cerner",
      "ehrId": "1",
      "hospitalId": "D12345",
@@ -22,12 +22,12 @@
       "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png",
       "enable": "true",
        "lastVisitDate" : "06-13-2013",
-	  "firstName": "John",
-	  "lastName": "Doe",
+	  "firstName": "Fred",
+	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345"
     },
-     {"hospitalName": "Hospital XYZ",
+     {"hospitalName": "CareFirst Clinic",
      "ehrName":"All Script",
      "ehrId": "2",
      "hospitalId": "X543W11",
@@ -35,12 +35,12 @@
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
       "enable": "false",
       "lastVisitDate" : "08-13-2013",
-	  "firstName": "John",
-	  "lastName": "Doe",
+	  "firstName": "Fred",
+	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345"
     },
-    {"hospitalName": "Hospital PQR",
+    {"hospitalName": "NorthWestern Hospital",
      "ehrName":"All Script",
      "ehrId": "2",
       "hospitalId": "2367890Q",
@@ -48,12 +48,12 @@
       "url": "https://www.allscripts.com/Image%20Library/Logo/allscripts-logo-green-gray-2x.png",
       "enable": "false",
       "lastVisitDate" : "08-13-2013",
-	  "firstName": "John",
-	  "lastName": "Doe",
+	  "firstName": "Fred",
+	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345"
     },
-    {"hospitalName": "Hospital ABC",
+    {"hospitalName": "John Medical",
      "ehrName":"All Script",
      "ehrId": "2",
      "hospitalId": "1234567",
@@ -64,9 +64,9 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"123467"
+	  "uhgId":"1234511"
     },
-    {"hospitalName": "Hospital WWW",
+    {"hospitalName": "Elmhurst Hospital",
      "ehrName":"Cerner",
      "ehrId": "1",
      "hospitalId": "D12345",
@@ -77,9 +77,9 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"123467"
+	  "uhgId":"1234511"
     },  
-    {"hospitalName": "Hospital XYZ",
+    {"hospitalName": "CareFirst Clinic",
      "ehrName":"All Script",
       "ehrId": "2",
        "hospitalId": "X543W11",
@@ -90,9 +90,9 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"123467"
+	  "uhgId":"1234511"
     },
-    {"hospitalName": "Hospital PQR",
+    {"hospitalName": "NorthWestern Hospital",
      "ehrName":"All Script",
      "ehrId": "2",
       "hospitalId": "2367890Q",
@@ -103,7 +103,7 @@
       "firstName": "Mike",
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
-	  "uhgId":"123467"
+	  "uhgId":"1234511"
     }
   ]
 }
