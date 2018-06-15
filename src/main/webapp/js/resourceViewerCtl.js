@@ -343,13 +343,14 @@ angular.module("sampleApp").controller('resourceViewerCtrl',
             };
             
             $scope.filterPatient = function(startDate, endDate){
+            	 appConfigSvc.setCurrentPatient(null);
            	 var resultData = $scope.allFilteredMembers.filter(function(item){
-		    			if(startDate!=undefined){
+		    			if(startDate){
 		    				var momentLastVisitDate=moment(item.lastVisitDate,'MM-DD-YYYY');
 		    				var momentStartDate = moment(startDate,'MM-DD-YYYY');
 		    				var diff = momentLastVisitDate.diff(momentStartDate, 'days');
 		    				if(diff>=0){
-		    					if(endDate!=undefined){
+		    					if(endDate){
 		    						var momentEndDate = moment(endDate,'MM-DD-YYYY');
 		    						var diff = momentLastVisitDate.diff(momentEndDate, 'days');
 		    						if(diff<=0){

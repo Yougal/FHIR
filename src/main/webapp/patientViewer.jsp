@@ -336,6 +336,11 @@
 		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
 	                    </tr>
 	                </tbody>
+	                <tbody ng-show="!getVisitHistory().length">
+	                		<tr>
+	                			<td>No patient found</td>
+	                		</tr>
+	                </tbody>
 	            </table>
             </div>
              <div class="row" style="padding: 0px 30px;" ng-hide="hasVistedHistory()">
