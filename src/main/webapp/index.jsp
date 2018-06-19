@@ -31,7 +31,7 @@
       color: #196ecf;
     }
         .myBox {
-          padding: 30px;
+          padding: 5px;
           border: 1px solid lightgray;
           margin: 15px;
         }
@@ -128,9 +128,10 @@
   <div class="row" ng-show="displayMode == 'front'" style="padding:30px;background: #1a6dcf;
     color: white;">
     <div class="col-md-6 col-sm-6">
-      <div style="    padding: 20px 40px;">
-        <h1 style="    margin-bottom: 30px;">Welcome to the EISL</h1>
-        <h3 style="    margin-bottom: 30px;">EMR Integration Service Layer</h3>
+      <div style="padding: 20px 40px;">
+        <h1 style="margin-bottom: 30px;">Welcome</h1>
+        <h3 style="margin-bottom: 30px;">EMR Integration Service Layer (EISL)</h3>
+	<h6 style="margin-bottom: 30px;">Version 1.0</h6>
         <!--<p style="    color: #555;
     font-style: italic;">
           Some description goes here. Some description goes here. Some description goes here. Some description goes
@@ -140,24 +141,28 @@
         </p>-->
       </div>
     </div>
-    <div class="col-md-6 text-right">
-      <!--<img style="height: 350px;" src="https://patientengagementhit.com/images/site/article_headers/_normal/doctor_computer.png">-->
-      <img style="height: 250px;" src="https://getreferralmd.com/wp-content/uploads/2013/10/patient-portal.png">
+    <div class="col-md-5 col-sm-5 align-items-center justify-content-center">
+	<!--<div class="square" style="width:400px">-->
+      		<!--<img style="height: 350px;" src="https://patientengagementhit.com/images/site/article_headers/_normal/doctor_computer.png">-->
+		<!--<img style="height: 250px;" src="https://getreferralmd.com/wp-content/uploads/2013/10/patient-portal.png">-->
+		&nbsp;&nbsp;&nbsp;&nbsp;<img style="height: 250px; width:500 text-align:center" src="./images/EISL-landing-logo.png">
+	<!--</div>-->
     </div>
   </div>
-  <div style="text-align: center;
-    padding-top: 30px;background: whitesmoke;
-    padding-bottom: 30px;">
-    <h2>Some punch line goes here...</h2>
-    <p style="margin-top: 20px;">Some long punch line goes here that describes what the product is...</p>
+  <div style="text-align:center;
+    padding-top: 5px;background: whitesmoke;
+    padding-bottom: 5px;">
+    <!--<h2>Some punch line goes here...</h2>-->
+    <p style="margin-top: 20px;" class="font-weight-bold text-secondary" >
+	The EISL Platform is based on the following integration tiers:</br> 1.&nbsp;Inbound Services Tier</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;On-Demand Services Tier </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;Application Services Tier</br> Please contact Clinical Data Services team at <a href="mailto:dataacquisitiontechsupport@uhc.com">UHC Clinical Data Acquisition</a> with any questions.</p>
   </div>
-  <div class="row" style="    padding-top: 50px;">
+  <div class="row" style="padding-top: 5px;">
     <div class="col-md-4 col-xs-4 " style="padding-left: 40px;">
       <div class="myBox">
-        <div style="text-align: center;margin-bottom: 20px;">
+        <div style="text-align: center;margin-bottom: 5px;">
           <i class="fa fa-angle-double-down" style="font-size: 80px;color: #003da0;"></i>
         </div>
-        <button class="btn btn-block btn-default disabled" style="    font-size: 30px;border: 1px solid lightgray;
+        <button class="btn btn-block btn-default disabled" style=" font-size: 30px;border: 1px solid lightgray;
     color: #999;
     background: whitesmoke;
     cursor: not-allowed;">In-bound Services
@@ -166,7 +171,7 @@
     </div>
     <div class="col-md-4 col-xs-4 ">
       <div class="myBox">
-        <div style="text-align: center;margin-bottom: 20px;">
+        <div style="text-align: center;margin-bottom: 5px;">
           <i class="fa fa-angle-double-down" style="font-size: 80px;color: #003da0;"></i>
         </div>
         <a href="${pageContext.request.contextPath}/patientViewer.jsp" class="primary-button-link" target = "_self">
@@ -176,7 +181,7 @@
     </div>
     <div class="col-md-4 col-xs-4 " style="padding-right: 40px;">
       <div class="myBox">
-        <div style="text-align: center;margin-bottom: 20px;">
+        <div style="text-align: center;margin-bottom: 5px;">
           <i class="fa fa-angle-double-down" style="font-size: 80px;color: #003da0;"></i>
         </div>
         <button class="btn btn-block btn-default disabled" style="    font-size: 30px;border: 1px solid lightgray;

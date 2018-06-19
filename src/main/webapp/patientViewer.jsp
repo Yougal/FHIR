@@ -109,7 +109,7 @@
     <script src="${pageContext.request.contextPath}/js/libs/angular-sanitize.js"></script>
 
     <script src="${pageContext.request.contextPath}/js/libs/angular-bootstrap-checkbox.js"></script>
-
+    
     <script>
         angular.module("sampleApp",['ui.checkbox','ui.bootstrap','ngStorage','ngSanitize']).config(function($locationProvider) {
 
@@ -208,7 +208,7 @@
         <form style="    width: 90%;padding: 30px;padding-bottom: 0px;" name="filter1">
             <div class="form-group row">
                 <div class="col-sm-2">
-                  <label class="col-form-label">Search Patient : </label>
+                  <label class="col-form-label"><strong>Search UHC Member :</strong></label>
                 </div>
                 <div class="col-sm-8">
                 <div class="row">
@@ -251,21 +251,21 @@
     <div ng-show="hasSearchedMember()" style="padding: 15px;    background: white; border-bottom: 1px solid lightgray; border-top: 1px solid lightgray;">
      <h3>
           <a href="#historyTable" data-toggle="collapse" onclick="$('.collapse').addClass('show');">
-            Visit History : ({{getName()}})
+            Visit History for : {{getName()}}
             <i class="fa fa-caret-down" ng-show="appConfigSvc.getCurrentPatient()"
                style="font-size: 30px;padding-left: 10px;"></i>
          </a>
-          <span  ng-show="appConfigSvc.getCurrentPatient()" style="font-size: 20px; color: #1a6dcf; background: aliceblue;padding: 0px 16px;
+          <span  ng-show="appConfigSvc.getCurrentPatient()" style="font-size: 20px; color: white; padding: 0px 16px;
 		    margin: 30px;
-		    font-weight: normal;"> {{displayEHR}}</span>
+		    font-weight: bold;" class="btn primary-button"> {{displayEHR}}</span>
 		  </h3>
 		  
 		<form name="filter2" id="filter2">
         <div id="historyTable" class="collapse show">
          <div class="row toolbar" style="padding: 10px 0px; background: whitesmoke; margin: 0px;">
             <div class="col-xs-16">
-              <a ng-class="{'active' : showFilter}" ng-click="setAttribute('showFilter', !showFilter)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Filter</a>
-              <a ng-class="{'active' : showAdditionalHospital}" ng-click="setAttribute('showAdditionalHospital', !showAdditionalHospital)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Additional Provider</a>
+              <a ng-class="{'active' : showFilter}" ng-click="setAttribute('showFilter', !showFilter)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Filter by Date Range</a>
+              <a ng-class="{'active' : showAdditionalHospital}" ng-click="setAttribute('showAdditionalHospital', !showAdditionalHospital)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Add Provider (by EMR or Provider List)</a>
             </div>
           </div>
           <div ng-show="showFilter" class="row toolbar" style="padding: 15px 0px;  background: floralwhite; margin: 0px; border-top: 1px solid lightgray;">
@@ -298,27 +298,31 @@
 <!--               <input type="text" placeholder="Hospital Name" class="form-control" id="patientDOB"
                      ng-model="input.patientDOB" value=""> -->
 			 <!-- <select class="form-control" ng-disabled="!selectedEHR" ng-model="selectedHospital" ng-options="hospital.name for hospital in hospitalArray">
-              	<option value="">Select Hospital Name</option>
+              	<option value="">Select Provider Name</option>
               </select> -->
-             <input type="text" ng-model="selectedHospital" placeholder="Hospital Name" uib-typeahead="hospital.name for hospital in hospitalArray | filter:{name:$viewValue}" 
+             <input type="text" ng-model="selectedHospital" placeholder="Provider Name" uib-typeahead="hospital.name for hospital in hospitalArray | filter:{name:$viewValue}" 
               		class="form-control" typeahead-show-hint="true" typeahead-min-length="0" ng-change="onHospitalNameChange()" typeahead-on-select="onHospitalNameChange()">
             </div>
             <div class="col-xs-4">
               <button type="reset" class="btn primary-button" ng-disabled="selectedEHR.name==='Meditech EHR' || selectedEHR==='Meditech EHR'" ng-click="addHospital()">
-                Add Hospital
+                Add Provider
               </button>
            </div>
 
           </div>
-          
-          <div class="row" style="padding: 0px 30px;" ng-show="hasVistedHistory()">
+         <div>
+          &nbsp;
+         </div> 
+          <div class="row top-buffer" style="padding: 0px 30px;" ng-show="hasVistedHistory()">
 	            <table class="table table-hover"  style="background: white;">
-	            		<thead>
-	            		<tr>
-					     <th>Hospital Name</th>
-					     <th>EHR Name</th>
-					     <th>Hospital Id</th>
-					     <th>Last Visited Date</th>
+	            		<thead >
+	            		<tr style="background-color: #196ECF; color:white;">
+				<!--<tr class="btn primary-button">-->
+					     <th><strong>Provider Name</strong></th>
+					     <th><strong>EHR Name</strong></th>
+					     <th><strong>Hospital ID/TIN</strong></th>
+					     <th><strong>Last Provider Visit</strong></th>
+                                             <th><strong>Last API Call</strong></th>
 					  </tr>
 					 </thead>
 	                <tbody ng-repeat="history in getVisitHistory()">
@@ -328,12 +332,14 @@
 	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
 	                        <td>{{history.hospitalId}}</td>
 		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
+				<td>&nbsp;06-18-2018</td>
 	                    </tr>
-	                     <tr ng-if= "history.enable=='false'" style="background-color: grey;">
+	                     <tr ng-if= "history.enable=='false'" style="background-color: lightgrey;">
 	                        <td>{{history.hospitalName}}</td>
 	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
 	                        <td>{{history.hospitalId}}</td>
 		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
+                                <td>&nbsp;06-18-2018</td>
 	                    </tr>
 	                </tbody>
 	                <tbody ng-show="!getVisitHistory().length">
