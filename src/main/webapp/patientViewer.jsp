@@ -263,14 +263,28 @@
 	</h3>
 	
 	<div class="form-group row" ng-show="appConfigSvc.getCurrentPatient()">
-		<div class="col-sm-8">
+		<div class="col-sm-11">
 			<div class="row">
-				<div class="col-xs-8">UHC Member: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{getName()}}</span></div>
-		  		<div class="col-xs-8">EMR: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{ehrName}}</span></div>
+				<div class="col-xs-3"><span style="float: right">UHC Member:</span></div> 
+				<div class="col-xs-5">
+					<span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{getName()}}</span>
+				</div>
+				
+				<div class="col-xs-3"><span style="float: right">EMR:</span></div>
+		  		<div class="col-xs-5">
+		  			<span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{ehrName}}</span>
+		  		</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-8">Provider: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{providerName}}</span></div>
-		  		<div class="col-xs-8">Version: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">N/A</span></div>
+				<div class="col-xs-3"><span style="float: right">Provider:</span></div> 
+				<div class="col-xs-5">
+					<span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{providerName}}</span>
+				</div>
+				
+				<div class="col-xs-3"><span style="float: right">Version:</span></div> 
+		  		<div class="col-xs-5">
+		  			<span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">N/A</span>
+		  		</div>
 			</div>
 		</div>
 	</div>
