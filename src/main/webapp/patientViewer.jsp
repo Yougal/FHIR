@@ -249,16 +249,31 @@
     </div>
 
     <div ng-show="hasSearchedMember()" style="padding: 15px;    background: white; border-bottom: 1px solid lightgray; border-top: 1px solid lightgray;">
-     <h3>
-          <a href="#historyTable" data-toggle="collapse" onclick="$('.collapse').addClass('show');">
-            Visit History for : {{getName()}}
-            <i class="fa fa-caret-down" ng-show="appConfigSvc.getCurrentPatient()"
-               style="font-size: 30px;padding-left: 10px;"></i>
-         </a>
-          <span  ng-show="appConfigSvc.getCurrentPatient()" style="font-size: 20px; color: white; padding: 0px 16px;
+     <h3 style="margin-bottom: 15px" ng-show="!appConfigSvc.getCurrentPatient()">
+	         <a href="#historyTable" data-toggle="collapse" onclick="$('.collapse').addClass('show');">
+	            Visit History for :
+	         </a>
+	         <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{getName()}}</span>
+	         <i class="fa fa-caret-down" ng-show="appConfigSvc.getCurrentPatient()"
+	               style="font-size: 30px;padding-left: 10px;"></i>
+<!--           <span  ng-show="appConfigSvc.getCurrentPatient()" style="font-size: 20px; color: white; padding: 0px 16px;
 		    margin: 30px;
-		    font-weight: bold;" class="btn primary-button"> {{displayEHR}}</span>
-		  </h3>
+		    font-weight: bold;" class="btn primary-button"> {{displayEHR}}
+		  </span> -->
+	</h3>
+	
+	<div class="form-group row" ng-show="appConfigSvc.getCurrentPatient()">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-xs-8">UHC Member: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{getName()}}</span></div>
+		  		<div class="col-xs-8">EMR: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{ehrName}}</span></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8">Provider: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{providerName}}</span></div>
+		  		<div class="col-xs-8">Version: <span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">N/A</span></div>
+			</div>
+		</div>
+	</div>
 		  
 		<form name="filter2" id="filter2">
         <div id="historyTable" class="collapse show">

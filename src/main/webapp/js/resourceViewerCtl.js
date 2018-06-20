@@ -466,6 +466,9 @@ angular.module("sampleApp").controller('resourceViewerCtrl',
 	        	 $scope.displayEHR=hospitalName + " - " + ehr;
 	        	 $scope.loadPatient(patientId,ehrId);
 	        	 $('.collapse').removeClass("show");
+	        	 
+	        	 $scope.providerName = hospitalName;
+	        	 $scope.ehrName = ehr;
 	        },
 	        
 	        //directly load a patient based on their id
