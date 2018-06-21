@@ -265,7 +265,7 @@
 	<div class="form-group row" ng-show="appConfigSvc.getCurrentPatient()">
 		<div class="col-sm-11">
 			<div class="row">
-				<div class="col-xs-3"><span style="float: right">UHC Member:</span></div> 
+				<div class="col-xs-3"><span style="float: right">Visit History for:</span></div> 
 				<div class="col-xs-5">
 					<span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{getName()}}</span>
 				</div>
@@ -275,6 +275,7 @@
 		  			<span style="font-size: 20px; color: white; padding: 0px 16px; margin: 0px; font-weight: bold;" class="primary-button">{{ehrName}}</span>
 		  		</div>
 			</div>
+                        </br>
 			<div class="row">
 				<div class="col-xs-3"><span style="float: right">Provider:</span></div> 
 				<div class="col-xs-5">

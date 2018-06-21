@@ -1,7 +1,7 @@
 {
   "visitHistory" :[
     {"hospitalName": "John Medical",
-     "ehrName":"All Script",
+     "ehrName":"Allscripts",
      "ehrId": "2",
       "hospitalId": "1234567",
      "patientId" : "19",
@@ -28,7 +28,7 @@
 	  "uhgId":"12345"
     },
      {"hospitalName": "CareFirst Clinic",
-     "ehrName":"All Script",
+     "ehrName":"Allscripts",
      "ehrId": "2",
      "hospitalId": "X543W11",
      "patientId" : "19",
@@ -41,7 +41,7 @@
 	  "uhgId":"12345"
     },
     {"hospitalName": "NorthWestern Hospital",
-     "ehrName":"All Script",
+     "ehrName":"Allscripts",
      "ehrId": "2",
       "hospitalId": "2367890Q",
      "patientId" : "19",
@@ -54,7 +54,7 @@
 	  "uhgId":"12345"
     },
     {"hospitalName": "John Medical",
-     "ehrName":"All Script",
+     "ehrName":"Allscripts",
      "ehrId": "2",
      "hospitalId": "1234567",
      "patientId" : "19",
@@ -80,7 +80,7 @@
 	  "uhgId":"1234511"
     },  
     {"hospitalName": "CareFirst Clinic",
-     "ehrName":"All Script",
+     "ehrName":"Allscripts",
       "ehrId": "2",
        "hospitalId": "X543W11",
      "patientId" : "19",
@@ -93,7 +93,7 @@
 	  "uhgId":"1234511"
     },
     {"hospitalName": "NorthWestern Hospital",
-     "ehrName":"All Script",
+     "ehrName":"Allscripts",
      "ehrId": "2",
       "hospitalId": "2367890Q",
      "patientId" : "19",
