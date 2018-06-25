@@ -369,7 +369,35 @@ angular.module("sampleApp").controller('resourceViewerCtrl',
 		    			}      
            	 	});
      	 	$scope.visitHistory=resultData;
-            }
+            };
+            
+            $scope.filterBySource = function(){
+            	
+            	var sources = [];
+            	if( $scope.input.patientClaimsFilter ) {
+            		sources["claims"] = true;
+            	} else {
+            		sources["claims"] = false;
+            	}
+            	
+            	if( $scope.input.patientPriorAuthFilter ) {
+            		sources["preAuth"] = true;
+            	} else {
+            		sources["preAuth"] = false;
+            	}
+            	
+            	if( $scope.input.patientEligibilityFilter ) {
+            		sources["eligibility"] = true;
+            	} else {
+            		sources["eligibility"] = false;
+            	}
+            	
+           	 appConfigSvc.setCurrentPatient(null);
+          	 var resultData = $scope.allFilteredMembers.filter(function(item){
+          		 	return sources[item.source];
+          	 	});
+    	 	$scope.visitHistory=resultData;
+           }
 
             	$scope.formReset = function(){
             		 $scope.allFilteredMembers={};

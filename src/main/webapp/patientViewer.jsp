@@ -232,6 +232,21 @@
                              ng-model="input.patientDOB" value="" data-date-format="mm-dd-yyyy" data-provide="datepicker">
                     </div>
                   </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-xs-5">
+                    	<label for="patientClaims" style="margin-right: 4px">Claims</label>
+                      	<input type="checkbox" id="patientClaims" ng-model="input.patientClaims" checked="checked" ng-checked="true"/>
+                    </div>
+                    <div class="col-xs-5">
+                    	<label for="patientPriorAuth" style="margin-right: 4px">Prior Auth</label>
+                      	<input type="checkbox" id="patientPriorAuth" ng-model="input.patientPriorAuth" checked="checked" ng-checked="true"/>
+                    </div>
+					<div class="col-xs-5">
+						<label for="patientEligibility" style="margin-right: 4px">Eligibility</label>
+                      	<input type="checkbox" id="patientEligibility" ng-model="input.patientEligibility" checked="checked" ng-checked="true"/>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-sm-1">
                    <button type="button" class="btn primary-button"
@@ -294,7 +309,8 @@
         <div id="historyTable" class="collapse show">
          <div class="row toolbar" style="padding: 10px 0px; background: whitesmoke; margin: 0px;">
             <div class="col-xs-16">
-              <a ng-class="{'active' : showFilter}" ng-click="setAttribute('showFilter', !showFilter)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Filter by Date Range</a>
+              <a ng-class="{'active' : showFilter}" ng-click="setAttribute('showFilter', !showFilter)" href="" style=" margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Filter by Date Range</a>
+              <a ng-class="{'active' : showFilterBySource}" ng-click="setAttribute('showFilterBySource', !showFilterBySource)" href="" style=" margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Filter by Source</a>
               <a ng-class="{'active' : showAdditionalHospital}" ng-click="setAttribute('showAdditionalHospital', !showAdditionalHospital)" href="" style="    margin-right: 20px; background: whitesmoke; padding: 5px 20px;">Add Provider (by EMR or Provider List)</a>
             </div>
           </div>
@@ -314,6 +330,23 @@
               </button>
             </div>
           </div>
+          
+          <div ng-show="showFilterBySource" class="row toolbar" style="padding: 15px 0px;  background: floralwhite; margin: 0px; border-top: 1px solid lightgray;">
+
+			<div class="col-xs-2">
+				<label for="patientClaimsFilter" style="margin-right: 4px">Claims</label>
+				<input type="checkbox" id="patientClaimsFilter" ng-model="input.patientClaimsFilter" checked="checked" ng-checked="true" ng-init="input.patientClaimsFilter = true" ng-click="filterBySource()"/>
+			</div>
+			<div class="col-xs-2">
+				<label for="patientPriorAuthFilter" style="margin-right: 4px">Prior Auth</label>
+				<input type="checkbox" id="patientPriorAuthFilter" ng-model="input.patientPriorAuthFilter" checked="checked" ng-checked="true" ng-init="input.patientPriorAuthFilter = true" ng-click="filterBySource()"/>
+			</div>
+			<div class="col-xs-2">
+				<label for="patientEligibilityFilter" style="margin-right: 4px">Eligibility</label>
+				<input type="checkbox" id="patientEligibilityFilter" ng-model="input.patientEligibilityFilter" checked="checked" ng-checked="true" ng-init="input.patientEligibilityFilter = true" ng-click="filterBySource()"/>
+			</div>
+          </div>
+          
           <div ng-show="showAdditionalHospital" class="row toolbar" style="padding: 15px 0px; background: floralwhite; margin: 0px; border-top: 1px solid lightgray;" id="showAdditionalHospitalContainer">
             <div class="col-xs-4">
 <!--               <input type="text" placeholder="EHR Name" class="form-control" id="patientDOB"
