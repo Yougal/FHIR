@@ -12,8 +12,9 @@
 	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345",
-	  "source": "claims"
-   },
+	  "source": "claims",
+	  "sourceName" : "Claims"
+  },
     
     {"hospitalName": "Elmhurst Hospital",
      "ehrName":"Cerner",
@@ -27,8 +28,39 @@
 	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345",
-	  "source": "preAuth"
-    },
+	  "source": "preAuth",
+	  "sourceName": "Prior Auth"
+   },
+       {"hospitalName": "Florida Orlando Hospital",
+     "ehrName":"Cerner",
+     "ehrId": "1",
+     "hospitalId": "D54321",
+     "patientId" : "10002752",
+      "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png",
+      "enable": "true",
+       "lastVisitDate" : "06-13-2013",
+	  "firstName": "Fred",
+	  "lastName": "Smart",
+	  "dob":"08-24-1965",
+	  "uhgId":"12345",
+	  "source": "eligibility",
+	  "sourceName": "Eligibility"
+   },
+          {"hospitalName": "Methodist University Hospital",
+     "ehrName":"Cerner",
+     "ehrId": "1",
+     "hospitalId": "D54321",
+     "patientId" : "10002752",
+      "url": "https://www.cerner.com/-/media/cerner-media-folder/home-page/cerner_rgb_standard_-horizontal.png",
+      "enable": "true",
+       "lastVisitDate" : "06-13-2013",
+	  "firstName": "Fred",
+	  "lastName": "Smart",
+	  "dob":"08-24-1965",
+	  "uhgId":"12345",
+	  "source": "claims",
+	  "sourceName": "Claims"
+   },
      {"hospitalName": "CareFirst Clinic",
      "ehrName":"Allscripts",
      "ehrId": "2",
@@ -41,8 +73,9 @@
 	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345",
-	  "source": "eligibility"
-    },
+	  "source": "eligibility",
+	  "sourceName": "Eligibility"
+   },
     {"hospitalName": "NorthWestern Hospital",
      "ehrName":"Allscripts",
      "ehrId": "2",
@@ -55,8 +88,9 @@
 	  "lastName": "Smart",
 	  "dob":"08-24-1965",
 	  "uhgId":"12345",
-	  "source": "claims"
-    },
+	  "source": "claims",
+	  "sourceName": "Claims"
+   },
     {"hospitalName": "John Medical",
      "ehrName":"Allscripts",
      "ehrId": "2",
@@ -69,8 +103,9 @@
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
 	  "uhgId":"1234511",
-	  "source": "claims"
-    },
+	  "source": "claims",
+	  "sourceName": "Claims"
+   },
     {"hospitalName": "Elmhurst Hospital",
      "ehrName":"Cerner",
      "ehrId": "1",
@@ -83,7 +118,8 @@
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
 	  "uhgId":"1234511",
-	  "source": "preAuth"
+	  "source": "preAuth",
+	  "sourceName": "Prior Auth"
     },  
     {"hospitalName": "CareFirst Clinic",
      "ehrName":"Allscripts",
@@ -97,8 +133,9 @@
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
 	  "uhgId":"1234511",
-	  "source": "preAuth"
-    },
+	  "source": "preAuth",
+	  "sourceName": "Prior Auth"
+   },
     {"hospitalName": "NorthWestern Hospital",
      "ehrName":"Allscripts",
      "ehrId": "2",
@@ -111,7 +148,8 @@
 	  "lastName": "Dave",
 	  "dob":"05-31-1977",
 	  "uhgId":"1234511",
-	  "source": "eligibility"
-    }
+	  "source": "eligibility",
+	  "sourceName": "Eligibility"
+   }
   ]
 }

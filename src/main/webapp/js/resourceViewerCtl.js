@@ -762,7 +762,8 @@ angular.module("sampleApp").controller('resourceViewerCtrl',
 
                         },
                         function (err) {
-                            $scope.xmlResource = "<error>Sorry, Unable to load Xml version</error>";
+                            //$scope.xmlResource = "<error>Sorry, Unable to load Xml version</error>";
+                        	$scope.xmlResource = "No XML";
                             // alert(angular.toJson(err, true))
                         }
                     ).finally(function(){

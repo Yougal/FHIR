@@ -385,7 +385,8 @@
 					     <th><strong>EHR Name</strong></th>
 					     <th><strong>Hospital ID/TIN</strong></th>
 					     <th><strong>Last Provider Visit</strong></th>
-                                             <th><strong>Last API Call</strong></th>
+						 <th><strong>Last API Call</strong></th>
+						 <th><strong>Source</strong></th>
 					  </tr>
 					 </thead>
 	                <tbody ng-repeat="history in getVisitHistory()">
@@ -395,14 +396,16 @@
 	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
 	                        <td>{{history.hospitalId}}</td>
 		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
-				<td>&nbsp;06-18-2018</td>
+							<td>&nbsp;06-18-2018</td>
+							<td>{{history.sourceName}}</td>
 	                    </tr>
 	                     <tr ng-if= "history.enable=='false'" style="background-color: lightgrey;">
 	                        <td>{{history.hospitalName}}</td>
 	                        <td><img  style="width: 100px;" src="{{history.url}}"></td>
 	                        <td>{{history.hospitalId}}</td>
 		                    <td>{{history.lastVisitDate | date:'medium'}}</td>
-                                <td>&nbsp;06-18-2018</td>
+                            <td>&nbsp;06-18-2018</td>
+                            <td>{{history.sourceName}}</td>
 	                    </tr>
 	                </tbody>
 	                <tbody ng-show="!getVisitHistory().length">

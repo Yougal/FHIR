@@ -162,11 +162,14 @@
         <div style="text-align: center;margin-bottom: 5px;">
           <i class="fa fa-angle-double-down" style="font-size: 80px;color: #003da0;"></i>
         </div>
-        <button class="btn btn-block btn-default disabled" style=" font-size: 30px;border: 1px solid lightgray;
+        <!-- <button class="btn btn-block btn-default disabled" style=" font-size: 30px;border: 1px solid lightgray;
     color: #999;
     background: whitesmoke;
     cursor: not-allowed;">In-bound Services
-        </button>
+        </button> -->
+        <a href="https://orbitbi-tableau.optum.com/t/PDCC/views/ProviderDataCommandCenterPROD/PDCCCCProdEnvironment?:embed=y&:display_count=no&:showVizHome=no#1" class="primary-button-link" target = "_blank">
+          <button class="btn btn-block primary-button" style="font-size: 30px;">In-bound Services</button>
+        </a>
       </div>
     </div>
     <div class="col-md-4 col-xs-4 ">

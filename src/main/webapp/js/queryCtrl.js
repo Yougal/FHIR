@@ -602,7 +602,8 @@ angular.module("sampleApp").controller('queryCtrl',function($scope,$rootScope,$u
                 $scope.xmlResource = data.data;
             },
             function (err) {
-                $scope.xmlResource = "<error>Sorry, Unable to load Xml version</error>";
+                //$scope.xmlResource = "<error>Sorry, Unable to load Xml version</error>";
+            	$scope.xmlResource = "No XML";
                 // alert(angular.toJson(err, true))
             }
         );
